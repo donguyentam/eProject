@@ -3,20 +3,19 @@
       <div class="row">
           <div class="col-lg-8">
               <div class="instagram__pic">
-                  <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-1.jpg"></div>
-                  <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-2.jpg"></div>
-                  <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-3.jpg"></div>
-                  <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-4.jpg"></div>
-                  <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-5.jpg"></div>
-                  <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-6.jpg"></div>
+                  <div class="instagram__pic__item set-bg" data-setbg="{{ asset('/fe/img/instagram/instagram-1.png') }}"></div>
+                  <div class="instagram__pic__item set-bg" data-setbg="{{ asset('/fe/img/instagram/instagram-2.png') }}"></div>
+                  <div class="instagram__pic__item set-bg" data-setbg="{{ asset('/fe/img/instagram/instagram-3.png') }}"></div>
+                  <div class="instagram__pic__item set-bg" data-setbg="{{ asset('/fe/img/instagram/instagram-4.png') }}"></div>
+                  <div class="instagram__pic__item set-bg" data-setbg="{{ asset('/fe/img/instagram/instagram-5.png') }}"></div>
+                  <div class="instagram__pic__item set-bg" data-setbg="{{ asset('/fe/img/instagram/instagram-6.png') }}"></div>
               </div>
           </div>
           <div class="col-lg-4">
               <div class="instagram__text">
                   <h2>Instagram</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                  labore et dolore magna aliqua.</p>
-                  <h3>#Male_Fashion</h3>
+                  <p>When disagreeing with loved ones, just face the current situation. Don't bring up the past.</p>
+                  <h3>#Modern_Furniture</h3>
               </div>
           </div>
       </div>

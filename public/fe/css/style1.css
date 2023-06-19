@@ -116,7 +116,7 @@ ol {
 }
 
 .section-title span {
-	color: #e53637;
+	color: #6b4705;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -316,7 +316,7 @@ ol {
 -----------------------*/
 
 .header {
-	background: #ffffff;
+	background: wheat;
 }
 
 .header__top {
@@ -494,7 +494,7 @@ ol {
 	bottom: 0;
 	width: 100%;
 	height: 2px;
-	background: #e53637;
+	background: #6b4705;
 	content: "";
 	-webkit-transition: all, 0.5s;
 	-o-transition: all, 0.5s;
@@ -746,7 +746,7 @@ ol {
 -----------------------*/
 
 .categories {
-	background: #f3f2ee;
+	background: tan;
 	overflow: hidden;
 	padding-top: 150px;
 	padding-bottom: 125px;
@@ -764,20 +764,20 @@ ol {
 	top: 0;
 	height: 300px;
 	width: 600px;
-	background: #ffffff;
+	background: #e4b978;
 	z-index: -1;
 	content: "";
 }
 
 .categories__text h2 {
-	color: #b7b7b7;
+	color: #78611e;
 	line-height: 72px;
 	font-size: 34px;
 }
 
 .categories__text h2 span {
 	font-weight: 700;
-	color: #111111;
+	color: #6b4705;
 }
 
 .categories__hot__deal {
@@ -815,7 +815,7 @@ ol {
 }
 
 .categories__deal__countdown span {
-	color: #e53637;
+	color: #6b4705;
 	font-size: 14px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -900,7 +900,7 @@ ol {
 }
 
 .instagram__text h3 {
-	color: #e53637;
+	color: #6b4705;
 	font-weight: 700;
 }
 
@@ -919,7 +919,7 @@ ol {
 }
 
 .filter__controls li {
-	color: #b7b7b7;
+	color: #d8a84e;
 	font-size: 24px;
 	font-weight: 700;
 	list-style: none;
@@ -933,7 +933,7 @@ ol {
 }
 
 .filter__controls li.active {
-	color: #111111;
+	color: #6b4705;
 }
 
 .product__item {
@@ -2758,7 +2758,7 @@ ol {
 	padding: 30px 30px 25px;
 	margin: 0 30px;
 	margin-top: -35px;
-	background: #ffffff;
+	background: tan;
 	-webkit-transition: all, 0.3s;
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;

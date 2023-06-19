@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style1.css') }}" type="text/css">
 </head>
 
-<body>
+<body style="background-color: wheat;">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -55,7 +55,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Free shipping, 30-day return or refund guarantee.</p>
+            <p>Free shipping, 30-day return or refund guarantee. Hotline:0359247738</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                            <p>Free shipping, 30-day return or refund guarantee. Hotline:0359247738</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
@@ -92,8 +92,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
-                    <div class="header__logo" style="width: 110px; height: auto;">
-                        <a href="{{ Route('home') }}"><img src="{{ asset('/fe/img/logo.jpg') }}" alt=""></a>
+                    <div class="header__logo" style="width: 90px; height: auto; padding: 5px;">
+                        <a href="{{ Route('home') }}"><img src="{{ asset('/fe/img/logo.png') }}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

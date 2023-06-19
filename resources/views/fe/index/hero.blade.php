@@ -5,11 +5,10 @@
               <div class="row">
                   <div class="col-xl-5 col-lg-7 col-md-8">
                       <div class="hero__text">
-                          <h6>Summer Collection</h6>
-                          <h2>Fall - Winter Collections 2030</h2>
-                          <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                          commitment to exceptional quality.</p>
-                          <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                          <h6>Modern Furniture</h6>
+                          <h2 style="color: aliceblue;">Collections 2030</h2>
+                          <p style="color: aliceblue;">Furniture is not a chair, a lamp or a curtain. It is the combination formula of those things, creating a perfect living space.</p>
+                          <a href="#" class="primary-btn" style="color: black; background-color: aliceblue; ">Shop now <span class="arrow_right"></span></a>
                           <div class="hero__social">
                               <a href="#"><i class="fa fa-facebook"></i></a>
                               <a href="#"><i class="fa fa-twitter"></i></a>
@@ -26,10 +25,9 @@
               <div class="row">
                   <div class="col-xl-5 col-lg-7 col-md-8">
                       <div class="hero__text">
-                          <h6>Summer Collection</h6>
-                          <h2>Fall - Winter Collections 2030</h2>
-                          <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                          commitment to exceptional quality.</p>
+                          <h6>Modern Furniture</h6>
+                          <h2>Collections 2030</h2>
+                          <p>Furniture is not a chair, a lamp or a curtain. It is the combination formula of those things, creating a perfect living space.</p>
                           <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                           <div class="hero__social">
                               <a href="#"><i class="fa fa-facebook"></i></a>
