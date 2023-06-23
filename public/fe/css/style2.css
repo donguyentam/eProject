@@ -676,7 +676,7 @@ ol {
 
 .banner__item:hover .banner__item__text a:after {
 	width: 40px;
-	background: #e53637;
+	background: #6b4705;
 }
 
 .banner__item.banner__item--middle {
@@ -1057,7 +1057,7 @@ ol {
 
 .product__item__text a {
 	font-size: 15px;
-	color: #e53637;
+	color: #6b4705;
 	font-weight: 700;
 	position: absolute;
 	left: 0;
@@ -2742,7 +2742,7 @@ ol {
 
 .blog__item:hover a::after {
 	width: 40px;
-	background: #e53637;
+	background: #6b4705;
 }
 
 .blog__item:hover .blog__item__text {

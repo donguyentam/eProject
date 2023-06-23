@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style1.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style2.css') }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
