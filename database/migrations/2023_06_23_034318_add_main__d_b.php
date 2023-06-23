@@ -15,7 +15,7 @@ return new class extends Migration
         // Schema::create('roles', function (Blueprint $table) {
         //     $table->increments('id');
         //     $table->string('slug');
-        //     $table->string('name');
+        //     $table->string('name', 50);
         //     $table->text('permissions')->nullable();
         //     $table->timestamps();
 
@@ -33,55 +33,40 @@ return new class extends Migration
         // });
         Schema::create('admin', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 128);
+            $table->string('name', 50);
             $table->string('password');
-            $table->string('email', 255)->nullable();
+            $table->string('email', 128)->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';
             $table->unique('email');
         });
         
         Schema::create('user', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 128);
+            $table->bigIncrements('id');
+            $table->string('name', 50);
             $table->string('phone', 40)->nullable();
-            $table->string('email', 255)->nullable();
-            $table->string('address')->nullable();
+            $table->string('email', 128)->nullable();
+            $table->string('address', 512)->nullable();
             $table->string('password');
             $table->timestamp('last_login')->nullable();
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
+            $table->string('first_name', 50)->nullable();
+            $table->string('last_name', 50)->nullable();
 
             $table->timestamps();
 
             $table->engine = 'InnoDB';
             $table->unique('email');
         });
-
+        
         // Schema::create('password_reset_tokens', function (Blueprint $table) {
         //     $table->string('email')->primary();
         //     $table->string('token');
         //     $table->timestamp('created_at')->nullable();
         // });
-        
-        Schema::create('product_detail', function (Blueprint $table) {
-            $table->increments('id');
-
-            $table->string('name', 255);
-            $table->string('slug', 512)->nullable();
-            $table->integer('price');
-            $table->string('image')->nullable();
-            $table->index('product_category_id');
-            $table->index('product_inventory_id');
-
-            $table->foreignId('product_category_id')->references('id')->on('product_category');
-            $table->foreignId('product_inventory_id')->references('id')->on('product_inventory');
-            $table->timestamps();
-        });
         Schema::create('product_category', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 64);
-            $table->string('slug')->nullable();
+            $table->string('name', 50);
+            $table->string('slug', 512)->nullable();
             $table->timestamps();
         });
         Schema::create('product_inventory', function (Blueprint $table) {
@@ -90,31 +75,36 @@ return new class extends Migration
             $table->timestamps();
 
         });
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('product_detail', function (Blueprint $table) {
             $table->id();
-            $table->integer('quantity')->nullable();
-            $table->foreignId('order_detail_id')->constrained();
-            $table->timestamp('order_date')->nullable();
+
+            $table->string('name', 50);
+            $table->string('slug', 512)->nullable();
+            $table->integer('price');
+            $table->string('image')->nullable();
+            $table->index('product_category_id');
+            $table->index('product_inventory_id');
+
+            $table->foreignId('product_category_id')->references('id')->on('product_category')->onDelete('cascade');
+            $table->foreignId('product_inventory_id')->references('id')->on('product_inventory')->onDelete('cascade');
             $table->timestamps();
         });
-
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained();
-            $table->foreignId('product_id')->constrained();
+            $table->foreignId('product_id')->references('id')->on('product_detail')->onDelete('cascade');
             $table->integer('quantity')->nullable();
             $table->integer('price')->nullable();
             $table->timestamps();
         });
-        Schema::create('review', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('comment')->nullable();
-            $table->integer('rating')->nullable();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('product_id')->constrained();
-            $table->string('image')->nullable();
+            $table->integer('quantity')->nullable();
+            $table->foreignId('order_detail_id')->references('id')->on('order_details')->onDelete('cascade');
+            $table->timestamp('order_date')->nullable();
             $table->timestamps();
         });
+
+        
         // Schema::create('cart_item', function (Blueprint $table) {
         //     $table->integer('shopping_cart_id')->unsigned();
         //     $table->integer('product_id')->unsigned();
@@ -142,7 +132,6 @@ return new class extends Migration
         Schema::dropIfExists('product_detail');
         Schema::dropIfExists('product_category');
         Schema::dropIfExists('product_inventory');
-        Schema::dropIfExists('review');
         Schema::dropIfExists('order_detail');
         Schema::dropIfExists('cart_item');
         Schema::dropIfExists('shopping_cart');
