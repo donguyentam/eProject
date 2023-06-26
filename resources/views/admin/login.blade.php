@@ -32,9 +32,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						
 					 <form action="{{ Route('processLogin') }}" method="post">
 					 @csrf
+						<div class="input-group mb-3">
+						<input type="text" class="form-control"  placeholder="User name" name="email" />
+						<div class="input-group-append">
+							<div class="input-group-text">
+							<span class="fas fa-lock"></span>
+							</div>
+						</div>
+						</div>
         
-						<input type="text"  placeholder="User name" name="name" />
-						<input type="password"  placeholder="Password" name="password"/>
+						<div class="input-group mb-3">
+						<input type="password" class="form-control"  placeholder="Password" name="password"/>
+						<div class="input-group-append">
+							<div class="input-group-text">
+							<span class="fas fa-lock"></span>
+							</div>
+						</div>
+						</div>
+						
 						<div class="remember">
 			             <span class="checkbox1">
 							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
