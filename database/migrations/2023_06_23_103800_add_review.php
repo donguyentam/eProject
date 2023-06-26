@@ -13,7 +13,7 @@ return new class extends Migration
     {
         //
         Schema::create('review', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('comment', 512)->nullable();
             $table->integer('rating')->nullable();
             $table->string('image')->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
 
         });
         Schema::table('review', function ($table) {
-            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('users_id')->constrained('users');
             $table->foreignId('product_id')->constrained('product_detail');
         });
     }

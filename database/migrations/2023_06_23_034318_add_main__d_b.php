@@ -40,24 +40,7 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->unique('email');
         });
-        
-        Schema::create('user', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 50);
-            $table->string('phone', 40)->nullable();
-            $table->string('email', 128)->nullable();
-            $table->string('address', 512)->nullable();
-            $table->string('password');
-            $table->timestamp('last_login')->nullable();
-            $table->string('first_name', 50)->nullable();
-            $table->string('last_name', 50)->nullable();
-
-            $table->timestamps();
-
-            $table->engine = 'InnoDB';
-            $table->unique('email');
-        });
-        
+             
         // Schema::create('password_reset_tokens', function (Blueprint $table) {
         //     $table->string('email')->primary();
         //     $table->string('token');
@@ -122,7 +105,6 @@ return new class extends Migration
     public function down(): void
     {
         //
-        Schema::drop('user');
         Schema::drop('admin');
         // Schema::dropIfExists('role_users');
         // Schema::dropIfExists('roles');
