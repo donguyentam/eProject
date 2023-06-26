@@ -45,7 +45,7 @@ class ProductController extends Controller
             if($ext != 'jpg' && $ext != 'png' && $ext !='jpeg')
             {
                 $cates = Category::all();
-                return view('admin.product.cr eate', compact('cates'))
+                return view('admin.product.create', compact('cates'))
                     ->with('error','Bạn chỉ được chọn file có đuôi jpg,png,jpeg');
             }
             $imgName = $file->getClientOriginalName();
