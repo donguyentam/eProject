@@ -30,9 +30,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					
 					<div class="header-left-bottom agileinfo">
 						
-					 <form action="#" method="post">
-						<input type="text"  value="User name" name="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
-					<input type="password"  value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
+					 <form action="{{ Route('processLogin') }}" method="post">
+					 @csrf
+        
+						<input type="text"  placeholder="User name" name="name" />
+						<input type="password"  placeholder="Password" name="password"/>
 						<div class="remember">
 			             <span class="checkbox1">
 							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
@@ -43,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="clear"> </div>
 					  </div>
 					   
-						<input type="submit" value="Login">
+						<input type="submit" class="btn btn-primary btn-block" value="Login">
 					</form>	
 					<div class="header-left-top">
 						<div class="sign-up"> <h2>or</h2> </div>
@@ -65,5 +67,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<p>You want good, quality, durable and beautiful furniture? Come to the Free Shop of the best quality furniture in Vietnamese © 2023<a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
 </div>
 <!--footer end here-->
+<!-- jQuery -->
+<script src="{{ asset('/plugins/jquery/jquery.min.js') }}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('/js/adminlte.min.js') }}"></script>
 </body>
 </html>
+
+

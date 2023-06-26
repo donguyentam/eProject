@@ -27,7 +27,7 @@
             <div class="col-lg-8">
                 <div class="shopping__cart__table">
                     <table>
-                        <thead>
+                        <thead>         
                             <tr>
                                 <th>Product</th>
                                 <th>Quantity</th>
