@@ -49,8 +49,8 @@ class HomeController extends Controller
     public function productDetails($slug) 
     {
         // hàm where() sẽ trả về 1 mảng
-        $prod = Product::where('name', $slug)->first();
-        return view('fe.product_detail', compact('prod'));
+        $prod = Product::where('slug', $slug)->first();
+        return view('fe.product_details', compact('prod'));
     }
 
     public function addCart(Request $request) 

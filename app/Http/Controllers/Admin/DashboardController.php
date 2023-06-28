@@ -31,7 +31,7 @@ class DashboardController extends Controller
         if ($user != null) {
             return redirect()->route('admin');
         } else {
-            $err = 'Invalide username or password';
+            $err = 'Invalid username or password';
             return view('admin.login', compact('err'));
         }
     }

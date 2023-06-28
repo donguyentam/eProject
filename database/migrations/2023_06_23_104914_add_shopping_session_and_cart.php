@@ -18,20 +18,20 @@ return new class extends Migration
             $table->engine = 'InnoDB';
         });
         Schema::table('shopping_session', function ($table) {
-            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('user_id')->constrained('users');
         });
         Schema::create('user_address', function (Blueprint $table) {
             $table->id();
-            $table->string('address_line1', 100);
-            $table->string('address_line2', 100)->nullable();
-            $table->string('city', 187);
-            $table->string('postal_code', 70);
-            $table->string('country', 50);
-            $table->string('phone_number', 70);
+            $table->string('address_line1')->nullable();
+            $table->string('address_line2')->nullable();
+            $table->string('city')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->string('country')->nullable();
+            $table->string('phone_number')->nullable();
             $table->timestamps();
         });
         Schema::table('user_address', function ($table) {
-            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('user_id')->constrained('users');
         });
         Schema::create('cart_item', function (Blueprint $table) {
             $table->increments('id');
