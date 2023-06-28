@@ -43,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="clear"> </div>
 					  </div>
 					   
-						<input type="submit" value="Login">
+						<input type="submit" value="Login" >
 					</form>	
 					<div class="header-left-top">
 						<div class="sign-up"> <h2>or</h2> </div>

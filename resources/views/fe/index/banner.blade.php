@@ -1,4 +1,4 @@
-<section class="banner spad">
+<section class="banner spad" style="padding-top: 870px;">
   <div class="container">
       <div class="row">
           <div class="col-lg-7 offset-lg-4">

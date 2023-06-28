@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style2.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style4.css') }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
@@ -62,12 +62,21 @@
 
     <!-- Header Section Begin -->
     <header class="header">
+
+    <!--video index-->
+        <div>
+    <section class="hero">
+  <video autoplay loop muted src= "{{ asset('/fe/img/hero/hero-1.mp4') }}"> </video>   
+</section>
+</div>
+<!--video index end-->
+
         <div class="header__top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee. Hotline:0359247738</p>
+                            <p>Free shipping, 30-day return or refund guarantee. Hotline: 035 9247 738</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
@@ -90,9 +99,13 @@
             </div>
         </div>
         <div class="container">
+
+
+
+        
             <div class="row">
                 <div class="col-lg-3 col-md-3">
-                    <div class="header__logo" style="width: 90px; height: auto; padding: 5px;">
+                    <div class="header__logo" style="width: 140px; height: auto; padding: 5px;">
                         <a href="{{ Route('home') }}"><img src="{{ asset('/fe/img/logo.png') }}" alt=""></a>
                     </div>
                 </div>
@@ -128,7 +141,7 @@
         </div>
     </header>
     <!-- Header Section End -->
-
+ 
     @yield('contents')
 
     <!-- Footer Section Begin -->
