@@ -16,6 +16,11 @@ Route::get('/login', [DashboardController::class, 'login'])->name('login');
 Route::post('/login', [DashboardController::class, 'processLogin'])
                     ->name('processLogin');
 
+Route::get('/register', [DashboardController::class, 'register'])->name('register');
+
+Route::post('/register', [DashboardController::class, 'processRegister'])
+                                        ->name('processRegister');
+
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
 Route::post('/add-cart', [HomeController::class, 'addCart'])->name('addCart');

@@ -803,3 +803,24 @@ span.sin-color {
 }
 }
 /*--meadia quries end here--*/
+
+.bu1{
+    padding-left: 780px;
+}
+.btn4{ display: inline-block;
+    font-size: 23px;
+     padding: 0.6em 1.7em;
+      border: 0.1em solid tan;
+       margin: 0 0.3em 0.3em 0;
+       background-color: tan;
+        border-radius: 0.12em;
+         box-sizing: border-box;
+           text-decoration: none;
+            font-family: “Roboto”, sans-serif; font-weight: 300;
+             color: #ffffff;
+              text-align: center;
+               transition: all 0.2s;
+             }
+.btn4:hover { 
+    color: #ffffff; background-color:#5f3f1c ; 
+}

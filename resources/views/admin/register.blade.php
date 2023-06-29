@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/loginadmin.js"></script>
 <!-- Custom Theme files -->
 
-<link rel="stylesheet" href="{{ asset('/css/styleloginad.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/styleloginadmin.css') }}">
 <!-- for-mobile-apps -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -24,20 +24,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--header start here-->
 <div class="header">
 		<div class="header-main">
-			<div class="bu1">
-				<a class="btn4" href="{{ Route('register') }}">Button</a>
-			</div>
-			
-		       <h1>Welcome to Login</h1>
+		       <h1>Register</h1>
 			<div class="header-bottom">
 				<div class="header-right w3agile">
 					
 					<div class="header-left-bottom agileinfo">
 						
-					 <form action="{{ Route('processLogin') }}" method="post">
+					 <form action="{{ Route('processRegister') }}" method="post">
 					 @csrf
 						<div class="input-group mb-3">
-						<input type="text" class="form-control"  placeholder="User name" name="email" />
+						<input type="text" class="form-control"  placeholder="Email" name="email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 							<span class="fas fa-lock"></span>
@@ -53,28 +49,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</div>
 						</div>
-						
-						<div class="remember">
-			             <span class="checkbox1">
-							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
-						 </span>
-						 <div class="forgot">
-						 	<h6><a href="#">Forgot Password?</a></h6>
-						 </div>
-						<div class="clear"> </div>
-					  </div>
+
+                        <div class="input-group mb-3">
+						<input type="password" class="form-control"  placeholder="Còni Password" name="rpassword"/>
+						<div class="input-group-append">
+							<div class="input-group-text">
+							<span class="fas fa-lock"></span>
+							</div>
+						</div>
+						</div>
 					   
 						<input type="submit" class="btn btn-primary btn-block" value="Login">
-						
+
 					</form>	
-					<div class="header-left-top">
-						<div class="sign-up"> <h2>or</h2> </div>
+				
 					
-					</div>
-					<div class="header-social wthree">
-							<a href="#" class="face"><h5>Facebook</h5></a>
-							<a href="#" class="twitt"><h5>Twitter</h5></a>
-						</div>
 						
 				</div>
 				</div>
