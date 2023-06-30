@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/loginadmin.js"></script>
 <!-- Custom Theme files -->
 
-<link rel="stylesheet" href="{{ asset('/css/styleloginadmin.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/styleloginad.css') }}">
 <!-- for-mobile-apps -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -26,11 +26,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header-main">
 		       <h1>Register</h1>
 			<div class="header-bottom">
+				
+				
 				<div class="header-right w3agile">
 					
 					<div class="header-left-bottom agileinfo">
 						
 					 <form action="{{ Route('processRegister') }}" method="post">
+					 <span style="color:#ff6c6c ;width: 10px">
+								
+								@error('email')
+
+								{{$message}}
+
+								@enderror
+							
+								
+							</span>
 					 @csrf
 						<div class="input-group mb-3">
 						<input type="text" class="form-control"  placeholder="Email" name="email" />
@@ -40,7 +52,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</div>
 						</div>
-        
+								<span style="color:#ff6c6c">
+									@error('password')
+
+									{{$message}}
+
+									@enderror
+								</span>
+
 						<div class="input-group mb-3">
 						<input type="password" class="form-control"  placeholder="Password" name="password"/>
 						<div class="input-group-append">
@@ -50,14 +69,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						</div>
 
-                        <div class="input-group mb-3">
-						<input type="password" class="form-control"  placeholder="Còni Password" name="rpassword"/>
-						<div class="input-group-append">
-							<div class="input-group-text">
-							<span class="fas fa-lock"></span>
-							</div>
-						</div>
-						</div>
+						
 					   
 						<input type="submit" class="btn btn-primary btn-block" value="Login">
 

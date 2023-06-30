@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
 class DashboardController extends Controller
@@ -44,6 +45,15 @@ class DashboardController extends Controller
 
     public function processRegister(Request $request )
     {   
+        $request->validate([
+            'email'    => 'required|email|unique:users',
+            'password'    => 'required',
+        ],
+        [
+            'email.required' => 'Bat buoc nhap email',
+            'password.required' => 'Bat buoc nhap password',
+            'email.unique'=>'Email nay da duoc dang ky'
+        ]);
 
         $email = $request->email;
         $pwd = $request->password;
@@ -54,13 +64,13 @@ class DashboardController extends Controller
             'email'    => $email,
             'password' => $pwd,
         ];
+
+       
             $user = \Sentinel::create($credentials);
             $activation = \Activation::create($user);
             
         return redirect()->route('login')->with('success','Dang ky thanh cong');
 
-        
-        
 
     }
 
