@@ -28,7 +28,8 @@ nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 body{
-background: url(../img/banner3.jpg)no-repeat;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/banner3.jpg)no-repeat;
+
 background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -73,7 +74,7 @@ a:hover{
 }
 .header-main h1 {
     font-size: 64px;
-    color: rgb(220, 152, 64);
+    color: rgb(240, 240, 240);
     text-align: center;
     padding-bottom: 0.8em;
 }
@@ -123,7 +124,7 @@ span.login-color {
     outline: none;
     font-size: 15px;
     font-weight: 400;
-    color: tan;
+    color: whitesmoke;
     padding: 12px 13px 20px 44px;
 	border:none;
     border-bottom:1px solid #442504;
