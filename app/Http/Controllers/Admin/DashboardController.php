@@ -46,11 +46,12 @@ class DashboardController extends Controller
     public function processRegister(Request $request )
     {   
         $request->validate([
-            'email'    => 'required|email|unique:users',
+            'email'    => 'required|max:50|email|unique:users',
             'password'    => 'required',
         ],
         [
             'email.required' => 'Bat buoc nhap email',
+            'email.max' => 'Nhap khong qua 50 ki tu',
             'password.required' => 'Bat buoc nhap password',
             'email.unique'=>'Email nay da duoc dang ky'
         ]);

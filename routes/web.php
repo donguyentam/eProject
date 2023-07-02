@@ -42,9 +42,21 @@ Route::group(['middleware'=>'islogin'], function() {
 
     Route::get('/admin', [DashboardController::class, 'home'])->name('admin');
 
+    
+
     Route::group(['middleware'=>'isadmin', 'prefix'=>'admin', 'as'=>'admin.'], function() {
 
         Route::resource('/product', ProductController::class);
+
+        Route::get('/user', [ProductController::class, 'user'])->name('user');
+
+        Route::get('/edituser/{id}', [ProductController::class, 'edituser'])->name('edituser');
+
+        Route::post('/edituser/{id}', [ProductController::class, 'updateuser'])->name('updateuser');
+
+        Route::get('/deleteuser/{id}', [ProductController::class, 'deleteuser'])->name('deleteuser');
+
+        Route::get('/search', [ProductController::class, 'search'])->name('search');
 
     });
 });

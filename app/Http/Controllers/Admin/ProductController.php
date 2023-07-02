@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -114,4 +115,46 @@ class ProductController extends Controller
     {
         //
     }
+
+
+
+    public function user ()
+    {
+        $users = User::all();
+        // return view('admin.product.index')->with([
+        //     'prods' => $prods
+        // ]);
+        return view('admin.adUser.user', compact('users'));
+    }
+
+    public function updateuser(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user -> email = $request->email;
+        $user -> password = bcrypt($request->password);
+        $user ->save();
+        return redirect()->route('admin.user');
+    }
+
+
+    public function edituser( $id)
+    {
+        $user = User::find($id);
+        return view('admin.adUser.edituser', compact('user'));
+    }
+
+    public function deleteuser( $id)
+    {
+        $user = User::find($id);
+        $user ->delete();
+        return redirect()->route('admin.user');
+    }
+
+    public function search()
+    {
+        $search = $_GET['search'];
+        $users = User::where('email','LIKE','%' . $search . '%')->get();
+        return view('admin.adUser.search', compact('users'));
+    }
 }
+
