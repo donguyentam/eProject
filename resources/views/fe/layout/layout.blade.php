@@ -70,7 +70,6 @@
 </section>
 </div>
 <!--video index end-->
-
         <div class="header__top">
             <div class="container">
                 <div class="row">
@@ -99,10 +98,6 @@
             </div>
         </div>
         <div class="container">
-
-
-
-        
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo" style="width: 140px; height: auto; padding: 5px;">
