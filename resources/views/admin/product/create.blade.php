@@ -52,13 +52,26 @@
             </div>
             <div class="form-group">
               <label for="category">Category</label>
-              <select id="category" class="form-control custom-select" name="category_id">
+              <select id="category" class="form-control custom-select" name="product_category_id">
                 <option selected disabled>Select one</option>
                 @foreach($cates as $item)
                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
+                
               </select>
+              
             </div>
+
+            <div class="form-group">
+            <label for="inventory">Category</label>
+              <select id="inventory" class="form-control custom-select" name="product_inventory_id">
+                <option selected disabled>Select one</option>
+                @foreach($invens as $item)
+                <option value="{{ $item->id }}">{{ $item->id }}</option>
+                @endforeach
+                
+              </select>
+              </div>
           </div>
           <!-- /.card-body -->
         </div>

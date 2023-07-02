@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Inventory;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -28,13 +29,14 @@ class ProductController extends Controller
     public function create()
     {
         $cates = Category::all();
-        return view('admin.product.create', compact('cates'));
+        $invens = Inventory::all();
+        return view('admin.product.create', compact('cates','invens'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Category $cates, Inventory $inves)
     {
         // $prods là mảng liên hợp (associative array)
         $prods = $request->all();
@@ -44,9 +46,11 @@ class ProductController extends Controller
             $file = $request->file('photo');
             $ext = $file->getClientOriginalExtension();
             if($ext != 'jpg' && $ext != 'png' && $ext !='jpeg')
-            {
+            { 
+                $invens = Inventory::all();
                 $cates = Category::all();
-                return view('admin.product.create', compact('cates'))
+               
+                return view('admin.product.create', compact('cates','invens'))
                     ->with('error','Bạn chỉ được chọn file có đuôi jpg,png,jpeg');
             }
             $imgName = $file->getClientOriginalName();
@@ -54,8 +58,8 @@ class ProductController extends Controller
         } else {
             $imgName = null;
         }
-
         $prods['image'] = $imgName;
+       
         Product::create($prods);
         return redirect()->route('admin.product.index');
     }
