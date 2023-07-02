@@ -23,6 +23,7 @@ Route::post('/register', [DashboardController::class, 'processRegister'])
 
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
+
 Route::post('/add-cart', [HomeController::class, 'addCart'])->name('addCart');
 
 Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart');
@@ -37,6 +38,8 @@ Route::post('/remove-cart-item', [HomeController::class, 'removeCartItem'])
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
 Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart');
+
+Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
 
 Route::group(['middleware'=>'islogin'], function() {
 

@@ -78,6 +78,11 @@ class HomeController extends Controller
         }
     }
 
+    public function productSearch(Request $request)
+    {
+        return view("fe.product_search");
+    }
+
     public function clearCart(Request $request)
     {
         if ($request->session()->has('cart')) {
@@ -92,6 +97,7 @@ class HomeController extends Controller
         //     dd($request->session()->get('cart'));
         // }
     }
+    
 
     public function updateCart(Request $request)
     {
