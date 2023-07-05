@@ -195,7 +195,6 @@
     <section class="shopping-cart spad" style="padding-top: 20px;">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-12">
                     <div class="col-lg-8" style="padding-left: 0px;">
                         <div class="cart__discount" style="margin-bottom: 40px;">
