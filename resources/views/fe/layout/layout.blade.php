@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style4.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style.css') }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee. Hotline: 035 9247 738</p>
+                            <p>Free shipping, 30-day return or refund guarantee. Hotline: 076 883 8298</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
@@ -49,8 +49,6 @@
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
                                     <li>USD</li>
                                 </ul>
                             </div>
@@ -73,14 +71,11 @@
                             <li><a href="{{ Route('productSearch') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                    <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ Route('viewCart') }}">Blog</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./contact.html">Contacts</a></li>
                         </ul>
                     </nav>
