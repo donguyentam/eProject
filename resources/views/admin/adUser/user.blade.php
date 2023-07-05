@@ -33,7 +33,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Products</h3>
+        <h3 class="card-title">User</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -67,11 +67,11 @@
                             </i>
                             View
                         </a>
-                        <a class="btn btn-info btn-sm" href="{{ Route('admin.edituser', $user->id) }}">
+                        <!-- <a class="btn btn-info btn-sm" href="{{ Route('admin.edituser', $user->id) }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit
-                        </a>
+                        </a> -->
                         <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteuser', $user->id) }}">
                             <i class="fas fa-trash">
                             </i>

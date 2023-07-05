@@ -24,7 +24,7 @@ Route::post('/register', [DashboardController::class, 'processRegister'])
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
 
-Route::post('/add-cart', [HomeController::class, 'addCart'])->name('addCart');
+Route::get('/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
 
 Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart');
 
@@ -32,8 +32,13 @@ Route::get('/view-cart', [HomeController::class, 'viewCart'])->name('viewCart');
 
 Route::post('/update-cart', [HomeController::class, 'updateCart'])->name('updateCart');
 
-Route::post('/remove-cart-item', [HomeController::class, 'removeCartItem'])
-            ->name('removeCartItem');
+Route::get('/DeleteItemCart/{id}', [HomeController::class, 'DeleteItemCart'])->name('DeleteItemCart');
+
+Route::get('/DeleteListItemCart/{id}', [HomeController::class, 'DeleteListItemCart'])->name('DeleteListItemCart');
+
+Route::get('/SaveListItemCart/{id}/{quanty}', [HomeController::class, 'SaveListItemCart'])->name('SaveListItemCart');
+
+Route::post('/SaveAll', [HomeController::class, 'SaveAll'])->name('SaveAll');
 
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 

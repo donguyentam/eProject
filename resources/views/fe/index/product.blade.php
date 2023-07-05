@@ -9,11 +9,14 @@
               </ul>
           </div>
       </div>
+        
+
       <div class="row product__filter">
-        @foreach($prods as $item)
+        @foreach($products as $item)
           <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
               <div class="product__item">
-                  <div class="product__item__pic set-bg" data-setbg="{{ asset('/images/'.$item->image) }}">
+                  <div class="product__item__pic set-bg" >
+                    <img src="{{ asset('/images/'. $item->image) }}" alt="">
                       <!-- <span class="label">New</span> -->
                       <ul class="product__hover">
                           <li><a href="#"><img src="{{ asset('/fe/img/icon/heart.png') }}" alt=""></a></li>
@@ -23,7 +26,7 @@
                   </div>
                   <div class="product__item__text">
                       <h6>{{ $item->price }} đ</h6>
-                      <a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
+                      <a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To Cart</a>
                       <div class="rating">
                           <i class="fa fa-star-o"></i>
                           <i class="fa fa-star-o"></i>
@@ -52,3 +55,5 @@
       </div>
   </div>
 </section>
+
+

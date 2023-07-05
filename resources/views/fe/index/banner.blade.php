@@ -1,9 +1,9 @@
-<section class="banner spad" style="padding-top: 100px;">
+<section class="banner spad">
   <div class="container">
       <div class="row">
           <div class="col-lg-7 offset-lg-4">
               <div class="banner__item">
-                  <div class="banner__item__pic banner__item__first">
+                  <div class="banner__item__pic" style="height: 500px; width: 500px;">
                       <img src="{{ asset('/fe/img/banner/banner-4.png') }}" alt="">
                   </div>
                   <div class="banner__item__text">

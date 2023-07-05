@@ -8,43 +8,24 @@ use App\Models\Product;
 use App\Models\CartItem;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use DB;
+use Session;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        /*
-        $role1 = \Sentinel::getRoleRepository()->createModel()->create([
-            'name' => 'Admin',
-            'slug' => 'admin',
-        ]);
-
-        $role2 = \Sentinel::getRoleRepository()->createModel()->create([
-            'name' => 'User',
-            'slug' => 'user',
-        ]);
-
-        $credentials = [
-            'email'    => 'admin@gmail.com',
-            'password' => '123',
-        ];
-        
-        $user1 = \Sentinel::create($credentials);
-        $activation = \Activation::create($user1);
-        $role1->users()->attach($user1);
-
-        $credentials = [
-            'email'    => 'user@gmail.com',
-            'password' => '123',
-        ];
-        $user2 = \Sentinel::create($credentials);
-        $activation = \Activation::create($user2);
-        $role2->users()->attach($user2);
-        */
-
-        $prods = Product::all();
-        return view('fe.index', compact('prods'));
+        $products = DB::table('product_detail')->get();
+        return view('fe.index', compact('products'));
     }
+
+
+    public function productSearch()
+    {
+        $products = Product::all();
+        return view('fe.product_search', compact('products'));
+    }
+
 
     public function productDetails($slug) 
     {
@@ -53,35 +34,21 @@ class HomeController extends Controller
         return view('fe.product_details', compact('prod'));
     }
 
-    public function addCart(Request $request) 
+
+    public function AddCart(Request $request, $id) 
     {
-        try {
-            $pid = $request->pid;
-            $quantity = $request->quantity;
-            $cart = []; // khai báo biến lưu cart
-            // kiểm tra session
-            if ($request->session()->has('cart')) {
-                $cart = $request->session()->get('cart');
-            }
+        $product = DB::table('product_detail')->where('id', $id)->first();
+        if($product!=null){
+            $oldCart = Session('Cart') ? Session('Cart') : null;
+            $newCart = new CartItem($oldCart);
+            $newCart -> AddCart($product,$id);
 
-            $prod = Product::find($pid);    // tìm product theo id
-            // tạo đối tượng CartItem
-            $item = new CartItem($prod, $quantity);
-
-            // add item to cart
-            $cart[$pid] = $item;
-            // lưu lại thông tin vào session
-            $request->session()->put('cart', $cart);
-            return 1;
-        } catch (\Exception $e) {
-            return 0;   // nên trả về mã 404, hiện tại vẫn trả về mã 200
+            $request->session()->put('Cart', $newCart);
         }
+        return view('fe.cart');
     }
 
-    public function productSearch(Request $request)
-    {
-        return view("fe.product_search");
-    }
+    
 
     public function clearCart(Request $request)
     {
@@ -89,6 +56,7 @@ class HomeController extends Controller
             $request->session()->forget('cart');
         }
     }
+
 
     public function viewCart(Request $request)
     {
@@ -117,14 +85,43 @@ class HomeController extends Controller
         // }
         $request->session()->put('cart', $cart);
     }
+    
 
-    public function removeCartItem(Request $request) 
+    public function DeleteItemCart(Request $request, $id) 
     {
-        $pid = $request->pid;
-        $cart = $request->session()->get('cart');
-        unset($cart[$pid]);
-        $request->session()->put('cart', $cart);
+        
+            $oldCart = Session('Cart') ? Session('Cart') : null;
+            $newCart = new CartItem($oldCart);
+            $newCart -> DeleteItemCart($id);
+        
+            if(count( $newCart -> products)>0){
+                $request->session()->put('Cart', $newCart);
+            }else{
+                $request->session()->forget('Cart');
+            }
+
+            
+        return view('fe.cart');
     }
+
+
+    public function DeleteListItemCart(Request $request, $id) 
+    {
+        
+            $oldCart = Session('Cart') ? Session('Cart') : null;
+            $newCart = new CartItem($oldCart);
+            $newCart -> DeleteItemCart($id);
+        
+            if(count( $newCart -> products)>0){
+                $request->session()->put('Cart', $newCart);
+            }else{
+                $request->session()->forget('Cart');
+            }
+
+            
+        return view('fe.cart');
+    }
+
 
     public function checkout() 
     {
@@ -133,30 +130,26 @@ class HomeController extends Controller
         return view("fe.checkout", compact('user'));
     }
 
-    public function saveCart(Request $request) 
+    public function SaveListItemCart(Request $request, $id,$quanty) 
     {
-        $uid = $request->uid;
+        $oldCart = Session('Cart') ? Session('Cart') : null;
+            $newCart = new CartItem($oldCart);
+            $newCart -> UpdateItemCart($id,$quanty); 
         
-        $cart = $request->session()->get('cart');
-        $ord = new Order();
-        $ord->user_id = $uid;
-        $ord->order_date = date('Y-m-d', time());
-        $ord->save();
+            $request->session()->put('Cart', $newCart);
 
-        //$details = [];
-        foreach($cart as $item) {
-            $detail = new OrderDetail();
-            $detail->product_id = $item->product->id;
-            $detail->price = $item->product->price;
-            $detail->quantity = $item->quantity;
-            $detail->order_id = $ord->id;
-            $detail->save();
-            //$details[] = $detail;
+            
+        return view('fe.cart');
+    }
+
+    public function SaveAll(Request $request) 
+    {
+        foreach($request->data as $item){
+            $oldCart = Session('Cart') ? Session('Cart') : null;
+            $newCart = new CartItem($oldCart);
+            $newCart -> UpdateItemCart($item["key"],$item["value"]); 
+            $request->session()->put('Cart', $newCart);
         }
-        //$ord->details->add($details);
-        //$ord->save();   // lưu order
-
-        $request->session()->forget('cart');    // xóa session sau khi lưu
-        return redirect()->route("home");
+            
     }
 }

@@ -11,7 +11,9 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
+
+
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap.min.css') }}" type="text/css">
@@ -21,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style3.css') }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
@@ -30,6 +32,36 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="{{ asset('img/icon/search.png') }}" alt=""></a>
+            <a href="#"><img src="{{ asset('img/icon/heart.png') }}" alt=""></a>
+            <a href="#"><img src="{{ asset('img/icon/cart.png') }}" alt=""> <span>{{count((array) session('cart'))
+                    }}</span></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 30-day return or refund guarantee. Hotline:0359247738</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
     <!-- Header Section Begin -->
     <header class="header">
         <div class="header__top">
@@ -37,7 +69,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee. Hotline: 076 883 8298</p>
+                            <p>Free shipping, 30-day return or refund guarantee. Hotline: 035 9247 738</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
@@ -50,6 +82,8 @@
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>
                                     <li>USD</li>
+                                    <li>EUR</li>
+                                    <li>USD</li>
                                 </ul>
                             </div>
                         </div>
@@ -58,9 +92,9 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row" style="height:112px">
                 <div class="col-lg-3 col-md-3">
-                    <div class="header__logo" style="width: 140px; height: auto; padding: 5px;">
+                    <div class="header__logo" style="width: 110px; height: auto; padding: 5px;">
                         <a href="{{ Route('home') }}"><img src="{{ asset('/fe/img/logo.png') }}" alt=""></a>
                     </div>
                 </div>
@@ -71,21 +105,85 @@
                             <li><a href="{{ Route('productSearch') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
+                                    <li><a href="./about.html">About Us</a></li>
+                                    <li><a href="./shop-details.html">Shop Details</a></li>
+                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
+                                    <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="{{ Route('viewCart') }}">Blog</a></li>
                             <li><a href="./contact.html">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="{{ asset('/fe/img/icon/search.png') }}" alt=""></a>
-                        <a href="#"><img src="{{ asset('/fe/img/icon/heart.png') }}" alt=""></a>
-                        <a href="{{ Route('viewCart') }}"><img src="{{ asset('/fe/img/icon/cart.png') }}" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
+                        <ul class="nav-right">
+                            <li class="heart-icon">
+                                <a href="#">
+                                    <i class="icon_heart_alt"></i>
+                                    <span style="left: 14px;">1</span>
+                                </a>
+                            </li>
+                            <li class="cart-icon">
+                                <a href="#">
+                                    <i class="icon_bag_alt"></i>
+                                    @if(Session::has("Cart") != null)
+                                    <span style="left: 14px;" id="total-quanty-show">{{Session::get("Cart")->totalQuanty}}</span>
+                                    @else
+                                    <span style="left: 14px;" id="total-quanty-show">0</span>
+                                    @endif
+                                    
+                                </a>
+                                <div class="cart-hover" style="top:35px;">
+                                    <div id="change-item-cart">
+                                        @if(Session::has("Cart") != null)
+
+
+                                        <div class="select-items">
+                                            <table>
+                                                <tbody>
+                                                    @foreach(Session::get("Cart")->products as $item)
+                                                    <tr>
+                                                        <td class="si-pic" style="width: 90px"><img
+                                                                src="{{ asset('/images/'. $item['productInfo']->image) }}"
+                                                                alt=""></td>
+                                                        <td class="si-text">
+                                                            <div class="product-selected">
+                                                                <p> {{ number_format ($item['productInfo'] -> price) }}
+                                                                    đ x {{ $item['quanty'] }}</p>
+                                                                <h6>{{ $item['productInfo']->name }}</h6>
+                                                            </div>
+                                                        </td>
+                                                        <td class="si-close">
+                                                            <i class="fa fa-close"
+                                                                data-id="{{ $item['productInfo']->id }}"></i>
+                                                        </td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="select-total">
+                                            <span>total:</span>
+                                            <h5>{{ number_format(Session::get("Cart")->totalPrice ) }} đ</h5>
+                                        </div>
+
+                                        @endif
+                                    </div>
+
+
+                                    <div class="select-button">
+                                        <a href="{{ Route('viewCart') }}" style="margin-right: 0px;" class="primary-btn view-card">VIEW
+                                            CARD</a>
+                                        <a href="#" style="background: #ffc107;" class="primary-btn checkout-btn">CHECK
+                                            OUT</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -93,7 +191,7 @@
         </div>
     </header>
     <!-- Header Section End -->
- 
+
     @yield('contents')
 
     <!-- Footer Section Begin -->
@@ -153,7 +251,7 @@
                                 document.write(new Date().getFullYear());
                             </script>2020
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
@@ -185,6 +283,16 @@
     <script src="{{ asset('/fe/js/mixitup.min.js') }}"></script>
     <script src="{{ asset('/fe/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('/fe/js/main.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
     @yield('myjs')
 </body>
 

@@ -28,24 +28,32 @@
 
 @section('myjs')
 <script>
-    $('.product__item__text a').click(function(e) {
-        e.preventDefault(); // huỷ tác dụng thẻ a
-        let pid = $(this).data('pid');
-        let quantity = 1;
-        //alert(quantity);
-        const url = "{{ Route('addCart') }}";
+   function AddCart(id) {
         $.ajax({
-            url: url,
-            method: 'post',
-            data: {
-                pid: pid,
-                quantity: quantity,
-                _token: "{{ csrf_token() }}"
-            },
-            success: function(data) {
-                alert("Add item to cart successfully.");
-            }
+            url:'AddCart/'+id,
+            type:'GET',
+        }).done(function(response){
+            RenderCart(response);
+            alertify.success('Them vao thanh cong');
+        });
+    }
+
+    $("#change-item-cart").on("click",".si-close i",function(){
+        $.ajax({
+            url:'DeleteItemCart/'+$(this).data("id"),
+            type:'GET',
+        }).done(function(response){
+            RenderCart(response);
+            alertify.success('Xoa thanh cong');
+            location.reload();
         });
     });
-</script>
+
+    function RenderCart(response){
+        $("#change-item-cart").empty();
+        $("#change-item-cart").html(response);
+        $("#total-quanty-show").text($("#total-quanty-cart").val());
+        
+    }
+ </script>   
 @endsection
