@@ -222,9 +222,11 @@ This is a great space to write a long text about your company and your services.
 
 
                 </div>
+                <div class="col-lg-2">
+                </div>
 
-                <div class="col-lg-6">
-                    <img style="position: absolute;" src="{{ asset('/fe/img/logo.png') }}">
+                <div class="col-lg-4">
+                    <img style="position: initial; max-width: 100%;"  src="{{ asset('/fe/img/blog/blog-5.png') }}">
                 </div>
 
             </div>
