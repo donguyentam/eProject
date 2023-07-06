@@ -205,7 +205,7 @@
 
                 <div id="comp-kcynqza9" class="BaOVQ8 tz5f0K comp-kcynqza9 wixui-rich-text" data-testid="richTextElement">
                     <h2 class="font_5 wixui-rich-text__text" style="line-height:1.4em; font-size:27px;">
-                <span style="letter-spacing:0.05em;" class="wixui-rich-text__text">I'm a subtitle<br class="wixui-rich-text__text"></span></h2>
+                <span style="letter-spacing:0.05em;" class="wixui-rich-text__text"><br class="wixui-rich-text__text"></span></h2>
                 </div>
 
                 <div id="comp-kcymfd9y" class="BaOVQ8 tz5f0K comp-kcymfd9y wixui-rich-text" data-testid="richTextElement">
@@ -222,6 +222,20 @@
                         <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">Besides, Free Shop is proud to own a team of professional design consultants and engineers, with extensive knowledge in the field of furniture. The staff at Free Shop is committed to trying their best to advise and help customers choose the best product. The design consulting service of Free Shop will help customers create a desired living space through a skillful combination of interior products and decorations.</span></p>
 
 
+                        <iframe
+              class="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3193500366874!2d106.66408561462273!3d10.78683479231452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed2392c44df%3A0xd2ecb62e0d050fe9!2zRlBUIEFwdGVjaCBIQ00gLSBI4buHIFRo4buRbmcgxJDDoG8gVOG6oW8gTOG6rXAgVHLDrG5oIFZpw6puIFF14buRYyBU4bq_IChTaW5jZSAxOTk5KQ!5e0!3m2!1svi!2s!4v1669697060369!5m2!1svi!2s"
+              width="600px"
+              
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+
+            <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">FPT Aptech HCM 1 - International Programmer Training System(Since 1999) 590 VND.Cach Mang Thang 8, Ward 11,District 3,Ho Chi Minh City 723564. If you need help, please contact us. Hotline: 035 9247 738 Thank You.</span></p>
+
+
                 </div>
                 <div class="col-lg-1">
                     
@@ -230,7 +244,10 @@
                 <div class="col-lg-5">
                     <img style="position: initial; max-width: 100%; margin-top: 10%;"  src="{{ asset('/fe/img/blog/blog-5.png') }}">
                     <img style="position: initial; max-width: 100%; margin-top: 10%;"  src="{{ asset('/fe/img/blog/blog-6.png') }}">
+                    <img style="position: initial; max-width: 100%; margin-top: 10%; "  src="{{ asset('/fe/img/blog/blog-7.png') }}">
                 </div>
+
+                
 
             </div>
         </div>
