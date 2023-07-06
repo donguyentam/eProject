@@ -193,9 +193,10 @@
     <!-- Header Section End -->
 
     <section class="shopping-cart spad" style="padding-top: 20px;">
+        
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                    
                 
                 <div id="comp-kcyf0tt5" class="BaOVQ8 tz5f0K comp-kcyf0tt5 wixui-rich-text" data-testid="richTextElement">
@@ -220,6 +221,10 @@
 This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</span></p></div>
 
 
+                </div>
+
+                <div class="col-lg-6">
+                    <img style="position: absolute;" src="{{ asset('/fe/img/logo.png') }}">
                 </div>
 
             </div>
