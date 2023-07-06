@@ -21,16 +21,24 @@ Route::get('/register', [DashboardController::class, 'register'])->name('registe
 Route::post('/register', [DashboardController::class, 'processRegister'])
                                         ->name('processRegister');
 
+
+Route::get('/forget-password', [DashboardController::class, 'forgetPassword'])->name('forgetPassword');          
+
+Route::post('/forget-password', [DashboardController::class, 'forgetPasswordPost'])->name('forgetPasswordPost');     
+
+Route::get('/reset-password/{token}', [DashboardController::class, 'resetPassword'])->name('resetPassword');
+
+Route::post('/reset-password', [DashboardController::class, 'resetPasswordPost'])->name('resetPasswordPost');
+
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
+Route::get('/blognews', [HomeController::class, 'blognews'])->name('blognews');
 
 Route::get('/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
 
 Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart');
 
 Route::get('/view-cart', [HomeController::class, 'viewCart'])->name('viewCart');
-
-Route::get('/blognews', [HomeController::class, 'blognews'])->name('blognews');
 
 Route::post('/update-cart', [HomeController::class, 'updateCart'])->name('updateCart');
 
@@ -67,10 +75,6 @@ Route::group(['middleware'=>'islogin'], function() {
         Route::get('/deleteuser/{id}', [ProductController::class, 'deleteuser'])->name('deleteuser');
 
         Route::get('/search', [ProductController::class, 'search'])->name('search');
-
-        
-
-
 
     });
 });
