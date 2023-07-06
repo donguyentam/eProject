@@ -30,6 +30,8 @@ Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart
 
 Route::get('/view-cart', [HomeController::class, 'viewCart'])->name('viewCart');
 
+Route::get('/blognews', [HomeController::class, 'blognews'])->name('blognews');
+
 Route::post('/update-cart', [HomeController::class, 'updateCart'])->name('updateCart');
 
 Route::get('/DeleteItemCart/{id}', [HomeController::class, 'DeleteItemCart'])->name('DeleteItemCart');
@@ -65,6 +67,10 @@ Route::group(['middleware'=>'islogin'], function() {
         Route::get('/deleteuser/{id}', [ProductController::class, 'deleteuser'])->name('deleteuser');
 
         Route::get('/search', [ProductController::class, 'search'])->name('search');
+
+        
+
+
 
     });
 });

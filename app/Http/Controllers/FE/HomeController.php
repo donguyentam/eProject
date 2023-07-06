@@ -152,4 +152,9 @@ class HomeController extends Controller
         }
             
     }
+
+    public function blognews()
+    {
+        return view('fe.blog_news');
+    }
 }

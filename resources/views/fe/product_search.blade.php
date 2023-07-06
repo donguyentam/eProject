@@ -112,7 +112,7 @@
                                     <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ Route('viewCart') }}">Blog</a></li>
+                            <li><a href="{{ Route('blognews') }}">Blog</a></li>
                             <li><a href="./contact.html">Contacts</a></li>
                         </ul>
                     </nav>
