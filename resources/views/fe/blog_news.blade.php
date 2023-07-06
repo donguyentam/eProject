@@ -200,34 +200,36 @@
                    
                 
                 <div id="comp-kcyf0tt5" class="BaOVQ8 tz5f0K comp-kcyf0tt5 wixui-rich-text" data-testid="richTextElement">
-                    <h1 class="font_0 wixui-rich-text__text" style="line-height:1.3em; font-size:60px;"><span style="letter-spacing:0.03em;" class="wixui-rich-text__text">I'M A TITLE</span></h1>
+                    <h1 class="font_0 wixui-rich-text__text" style="line-height:1.3em; font-size:60px;"><span style="letter-spacing:0.03em;" class="wixui-rich-text__text">HISTORY BEGIN</span></h1>
                 </div>
 
                 <div id="comp-kcynqza9" class="BaOVQ8 tz5f0K comp-kcynqza9 wixui-rich-text" data-testid="richTextElement">
                     <h2 class="font_5 wixui-rich-text__text" style="line-height:1.4em; font-size:27px;">
-                <span style="letter-spacing:0.05em;" class="wixui-rich-text__text">I'm a subtitle<br class="wixui-rich-text__text">Click here to edit me</span></h2>
+                <span style="letter-spacing:0.05em;" class="wixui-rich-text__text">I'm a subtitle<br class="wixui-rich-text__text"></span></h2>
                 </div>
 
                 <div id="comp-kcymfd9y" class="BaOVQ8 tz5f0K comp-kcymfd9y wixui-rich-text" data-testid="richTextElement">
-                    <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">
-                    <span style="letter-spacing:0.03em;" class="wixui-rich-text__text">
-                    I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</span></p>
-
-                    <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">
-                    <span style="letter-spacing:0.03em;" class="wixui-rich-text__text">​</span></p>
-
-<p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">
-<span style="letter-spacing:0.03em;" class="wixui-rich-text__text">
-This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</span></p></div>
+                    <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px; ">
+                    <span style="letter-spacing:0.03em; font-style: italic;" class="wixui-rich-text__text">
+                        <span style="letter-spacing:0.03em;" class="wixui-rich-text__text">
+                            Born from the idea of making a difference, Free Shop has maintained and developed into a leading position in the Vietnamese furniture market.</span></p>
+    
+                        <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">Up to now, Free Shop has had many large-scale and professional stores in big cities such as Hanoi, Ho Chi Minh City, and Binh Duong</span></p></div>
+                        <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">With the desire to develop Vietnamese brand with internal resources, Free Shop has focused on domestic interior design and production. Free Shop's product portfolio is regularly renewed and updated, continuously providing customers with the latest trending product lines. Designed and manufactured by Vietnamese people, Free Shop brand furniture is always suitable for Asian life, providing perfect comfort in every living space.
+                        </span></p>
+                        <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">More than 70% of Free Shop's products are designed and manufactured by an elite team of employees and workers with a factory with the most modern facilities in Vietnam.</span></p>
+                        <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">The quality of raw materials, accessories and production processes are all strictly inspected and monitored by the ISO 9001 quality management system. Free Shop's products are designed in the direction of usability and aesthetics. beauty and quality. In recent years, the brand has always focused on green design trends to contribute not only a comfortable living space but also a healthy living environment for users and the community. With such dedication, Free Shop is honored to be awarded the titles of "High Quality Vietnamese Goods", "Trusted brand" and "Top 100 Top Suppliers" for many years in a row.</span></p>
+                        <p class="font_8 wixui-rich-text__text" style="line-height:1.9em; font-size:16px;">Besides, Free Shop is proud to own a team of professional design consultants and engineers, with extensive knowledge in the field of furniture. The staff at Free Shop is committed to trying their best to advise and help customers choose the best product. The design consulting service of Free Shop will help customers create a desired living space through a skillful combination of interior products and decorations.</span></p>
 
 
                 </div>
-                <div class="col-lg-2">
-                </div>
-
-                <div class="col-lg-4">
-                    <img style="position: initial; max-width: 100%;"  src="{{ asset('/fe/img/blog/blog-5.png') }}">
+                <div class="col-lg-1">
                     
+                </div>
+
+                <div class="col-lg-5">
+                    <img style="position: initial; max-width: 100%; margin-top: 10%;"  src="{{ asset('/fe/img/blog/blog-5.png') }}">
+                    <img style="position: initial; max-width: 100%; margin-top: 10%;"  src="{{ asset('/fe/img/blog/blog-6.png') }}">
                 </div>
 
             </div>
