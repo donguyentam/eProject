@@ -120,21 +120,25 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <ul class="nav-right">
+                            <li class="search-switch">
+                                <a href="#">
+                                    <i class="icon_search_alt" style="color: black;"></i>
+                                </a>
+                            </li>
                             <li class="heart-icon">
                                 <a href="#">
                                     <i class="icon_heart_alt"></i>
-                                    <span style="left: 14px;">1</span>
                                 </a>
                             </li>
                             <li class="cart-icon">
-                                <a href="#">
+                                <a href="{{ Route('viewCart') }}">
                                     <i class="icon_bag_alt"></i>
                                     @if(Session::has("Cart") != null)
                                     <span style="left: 14px;" id="total-quanty-show">{{Session::get("Cart")->totalQuanty}}</span>
                                     @else
                                     <span style="left: 14px;" id="total-quanty-show">0</span>
                                     @endif
-                                    
+                                    <!-- <span>{{count((array) session('cart'))}}</span> -->
                                 </a>
                                 <div class="cart-hover" style="top:35px;">
                                     <div id="change-item-cart">

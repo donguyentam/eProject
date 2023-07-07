@@ -196,6 +196,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon_search:before {
 	content: "\55";
+	background: black;
 }
 .icon_box-empty:before {
 	content: "\56";
@@ -1064,7 +1065,7 @@ you can use the generic selector below, but it's slower:
 .icon_drive_alt:before {
 	content: "\e0e5";
 }
-.icon_search_alt:before {
+.icon_search_alt {
 	content: "\e0f7";
 }
 .icon_id_alt:before {
