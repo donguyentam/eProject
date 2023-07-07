@@ -26,41 +26,13 @@
     <link rel="stylesheet" href="{{ asset('/fe/css/style3.css') }}" type="text/css">
 </head>
 
-<body style="background-color: wheat;">
+<body style="background-color: white;">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__option">
-            <div class="offcanvas__links">
-                <a href="">Sign in</a>
-                <a href="#">FAQs</a>
-            </div>
-            <div class="offcanvas__top__hover">
-                <span>Usd <i class="arrow_carrot-down"></i></span>
-                <ul>
-                    <li>USD</li>
-                    <li>EUR</li>
-                    <li>USD</li>
-                </ul>
-            </div>
-        </div>
-        <div class="offcanvas__nav__option">
-            <a href="#" class="search-switch"><img src="{{ asset('img/icon/search.png') }}" alt=""></a>
-            <a href="#"><img src="{{ asset('img/icon/heart.png') }}" alt=""></a>
-            <a href="#"><img src="{{ asset('img/icon/cart.png') }}" alt=""> <span>{{count((array) session('cart'))
-                    }}</span></a>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__text">
-            <p>Free shipping, 30-day return or refund guarantee. Hotline:0359247738</p>
-        </div>
-    </div>
-    <!-- Offcanvas Menu End -->
+    
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -81,8 +53,6 @@
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
                                     <li>USD</li>
                                 </ul>
                             </div>
@@ -105,25 +75,26 @@
                             <li><a href="{{ Route('productSearch') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                    <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
                                     <li><a href="./blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <ul class="nav-right">
+                            <li class="search-switch">
+                                <a href="#">
+                                    <i class="icon_search_alt" style="color: black;"></i>
+                                </a>
+                            </li>
                             <li class="heart-icon">
                                 <a href="#">
                                     <i class="icon_heart_alt"></i>
-                                    <span style="left: 14px;">1</span>
                                 </a>
                             </li>
                             <li class="cart-icon">
@@ -134,7 +105,7 @@
                                     @else
                                     <span style="left: 14px;" id="total-quanty-show">0</span>
                                     @endif
-                                    
+                                    <!-- <span>{{count((array) session('cart'))}}</span> -->
                                 </a>
                                 <div class="cart-hover" style="top:35px;">
                                     <div id="change-item-cart">
@@ -199,20 +170,20 @@
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
                         <form action="#">
-                            <input type="text" placeholder="Search...">
+                            <input type="text" placeholder="Search..." style="border-color: black;">
                             <button type="submit"><span class="icon_search"></span></button>
                         </form>
                     </div>
                     <div class="shop__sidebar__accordion">
                         <div class="accordion" id="accordionExample">
-                            <div class="card">
+                            <div class="card" style="border-color: black;">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
                                 </div>
                                 <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <div class="shop__sidebar__categories">
-                                            <ul class="nice-scroll">
+                                        <div class="shop__sidebar__categories" ">
+                                            <ul class="nice-scroll" style="border-color: black;">
                                                 <li><a href="#">Men (20)</a></li>
                                                 <li><a href="#">Women (20)</a></li>
                                                 <li><a href="#">Bags (20)</a></li>
