@@ -87,7 +87,7 @@
                         <ul class="nav-right">
                             <li class="search-switch">
                                 <a href="#">
-                                    <i class="icon_search_alt" style="color: black;"></i>
+                                    <i class="icon_search-2" style="color: black;"></i>
                                 </a>
                             </li>
                             <li class="heart-icon">
