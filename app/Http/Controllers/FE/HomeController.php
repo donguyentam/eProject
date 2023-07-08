@@ -153,6 +153,38 @@ class HomeController extends Controller
             
     }
 
+    public function saveCart(Request $request) 
+    {
+        $uid = $request->uid;
+        
+        $cart = $request->session()->get('Cart');
+        $detail = new OrderDetail();
+        $ord = new Order();
+        foreach(Session::get("Cart")->products as $product){
+            foreach($cart as $item) {
+                $detail->product_id = $product['productInfo']->id;
+                $detail->price = $product['productInfo']->price;
+                $detail->quantity = $product['quanty'];
+                $detail->order_id = $ord->id;
+                $detail->save();
+            //$details[] = $detail;
+        }
+        }
+        
+
+        $ord->user_id = $uid;
+        $ord->order_date = date('Y-m-d', time());
+        $ord->save();
+
+        //$details = [];
+        
+        //$ord->details->add($details);
+        //$ord->save();   // lưu order
+
+        $request->session()->forget('Cart');    // xóa session sau khi lưu
+        return redirect()->route("home");
+    }
+
     public function blognews()
     {
         return view('fe.blog_news');
