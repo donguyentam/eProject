@@ -46,7 +46,7 @@ Route::get('/DeleteItemCart/{id}', [HomeController::class, 'DeleteItemCart'])->n
 
 Route::get('/DeleteListItemCart/{id}', [HomeController::class, 'DeleteListItemCart'])->name('DeleteListItemCart');
 
-Route::get('/SaveListItemCart/{id}/{quanty}', [HomeController::class, 'SaveListItemCart'])->name('SaveListItemCart');
+Route::post('/SaveListItemCart/{id}/{quanty}', [HomeController::class, 'SaveListItemCart'])->name('SaveListItemCart');
 
 Route::post('/SaveAll', [HomeController::class, 'SaveAll'])->name('SaveAll');
 
