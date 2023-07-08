@@ -81,6 +81,7 @@ return new class extends Migration
         });
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->integer('quantity')->nullable();
             $table->foreignId('order_detail_id')->references('id')->on('order_details')->onDelete('cascade');
             $table->timestamp('order_date')->nullable();

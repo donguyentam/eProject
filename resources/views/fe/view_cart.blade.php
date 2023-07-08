@@ -224,7 +224,7 @@
                                 $totalQ=0;
                                 @endphp
 
-                                @if(Session::has("Cart") != null)
+                                @if(Session::has('Cart') != null)
                                 @foreach(Session::get('Cart')->products as $item)
                                 <tr>
                                     <td class="product__cart__item">

@@ -111,8 +111,8 @@ class DashboardController extends Controller
     function resetPasswordPost(Request $request){
         $request -> validate([
             'email' =>"required | email |exists:users",
-            'password' =>"required | string | min:6 |confirmed",
-            'cpassword' =>"required",
+            'password' =>"required ",
+            
         ]);
 
         $updatePassword = DB::table('password_reset_tokens')->where([
