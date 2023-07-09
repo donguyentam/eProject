@@ -37,7 +37,7 @@
                           <p>Seconds</p>
                       </div>
                   </div>
-                  <a href="#" class="primary-btn">Shop now</a>
+                  <a href="{{ Route('productSearch') }}" class="primary-btn">Shop now</a>
               </div>
           </div>
       </div>

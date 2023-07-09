@@ -8,7 +8,7 @@
                   </div>
                   <div class="banner__item__text">
                       <h2>Products Try</h2>
-                      <a href="#">Shop now</a>
+                      <a href="{{ Route('productSearch') }}">Shop now</a>
                   </div>
               </div>
           </div>
@@ -19,7 +19,7 @@
                   </div>
                   <div class="banner__item__text">
                       <h2>Dinner Table</h2>
-                      <a href="#">Shop now</a>
+                      <a href="{{ Route('productSearch') }}">Shop now</a>
                   </div>
               </div>
           </div>
@@ -30,7 +30,7 @@
                   </div>
                   <div class="banner__item__text">
                       <h2>Dining Chairs</h2>
-                      <a href="#">Shop now</a>
+                      <a href="{{ Route('productSearch') }}">Shop now</a>
                   </div>
               </div>
           </div>

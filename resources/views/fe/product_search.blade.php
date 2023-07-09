@@ -16,17 +16,17 @@
 
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap1.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/elegant-icons.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/magnific-popup.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/nice-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/nice-select1.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style3.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style4.css') }}" type="text/css">
 </head>
 
-<body style="background-color: white;">
+<body style="background-color:   wheat;">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -77,10 +77,11 @@
                                 <ul class="dropdown">
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">Blog</a></li>
+                            
                         </ul>
                     </nav>
                 </div>
@@ -182,7 +183,7 @@
                                 </div>
                                 <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <div class="shop__sidebar__categories" ">
+                                        <div class="shop__sidebar__categories" >
                                             <ul class="nice-scroll" style="border-color: black;">
                                                 <li><a href="#">Men (20)</a></li>
                                                 <li><a href="#">Women (20)</a></li>

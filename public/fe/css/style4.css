@@ -1229,7 +1229,7 @@ ol {
 }
 
 .shop__sidebar__accordion .card-heading a {
-	color: #111111;
+	color: #6b4705;
 	font-size: 16px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -1251,7 +1251,7 @@ ol {
 .shop__sidebar__categories ul li a,
 .shop__sidebar__price ul li a,
 .shop__sidebar__brand ul li a {
-	color: #b7b7b7;
+	color: #6b4705;
 	font-size: 15px;
 	line-height: 32px;
 	-webkit-transition: all, 0.3s;
@@ -1262,7 +1262,7 @@ ol {
 .shop__sidebar__categories ul li a:hover,
 .shop__sidebar__price ul li a:hover,
 .shop__sidebar__brand ul li a:hover {
-	color: #111111;
+	color: peru;
 }
 
 .shop__sidebar__brand ul {
@@ -1398,7 +1398,7 @@ ol {
 	font-family: "FontAwesome";
 	font-size: 24px;
 	font-weight: 700;
-	color: #111111;
+	color: #6b4705;
 	position: absolute;
 	right: 0;
 	top: 2px;
@@ -1454,7 +1454,7 @@ ol {
 }
 
 .shop__product__option__right .nice-select span {
-	color: #111111;
+	color: #6b4705;
 	font-size: 15px;
 	font-weight: 700;
 }
@@ -2408,7 +2408,7 @@ ol {
 
 .continue__btn.update__btn a {
 	color: #ffffff;
-	background: #111111;
+	background: #724100;
 	border-color: #111111;
 }
 
@@ -2477,7 +2477,7 @@ ol {
 	font-weight: 700;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	background: #111111;
+	background: #724100;
 	padding: 0 30px;
 	border: none;
 	position: absolute;

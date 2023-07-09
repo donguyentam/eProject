@@ -16,14 +16,14 @@
 
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap1.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/elegant-icons.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/magnific-popup.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/nice-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/nice-select1.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style3.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style4.css') }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
@@ -75,7 +75,7 @@
                                 <ul class="dropdown">
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">Blog</a></li>

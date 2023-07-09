@@ -16,14 +16,14 @@
 
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap1.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/elegant-icons.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/magnific-popup.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/nice-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/nice-select1.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style3.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style4.css') }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
@@ -103,15 +103,15 @@
                             <li><a href="{{ Route('productSearch') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                                   
+                                  
+                                    <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
+                
                         </ul>
                     </nav>
                 </div>
@@ -268,7 +268,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn">
-                                <a style="background-color: black; color: white;" href="{{ Route('home') }}">Continue
+                                <a style="background-color: #724100; color: white;" href="{{ Route('home') }}">Continue
                                     Shopping</a>
                             </div>
                         </div>
