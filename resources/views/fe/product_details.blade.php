@@ -3,413 +3,242 @@
 @section('contents')
 <!-- Shop Details Section Begin -->
 <section class="shop-details">
-  <div class="product__details__pic">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-12">
-                  <div class="product__details__breadcrumb">
-                      <a href="{{ Route('home') }}">Home</a>
-                      <a href="javascript:void()">Shop</a>
-                      <span>Product Details</span>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-lg-3 col-md-3">
+    <div class="product__details__pic">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product__details__breadcrumb">
+                        <a href="{{ Route('home') }}">Home</a>
+                        <a href="javascript:void()">Shop</a>
+                        <span>Product Details</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+               
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img src="{{ asset('/images/' . $prod->image) }}" alt="">
+                            </div>
+                            <div style="padding-left: 0px;" class="col-lg-3 col-md-3">
                   <ul class="nav nav-tabs" role="tablist">
-                      <li class="nav-item">
-                          <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                      <li style="display: inline-flex;"  class="nav-item">
+                          <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
                               <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
+                                
                               </div>
                           </a>
+
+                          <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                              <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
+                                
+                              </div>
+                          </a>
+
+                          <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                              <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
+                                
+                              </div>
+                          </a>
+
+                         
+
+
                       </li>
                   </ul>
-              </div>
-              <div class="col-lg-6 col-md-9">
-                  <div class="tab-content">
-                      <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                          <div class="product__details__pic__item">
-                              <img src="{{ asset('/images/' . $prod->image) }}" alt="">
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="product__details__content">
-      <div class="container">
-          <div class="row d-flex justify-content-center">
-              <div class="col-lg-8">
-                  <div class="product__details__text">
-                      <h4>{{ $prod->name }}</h4>
-                      <div class="rating">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-o"></i>
-                          <span> - 5 Reviews</span>
-                      </div>
-                      <h3>{{ $prod->price }} đ <span>{{ $prod->price }} đ </span></h3>
-                      <p></p>
-                      <div class="product__details__option">
-                          <div class="product__details__option__size">
-                              <span>Size:</span>
-                              <label for="xxl">xxl
-                                  <input type="radio" id="xxl">
-                              </label>
-                              <label class="active" for="xl">xl
-                                  <input type="radio" id="xl">
-                              </label>
-                              <label for="l">l
-                                  <input type="radio" id="l">
-                              </label>
-                              <label for="sm">s
-                                  <input type="radio" id="sm">
-                              </label>
-                          </div>
-                          <div class="product__details__option__color">
-                              <span>Color:</span>
-                              <label class="c-1" for="sp-1">
-                                  <input type="radio" id="sp-1">
-                              </label>
-                              <label class="c-2" for="sp-2">
-                                  <input type="radio" id="sp-2">
-                              </label>
-                              <label class="c-3" for="sp-3">
-                                  <input type="radio" id="sp-3">
-                              </label>
-                              <label class="c-4" for="sp-4">
-                                  <input type="radio" id="sp-4">
-                              </label>
-                              <label class="c-9" for="sp-9">
-                                  <input type="radio" id="sp-9">
-                              </label>
-                          </div>
-                      </div>
-                      <div class="product__details__cart__option">
-                          <div class="quantity">
-                              <div class="pro-qty">
-                                  <input type="text" value="1">
-                              </div>
-                          </div>
-                          <a href="#" class="primary-btn" data-pid="{{ $prod->id }}">add to cart</a>
-                      </div>
-                      <div class="product__details__btns__option">
-                          <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
-                          <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a>
-                      </div>
-                      <div class="product__details__last__option">
-                          <h5><span>Guaranteed Safe Checkout</span></h5>
-                          <img src="img/shop-details/details-payment.png" alt="">
-                          <ul>
-                              <li><span>SKU:</span> 3812912</li>
-                              <li><span>Categories:</span> Clothes</li>
-                              <li><span>Tag:</span> Clothes, Skin, Body</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-lg-12">
-                  <div class="product__details__tab">
-                      <ul class="nav nav-tabs" role="tablist">
-                          <li class="nav-item">
-                              <a class="nav-link active" data-toggle="tab" href="#tabs-5"
-                              role="tab">Description</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Customer
-                              Previews(5)</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">Additional
-                              information</a>
-                          </li>
-                      </ul>
-                      <div class="tab-content">
-                          <div class="tab-pane active" id="tabs-5" role="tabpanel">
-                              <div class="product__details__tab__content">
-                                  <p class="note">Nam tempus turpis at metus scelerisque placerat nulla deumantos
-                                      solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis
-                                      ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
-                                  pharetras loremos.</p>
-                                  <div class="product__details__tab__content__item">
-                                      <h5>Products Infomation</h5>
-                                      <p>A Pocket PC is a handheld computer, which features many of the same
-                                          capabilities as a modern PC. These handy little devices allow
-                                          individuals to retrieve and store e-mail messages, create a contact
-                                          file, coordinate appointments, surf the internet, exchange text messages
-                                          and more. Every product that is labeled as a Pocket PC must be
-                                          accompanied with specific software to operate the unit and must feature
-                                      a touchscreen and touchpad.</p>
-                                      <p>As is the case with any new technology product, the cost of a Pocket PC
-                                          was substantial during it’s early release. For approximately $700.00,
-                                          consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                          These days, customers are finding that prices have become much more
-                                          reasonable now that the newness is wearing off. For approximately
-                                      $350.00, a new Pocket PC can now be purchased.</p>
-                                  </div>
-                                  <div class="product__details__tab__content__item">
-                                      <h5>Material used</h5>
-                                      <p>Polyester is deemed lower quality due to its none natural quality’s. Made
-                                          from synthetic materials, not natural like wool. Polyester suits become
-                                          creased easily and are known for not being breathable. Polyester suits
-                                          tend to have a shine to them compared to wool and cotton suits, this can
-                                          make the suit look cheap. The texture of velvet is luxurious and
-                                          breathable. Velvet is a great choice for dinner party jacket and can be
-                                      worn all year round.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="tab-pane" id="tabs-6" role="tabpanel">
-                              <div class="product__details__tab__content">
-                                  <div class="product__details__tab__content__item">
-                                      <h5>Products Infomation</h5>
-                                      <p>A Pocket PC is a handheld computer, which features many of the same
-                                          capabilities as a modern PC. These handy little devices allow
-                                          individuals to retrieve and store e-mail messages, create a contact
-                                          file, coordinate appointments, surf the internet, exchange text messages
-                                          and more. Every product that is labeled as a Pocket PC must be
-                                          accompanied with specific software to operate the unit and must feature
-                                      a touchscreen and touchpad.</p>
-                                      <p>As is the case with any new technology product, the cost of a Pocket PC
-                                          was substantial during it’s early release. For approximately $700.00,
-                                          consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                          These days, customers are finding that prices have become much more
-                                          reasonable now that the newness is wearing off. For approximately
-                                      $350.00, a new Pocket PC can now be purchased.</p>
-                                  </div>
-                                  <div class="product__details__tab__content__item">
-                                      <h5>Material used</h5>
-                                      <p>Polyester is deemed lower quality due to its none natural quality’s. Made
-                                          from synthetic materials, not natural like wool. Polyester suits become
-                                          creased easily and are known for not being breathable. Polyester suits
-                                          tend to have a shine to them compared to wool and cotton suits, this can
-                                          make the suit look cheap. The texture of velvet is luxurious and
-                                          breathable. Velvet is a great choice for dinner party jacket and can be
-                                      worn all year round.</p>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="tab-pane" id="tabs-7" role="tabpanel">
-                              <div class="product__details__tab__content">
-                                  <p class="note">Nam tempus turpis at metus scelerisque placerat nulla deumantos
-                                      solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis
-                                      ut risus. Sedcus faucibus an sullamcorper mattis drostique des commodo
-                                  pharetras loremos.</p>
-                                  <div class="product__details__tab__content__item">
-                                      <h5>Products Infomation</h5>
-                                      <p>A Pocket PC is a handheld computer, which features many of the same
-                                          capabilities as a modern PC. These handy little devices allow
-                                          individuals to retrieve and store e-mail messages, create a contact
-                                          file, coordinate appointments, surf the internet, exchange text messages
-                                          and more. Every product that is labeled as a Pocket PC must be
-                                          accompanied with specific software to operate the unit and must feature
-                                      a touchscreen and touchpad.</p>
-                                      <p>As is the case with any new technology product, the cost of a Pocket PC
-                                          was substantial during it’s early release. For approximately $700.00,
-                                          consumers could purchase one of top-of-the-line Pocket PCs in 2003.
-                                          These days, customers are finding that prices have become much more
-                                          reasonable now that the newness is wearing off. For approximately
-                                      $350.00, a new Pocket PC can now be purchased.</p>
-                                  </div>
-                                  <div class="product__details__tab__content__item">
-                                      <h5>Material used</h5>
-                                      <p>Polyester is deemed lower quality due to its none natural quality’s. Made
-                                          from synthetic materials, not natural like wool. Polyester suits become
-                                          creased easily and are known for not being breathable. Polyester suits
-                                          tend to have a shine to them compared to wool and cotton suits, this can
-                                          make the suit look cheap. The texture of velvet is luxurious and
-                                          breathable. Velvet is a great choice for dinner party jacket and can be
-                                      worn all year round.</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+              </div> 
+
+                        </div>
+
+                        <div class="row d-flex justify-content-center">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="product__details__text">
+                        <h4>{{ $prod->name }}</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span> - 5 Reviews</span>
+                        </div>
+                        <h3>{{ $prod->price }} đ <span>{{ $prod->price }} đ </span></h3>
+                        <p></p>
+
+                        <div class="product__details__cart__option">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <input type="text" value="1">
+                                </div>
+                            </div>
+                            <a href="#" class="primary-btn" data-pid="{{ $prod->id }}">add to cart</a>
+                        </div>
+
+                        <div class="product__details__last__option">
+                            <h5><span>Guaranteed Safe Checkout</span></h5>
+                            <img src="img/shop-details/details-payment.png" alt="">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product__details__content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                       
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-5" role="tabpanel">
+                                <div class="product__details__tab__content">
+                                    <p class="note">Free Shop is one of the leading companies in interior design and construction. 
+                                        With enthusiasm, experience, enthusiasm and cosmetics, 
+                                        the Home&Home team confidently brings customers the appraised interior styles, 
+                                        enhancing the value of your home. With us, you will surely be satisfied with your living space.</p>
+                                    <div class="product__details__tab__content__item">
+                                        <h5>What is Interior Design?</h5>
+                                        <p>When it comes to interior design, many people are not clear about this concept. 
+                                            Interior design is understood as the harmonious coordination between objects, colors, lighting, decorations,
+                                             architectural aesthetics and spiritual and feng shui elements to create a comfortable living environment for you.
+                                              , convenient.</p>
+                                        <p>Referring to interior design is referring to the synthesis of the whole sky of art, fine arts and science and technology. 
+                                            It can be said that interior design is a prerequisite in the construction of today's buildings. 
+                                            Typically, modern interior architecture emphasizes the harmonious arrangement of simple spatial shapes.</p>
+                                    </div>
+                                    <div class="product__details__tab__content__item">
+                                        <h5>SERVICE</h5>
+                                        <p>Free Shop always listens to and keeps up with the prevailing trends: 
+                                            Indochine style, Neo Classic neoclassical style, 
+                                            Modern modern style are subtly applied by Icon designers in each residential space but still bearing the unique imprint of the owner's personality. 
+                                            Customer satisfaction after each project is handed over is a certificate of achievement and tireless efforts of our staff. 
+                                            Free Shop Interior Design Joint Stock Company has gradually become a professional interior designer & constructor serving a series of projects of villas,
+                                             townhouses, apartments, offices, restaurants, hotels, etc. resort…</p>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </section>
 <!-- Shop Details Section End -->
 
 <!-- Related Section Begin -->
 <section class="related spad">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-12">
-              <h3 class="related-title">Related Product</h3>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-              <div class="product__item">
-                  <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
-                      <span class="label">New</span>
-                      <ul class="product__hover">
-                          <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                          <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                          <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                      </ul>
-                  </div>
-                  <div class="product__item__text">
-                      <h6>Piqué Biker Jacket</h6>
-                      <a href="#" class="add-cart">+ Add To Cart</a>
-                      <div class="rating">
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                      </div>
-                      <h5>$67.24</h5>
-                      <div class="product__color__select">
-                          <label for="pc-1">
-                              <input type="radio" id="pc-1">
-                          </label>
-                          <label class="active black" for="pc-2">
-                              <input type="radio" id="pc-2">
-                          </label>
-                          <label class="grey" for="pc-3">
-                              <input type="radio" id="pc-3">
-                          </label>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-              <div class="product__item">
-                  <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                      <ul class="product__hover">
-                          <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                          <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                          <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                      </ul>
-                  </div>
-                  <div class="product__item__text">
-                      <h6>Piqué Biker Jacket</h6>
-                      <a href="#" class="add-cart">+ Add To Cart</a>
-                      <div class="rating">
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                      </div>
-                      <h5>$67.24</h5>
-                      <div class="product__color__select">
-                          <label for="pc-4">
-                              <input type="radio" id="pc-4">
-                          </label>
-                          <label class="active black" for="pc-5">
-                              <input type="radio" id="pc-5">
-                          </label>
-                          <label class="grey" for="pc-6">
-                              <input type="radio" id="pc-6">
-                          </label>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-              <div class="product__item sale">
-                  <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
-                      <span class="label">Sale</span>
-                      <ul class="product__hover">
-                          <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                          <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                          <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                      </ul>
-                  </div>
-                  <div class="product__item__text">
-                      <h6>Multi-pocket Chest Bag</h6>
-                      <a href="#" class="add-cart">+ Add To Cart</a>
-                      <div class="rating">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-o"></i>
-                      </div>
-                      <h5>$43.48</h5>
-                      <div class="product__color__select">
-                          <label for="pc-7">
-                              <input type="radio" id="pc-7">
-                          </label>
-                          <label class="active black" for="pc-8">
-                              <input type="radio" id="pc-8">
-                          </label>
-                          <label class="grey" for="pc-9">
-                              <input type="radio" id="pc-9">
-                          </label>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-              <div class="product__item">
-                  <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
-                      <ul class="product__hover">
-                          <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                          <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                          <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                      </ul>
-                  </div>
-                  <div class="product__item__text">
-                      <h6>Diagonal Textured Cap</h6>
-                      <a href="#" class="add-cart">+ Add To Cart</a>
-                      <div class="rating">
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                      </div>
-                      <h5>$60.9</h5>
-                      <div class="product__color__select">
-                          <label for="pc-10">
-                              <input type="radio" id="pc-10">
-                          </label>
-                          <label class="active black" for="pc-11">
-                              <input type="radio" id="pc-11">
-                          </label>
-                          <label class="grey" for="pc-12">
-                              <input type="radio" id="pc-12">
-                          </label>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="related-title">Related Product</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/fe/img/blog/details/details-1.png') }}">
+                        <span class="label">New</span>
+
+                    </div>
+                    <div class="product__item__text">
+                        <h6>Sports style study table and chair</h6>
+                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <div class="rating">
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <h5>50.000.000</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/fe/img/blog/details/details-2.png') }}">
+
+                    </div>
+                    <div class="product__item__text">
+                        <h6>Luxury style coffee table and chairs</h6>
+                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <div class="rating">
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <h5>10.000.000</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                <div class="product__item sale">
+                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/fe/img/blog/details/details-3.png') }}">
+                        <span class="label">Sale</span>
+
+                    </div>
+                    <div class="product__item__text">
+                        <h6>Classic desk and chair</h6>
+                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <h5>20.000.000</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/fe/img/blog/details/details-4.png') }}">
+
+                    </div>
+                    <div class="product__item__text">
+                        <h6>Luxury living room furniture</h6>
+                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <div class="rating">
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <h5>100.000.000</h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- Related Section End -->
 @endsection
 
 @section('myjs')
-<script>
-    $('.product__details__cart__option a').click(function(e) {
-        e.preventDefault(); // huỷ tác dụng thẻ a
-        let pid = $(this).data('pid');
-        let quantity = $('.product__details__cart__option .pro-qty input').val();
-        //alert(quantity);
-        const url = "{{ Route('addCart') }}";
-        $.ajax({
-            url: url,
-            method: 'post',
-            data: {
-                pid: pid,
-                quantity: quantity,
-                _token: "{{ csrf_token() }}"
-            },
-            success: function(data) {
-                alert("Add item to cart successfully.");
-            }
-        });
-    });
-</script>
+
 @endsection

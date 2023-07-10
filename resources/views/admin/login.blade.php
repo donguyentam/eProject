@@ -84,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <!--header end here-->
 <div class="copyright">
-	<p>You want good, quality, durable and beautiful furniture? Come to the Free Shop of the best quality furniture in Vietnamese © 2023<a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+	<p>You want good, quality, durable and beautiful furniture? Come to the Free Shop of the best quality furniture in Vietnamese © 2023</p>
 </div>
 <!--footer end here-->
 <!-- jQuery -->
