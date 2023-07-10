@@ -37,6 +37,13 @@
           </button>
         </div>
       </div>
+
+      <form type="get" action="{{ Route('admin.product.searchProduct') }}">
+          <input type="search" style="width:350px; height:35px; " name="search" class="but1"  placeholder="Search Product">
+          <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="but1" value="Search">
+        </form>
+        </div>
+
       <div class="card-body p-0">
         <table class="table table-striped projects">
             <thead>

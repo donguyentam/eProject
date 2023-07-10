@@ -154,7 +154,7 @@ class ProductController extends Controller
         return redirect()->route('admin.user');
     }
 
-    public function search()
+    public function searchUser()
     {
         $search = $_GET['search'];
         $users = User::where('email','LIKE','%' . $search . '%')->get();

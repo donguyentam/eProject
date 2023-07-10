@@ -54,6 +54,11 @@ Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
 Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart');
 
+Route::get('search',[
+	'as'=>'search',
+	'uses'=>'PageController@getSearch'
+]);
+
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
 
 Route::group(['middleware'=>'islogin'], function() {
@@ -74,7 +79,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/deleteuser/{id}', [ProductController::class, 'deleteuser'])->name('deleteuser');
 
-        Route::get('/search', [ProductController::class, 'search'])->name('search');
+        Route::get('/searchUser', [ProductController::class, 'searchUser'])->name('searchUser');
 
     });
 });

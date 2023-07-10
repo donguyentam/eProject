@@ -189,4 +189,13 @@ class HomeController extends Controller
     {
         return view('fe.blog_news');
     }
+
+    public function getSearch(Request $req)
+    {
+        $product = Product::where('product_name','like','%'.$req->key.'%')
+                            ->orWhere('product_price',$req->key)
+                            //->orWhere('product_promotion_price',$req->key)
+                            ->get();
+        return view('.search',compact('product'));
+    }
 }
