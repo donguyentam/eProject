@@ -63,7 +63,7 @@
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->price }}</td>
                     <td>{{ $item->category!=null ? $item->category->name : '' }}</td>
-                    <td>{{ $item->inventory!=null ? $item->inventory->quantity : '' }}</td>
+                    <td>{{ $item->quantity}}</td>
                     <td>
                       @if ($item->image!=null)
                       <img src="{{ asset('images/' . $item->image) }}" alt="" 

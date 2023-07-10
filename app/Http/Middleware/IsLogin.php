@@ -13,12 +13,20 @@ class IsLogin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next): Response 
     {
         if ($user = \Sentinel::check())
         {
-            return $next($request); // đã login, xử lý tiếp
+            if ($user->id == 1)
+                return $next($request);
+            else if($user->id == 5){
+                 return redirect('/')->with('notify','Bạn không có quyền đăng nhập vào trang này');
+            }else
+            return redirect('login')->with('notify','Đăng nhập không thành công');
         }
+               
+        
+        
         else
         {
             return redirect()->route('login');

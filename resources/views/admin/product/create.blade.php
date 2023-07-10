@@ -63,12 +63,8 @@
             </div>
 
             <div class="form-group">
-            <label for="inventory">Category</label>
-              <select id="inventory" class="form-control custom-select" name="product_inventory_id">
-                <option selected disabled>Select one</option>
-                @foreach($invens as $item)
-                <option value="{{ $item->id }}">{{ $item->id }}</option>
-                @endforeach
+            <label for="quantity">Inventory</label>
+              <input id="quantity" type="number" class="form-control" name="quantity"/>
                 
               </select>
               </div>

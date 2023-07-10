@@ -52,12 +52,12 @@ return new class extends Migration
             $table->string('slug', 512)->nullable();
             $table->timestamps();
         });
-        Schema::create('product_inventory', function (Blueprint $table) {
-            $table->id();
-            $table->integer('quantity');
-            $table->timestamps();
+        // Schema::create('product_inventory', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->integer('quantity');
+        //     $table->timestamps();
 
-        });
+        // });
         Schema::create('product_detail', function (Blueprint $table) {
             $table->id();
 
@@ -66,27 +66,39 @@ return new class extends Migration
             $table->integer('price');
             $table->string('image')->nullable();
             $table->index('product_category_id');
-            $table->index('product_inventory_id');
+            $table->integer('quantity');
+
+            // $table->index('product_inventory_id');
 
             $table->foreignId('product_category_id')->references('id')->on('product_category')->onDelete('cascade');
-            $table->foreignId('product_inventory_id')->references('id')->on('product_inventory')->onDelete('cascade');
-            $table->timestamps();
-        });
-        Schema::create('order_details', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('product_id')->references('id')->on('product_detail')->onDelete('cascade');
-            $table->integer('quantity')->nullable();
-            $table->integer('price')->nullable();
+            // $table->foreignId('product_inventory_id')->references('id')->on('product_inventory')->onDelete('cascade');
             $table->timestamps();
         });
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->integer('quantity')->nullable();
-            $table->foreignId('order_detail_id')->references('id')->on('order_details')->onDelete('cascade');
+            $table->integer('total')->nullable();
+            $table->string('payment_type')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('email')->nullable();
+            $table->string('note')->nullable();
+            $table->string('payment_method')->nullable();
+
             $table->timestamp('order_date')->nullable();
             $table->timestamps();
         });
+        Schema::create('order_details', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('product_id');
+            $table->foreignId('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->integer('quantity')->nullable();
+            $table->integer('price')->nullable();
+            $table->timestamps();
+        });
+        
 
         
         // Schema::create('cart_item', function (Blueprint $table) {

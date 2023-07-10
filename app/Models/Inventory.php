@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Inventory extends Model
 {
     use HasFactory;
-    protected $fillable=['id'];
+    protected $fillable=['id', 'quantity','created_at','updated_at'];
     protected $table = 'product_inventory';
-    public function products() 
-    {
-        return $this->has(Product::class, 'product_inventory_id');
-    }
+    // public function products() 
+    // {
+    //     return $this->has(Product::class, 'product_inventory_id');
+    // }
 }

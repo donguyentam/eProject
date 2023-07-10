@@ -9,14 +9,11 @@ class Product extends Model
 {
     use HasFactory;
     protected $table = 'product_detail';
-    protected $fillable=['name', 'slug', 'price', 'image', 'product_category_id','product_inventory_id','created_at', 'updated_at'];
+    protected $fillable=['name', 'slug', 'price', 'image','quantity', 'product_category_id','created_at', 'updated_at'];
 
     public function category()
     {
         return $this->belongsTo(Category::class, 'product_category_id');
     }
-    public function inventory()
-    {
-        return $this->belongsTo(Inventory::class, 'product_inventory_id');
-    }
+    
 }
