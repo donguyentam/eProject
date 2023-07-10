@@ -145,8 +145,8 @@
 
                                     <div class="select-button">
                                         <a href="{{ Route('viewCart') }}" style="margin-right: 0px;" class="primary-btn view-card">VIEW
-                                            CARD</a>
-                                        
+                                            CART</a>
+
                                     </div>
                                 </div>
                             </li>
@@ -179,10 +179,10 @@
                     <div class="footer__widget">
                         <h6>Shopping</h6>
                         <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
+                            <li><a href="#">Furniture Store</a></li>
+                            <li><a href="#">Trending Furniture</a></li>
+                            <li><a href="#">Dining Tables</a></li>
+                            <li><a href="#">Sales</a></li>
                         </ul>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
                     <div class="footer__widget">
                         <h6>NewLetter</h6>
                         <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <p>Be the first to know about new arrivals, products, sales & promos!</p>
                             <form action="#">
                                 <input type="text" placeholder="Your email">
                                 <button type="submit"><span class="icon_mail_alt"></span></button>
@@ -213,15 +213,12 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <p>Copyright ©
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            All rights reserved
                         </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
             </div>

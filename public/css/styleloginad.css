@@ -37,13 +37,13 @@ background-attachment: fixed;
     -moz-background-size: cover;
     -o-background-size: cover;
 padding:0;
-margin:0; 
+margin:0;
 font-family: 'Roboto Condensed', sans-serif;
  font-size: 100%;
-}  
+}
 h1,h2,h3,h4,h5,h6{
-	margin:0;			   
-}	
+	margin:0;
+}
 p{
 	margin:0;
 }
@@ -150,7 +150,6 @@ span.login-color {
     color: #f4f4f4;
     font-size: 26px;
     padding: 0.3em 1.2em;
-    width: 100%;
     font-weight: 500;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -575,7 +574,7 @@ span.sin-color {
 
 @media(max-width:1440px){
 .header-main {
-    width: 33%;	
+    width: 33%;
 }
 }
 @media(max-width:1366px){
@@ -586,7 +585,7 @@ span.sin-color {
 @media(max-width:1280px){
 .header-main {
     width: 38%;
-}	
+}
 }
 @media(max-width:1024px){
 .header-main {
@@ -594,7 +593,7 @@ span.sin-color {
 }
 .header-main h1 {
     font-size: 63px;
-}	
+}
 }
 @media(max-width:991px){
 .header-main {
@@ -750,7 +749,7 @@ span.sin-color {
     width: 85%;
 }
 .header-main {
-    padding: 25px 0px 15px 0px;	
+    padding: 25px 0px 15px 0px;
 }
 .header-left-bottom input[type="text"] {
     padding: 12px 13px 15px 44px;
@@ -808,7 +807,7 @@ span.sin-color {
 .bu1{
     padding-left: 780px;
 }
-.btn4{ display: inline-block;
+/* .btn4{ display: inline-block;
     font-size: 23px;
      padding: 0.6em 1.7em;
       border: 0.1em solid tan;
@@ -822,6 +821,30 @@ span.sin-color {
               text-align: center;
                transition: all 0.2s;
              }
-.btn4:hover { 
-    color: #ffffff; background-color:#5f3f1c ; 
+.btn4:hover {
+    color: #ffffff; background-color:#5f3f1c ;
+} */
+.btn4 {
+    background: tan;
+    color: #f4f4f4;
+    font-size: 26px;
+    padding: 0.3em 1.2em;
+    font-weight: 500;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.btn4:hover {
+    background: rgb(119, 94, 61);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
 }
