@@ -45,8 +45,21 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="{{ Route('login') }}">Sign in</a>
-                                <a href="#">FAQs</a>
+                                @php 
+                            $user = Sentinel::check();
+                            @endphp
+                                @if(Sentinel::check())
+                                    
+                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a> 
+                                        <a style="background-color: coral; padding: 3px;" href="{{'logout'}}">Log Out</a>
+                                    
+                                    
+                               @else
+                               <a href="{{ Route('login') }}">Sign in</a>
+                               @endif
+                                
+                                
+                                
                             </div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>

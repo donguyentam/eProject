@@ -35,73 +35,76 @@
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="checkout__input">
-                                  <p>Fist Name<span>*</span></p>
-                                  <input type="text" value="{{ isset($user->firstname) ? $user->firstname: '' }}">
+                                  <p>First Name<span>*</span></p>
+                                  <input type="text" name="first_name" value="{{ isset($user->firstname) ? $user->firstname: '' }}">
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Last Name<span>*</span></p>
-                                  <input type="text">
+                                  <input type="text" name="last_name">
                               </div>
                           </div>
                       </div>
                       
                       <div class="checkout__input">
                           <p>Address<span>*</span></p>
-                          <input type="text" placeholder="Street Address" class="checkout__input__add">
+                          <input type="text" name="address" placeholder="Street Address" class="checkout__input__add">
                       </div>
                       
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Phone<span>*</span></p>
-                                  <input type="text">
+                                  <input type="text" name="phone_number">
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Email<span>*</span></p>
-                                  <input type="text" value="{{ isset($user->email) ? $user->email: '' }}">
+                                  <input type="text" name="email" value="{{ isset($user->email) ? $user->email: '' }}">
                               </div>
                           </div>
                       </div>
                       
                       <div class="checkout__input__checkbox">
                           <label for="diff-acc">
-                              Note about your order, e.g, special noe for delivery
+                              Note about your order, e.g, special note for delivery
                               <input type="checkbox" id="diff-acc">
                               <span class="checkmark"></span>
                           </label>
                       </div>
                       <div class="checkout__input">
                           <p>Order notes</p>
-                          <input type="text"
+                          <input type="text" name="note"
                           placeholder="Notes about your order, e.g. special notes for delivery.">
                       </div>
                   </div>
                   <div class="col-lg-4 col-md-6">
                       <div class="checkout__order">
-                          <h4 class="order__title">Your order</h4>
-                          <div class="checkout__order__products">Product <span>Total</span></div>
-                          <ul class="checkout__total__products">
+                          <h4 style="margin-bottom: 0px;" class="order__title">Your order</h4>
+                          
+                          
                           @php
-                          $total=0;
-                          @endphp
-
-                          @if (\Session::has('cart'))
-                            @foreach(\Session::get('cart') as $item)
-                              <li>{{ $item->product->name }}<span>{{ $item->product->price }} đ</span></li>
-                              @php
-                                $total+=$item->product->price * $item->quantity;
-                              @endphp
-                            @endforeach
-                          @endif
-                          </ul>
+                            $totalP=0;
+                            $totalQ=0;
+                            @endphp
+                          
+                          @if(Session::has("Cart") != null)
+                          @foreach(Session::get('Cart')->products as $item)
+                          @php
+                            $totalP+=($item['productInfo'] -> price) * ($item['quanty']);
+                            $totalQ=Session::get('Cart')->totalQuanty;
+                            @endphp
+                          @endforeach
+                          
                           <ul class="checkout__total__all">
-                              <li>Subtotal <span>{{ $total }} đ</span></li>
-                              <li>Total <span>{{ $total }} đ</span></li>
+                          <li>Total Quantity: <span>{{ $totalQ }} </span></li>
+                                    <li>Total Price: <span>{{ $totalP }} đ</span></li>
                           </ul>
+                          <input type="hidden" name="total" value="{{ $totalP }}" class="checkout__input__add">
+                          @endif
+
                           <!-- <div class="checkout__input__checkbox">
                               <label for="acc-or">
                                   Create an account?
@@ -113,14 +116,14 @@
                           <div class="checkout__input__checkbox">
                               <label for="cod">
                                   COD
-                                  <input type="checkbox" id="cod">
+                                  <input type="radio" name="payment_method" value="COD" id="cod">
                                   <span class="checkmark"></span>
                               </label>
                           </div>
                           <div class="checkout__input__checkbox">
                               <label for="paypal">
                                   Paypal
-                                  <input type="checkbox" id="paypal">
+                                  <input type="radio" name="payment_method" value="Paypal" id="paypal">
                                   <span class="checkmark"></span>
                               </label>
                           </div>
