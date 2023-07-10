@@ -27,7 +27,6 @@
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Products</h3>
-
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
@@ -38,11 +37,10 @@
         </div>
       </div>
 
-      <form type="get" action="{{ Route('admin.product.searchProduct') }}">
+      <form type="get" action="{{ Route('admin.searchProduct') }}">
           <input type="search" style="width:350px; height:35px; " name="search" class="but1"  placeholder="Search Product">
           <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="but1" value="Search">
-        </form>
-        </div>
+      </form>
 
       <div class="card-body p-0">
         <table class="table table-striped projects">

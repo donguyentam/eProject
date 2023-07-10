@@ -65,14 +65,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Product $product)
@@ -120,6 +112,13 @@ class ProductController extends Controller
         //
     }
 
+    public function searchProduct()
+    {
+        $search = $_GET['search'];
+        $prods = Product::where('name','LIKE','%' . $search . '%')->get();
+        return view('admin.product.index', compact('prods'));
+    }
+
 
 
     public function user ()
@@ -158,7 +157,7 @@ class ProductController extends Controller
     {
         $search = $_GET['search'];
         $users = User::where('email','LIKE','%' . $search . '%')->get();
-        return view('admin.adUser.search', compact('users'));
+        return view('admin.adUser.user', compact('users'));
     }
 }
 

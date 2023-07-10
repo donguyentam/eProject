@@ -81,6 +81,8 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/searchUser', [ProductController::class, 'searchUser'])->name('searchUser');
 
+        Route::get('/searchProduct', [ProductController::class, 'searchProduct'])->name('searchProduct');
+
     });
 });
 
