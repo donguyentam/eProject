@@ -3715,7 +3715,7 @@ ol {
 	}
 	.instagram__pic__item {
 		width: 50%;
-	}
+	} 
 	.shop__product__option__right {
 		text-align: left;
 		padding-top: 20px;
@@ -3969,7 +3969,7 @@ ol {
 }
 
  .nav-right li.cart-icon .cart-hover .select-items table tr td.si-text .product-selected p {
-	color: #e7ab3c;
+	color: #372d1b;
 	line-height: 30px;
 	margin-bottom: 7px;
 }

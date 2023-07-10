@@ -146,8 +146,7 @@
                                     <div class="select-button">
                                         <a href="{{ Route('viewCart') }}" style="margin-right: 0px;" class="primary-btn view-card">VIEW
                                             CARD</a>
-                                        <a href="#" style="background: #ffc107;" class="primary-btn checkout-btn">CHECK
-                                            OUT</a>
+                                        
                                     </div>
                                 </div>
                             </li>
