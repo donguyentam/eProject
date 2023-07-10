@@ -79,7 +79,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <!--header end here-->
 <div class="copyright">
-	<p>You want good, quality, durable and beautiful furniture? Come to Wood Express where we have the best quality furniture in Vietnamese © 2023</p>
+	<p>You want good, quality, durable and beautiful furniture? Come to Wood Express where we have the best quality furniture in Vietnam ©2023</p>
 </div>
 <!--footer end here-->
 <!-- jQuery -->
