@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select1.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style4.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style5.css') }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
@@ -35,23 +35,27 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-                <a href="">Sign in</a>
-                <a href="#">FAQs</a>
+            @php 
+                            $user = Sentinel::check();
+                            @endphp
+                                @if(Sentinel::check())
+                                    
+                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a> 
+                                        <a style="background-color: coral; padding: 3px;" href="{{'logout'}}">Log Out</a>
+                                    
+                                    
+                               @else
+                               <a href="{{ Route('login') }}">Sign in</a>
+                               @endif
             </div>
             <div class="offcanvas__top__hover">
                 <span>Usd <i class="arrow_carrot-down"></i></span>
-                <ul>
-                    <li>USD</li>
-                    <li>EUR</li>
-                    <li>USD</li>
-                </ul>
+                
             </div>
         </div>
         <div class="offcanvas__nav__option">
-            <a href="#" class="search-switch"><img src="{{ asset('img/icon/search.png') }}" alt=""></a>
-            <a href="#"><img src="{{ asset('img/icon/heart.png') }}" alt=""></a>
-            <a href="#"><img src="{{ asset('img/icon/cart.png') }}" alt=""> <span>{{count((array) session('cart'))
-                    }}</span></a>
+                <a style="text-decoration: none; color: black;" href="{{Route('viewCart')}}"><i class="icon_bag_alt"></i></a>
+               
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
@@ -61,7 +65,7 @@
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
-    <header class="header">
+    <header class="header" style="height: 140px;">
         <div class="header__top">
             <div class="container">
                 <div class="row">
@@ -73,15 +77,24 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="{{ Route('login') }}">Sign in</a>
-                                <a href="#">FAQs</a>
+                            @php 
+                            $user = Sentinel::check();
+                            @endphp
+                                @if(Sentinel::check())
+                                    
+                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a> 
+                                        <a style="background-color: coral; padding: 3px;" href="{{'logout'}}">Log Out</a>
+                                    
+                                    
+                               
+                               
+                               @endif
                             </div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>
                                     <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
+                                   
                                 </ul>
                             </div>
                         </div>
@@ -104,26 +117,25 @@
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                    
+                                  
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
                                     <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">Blog</a></li>
-                        
+                
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <ul class="nav-right">
-                            <li class="heart-icon">
-                                <a href="#">
-                                    <i class="icon_heart_alt"></i>
-                                    <span style="left: 14px;">1</span>
-                                </a>
-                            </li>
+                            @if(!Sentinel::check())
+                            <li><a style="padding:  4px 20px; background-color: wheat;border: 2px solid black; color: black; right: 10px; " href="{{ Route('login') }}">Sign in</a></li>
+                            @endif
                             <li class="cart-icon">
+                               
                                 <a href="#">
                                     <i class="icon_bag_alt"></i>
                                     @if(Session::has("Cart") != null)
@@ -134,7 +146,7 @@
                                     @endif
 
                                 </a>
-                                <div class="cart-hover" style="top:35px;">
+                                <div class="cart-hover" style="top:40px;">
                                     <div id="change-item-cart">
                                         @if(Session::has("Cart") != null)
 
@@ -341,6 +353,7 @@
     <script src="{{ asset('/fe/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('/fe/js/main.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />

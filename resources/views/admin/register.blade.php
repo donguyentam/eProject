@@ -19,6 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //for-mobile-apps -->
 <!--Google Fonts-->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 <!--header start here-->
@@ -29,6 +30,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 				
 				<div class="header-right w3agile">
+					
 					
 					<div class="header-left-bottom agileinfo">
 						
@@ -88,12 +90,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<p>You want good, quality, durable and beautiful furniture? Come to the Free Shop of the best quality furniture in Vietnamese © 2023<a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
 </div>
 <!--footer end here-->
+
+
+
 <!-- jQuery -->
 <script src="{{ asset('/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/js/adminlte.min.js') }}"></script>
+
 </body>
 </html>
 

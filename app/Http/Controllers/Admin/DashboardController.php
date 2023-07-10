@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -75,6 +76,7 @@ class DashboardController extends Controller
             $activation = \Activation::create($user);
             
         return redirect()->route('login')->with('success','Dang ky thanh cong');
+        
 
 
     }
@@ -135,6 +137,6 @@ class DashboardController extends Controller
     public function logout()
     {
         \Sentinel::logout();
-        return redirect()->route('login');
+        return redirect()->route('/');
     }
 }
