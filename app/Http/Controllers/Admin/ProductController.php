@@ -119,6 +119,7 @@ class ProductController extends Controller
         ->get();
         return view('admin.product.index', compact('prods'));
     }
+    
     public function getSearch(Request $req)
     {
         $product = Product::where('product_name','like','%'.$req->key.'%')
@@ -127,6 +128,8 @@ class ProductController extends Controller
                             ->get();
         return view('page.search',compact('product'));
     }
+
+
 
 
     public function user ()

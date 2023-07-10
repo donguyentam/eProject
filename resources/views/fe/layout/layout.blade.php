@@ -134,8 +134,14 @@
                             @if(!Sentinel::check())
                             <li><a style="padding:  4px 20px; background-color: wheat;border: 2px solid black; color: black; right: 10px; " href="{{ Route('login') }}">Sign in</a></li>
                             @endif
-                            <li class="cart-icon">
 
+                            <li class="search-switch">
+                                <a href="#">
+                                    <i class="icon_search-2" style="color: black;"></i>
+                                </a>
+                            </li>
+                            
+                            <li class="cart-icon">
                                 <a href="#">
                                     <i class="icon_bag_alt"></i>
                                     @if(Session::has("Cart") != null)

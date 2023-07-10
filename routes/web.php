@@ -54,18 +54,16 @@ Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
 Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart');
 
-Route::get('search',[
+Route::get('search',[ProductController::class,
 	'as'=>'search',
-	'uses'=>'PageController@getSearch'
-]);
+	'uses'=>'ProductController@getSearch'
+])->name('ProductController@getSearch');
 
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
 
 Route::group(['middleware'=>'islogin'], function() {
 
     Route::get('/admin', [DashboardController::class, 'home'])->name('admin');
-
-
 
     Route::group(['middleware'=>'isadmin', 'prefix'=>'admin', 'as'=>'admin.'], function() {
 
