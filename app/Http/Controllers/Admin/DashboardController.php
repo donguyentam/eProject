@@ -33,7 +33,7 @@ class DashboardController extends Controller
             'email'    => $email,
             'password' => $pwd,
         ];
-        
+
         $user = \Sentinel::authenticate($credentials);
         if ($user != null) {
             return redirect()->route('admin');
@@ -49,7 +49,7 @@ class DashboardController extends Controller
     }
 
     public function processRegister(Request $request )
-    {   
+    {
         $request->validate([
             'email'    => 'required|max:50|email|unique:users',
             'password'    => 'required',
@@ -64,19 +64,19 @@ class DashboardController extends Controller
         $email = $request->email;
         $pwd = $request->password;
 
-        
-        
+
+
         $credentials = [
             'email'    => $email,
             'password' => $pwd,
         ];
 
-       
+
             $user = \Sentinel::create($credentials);
             $activation = \Activation::create($user);
-            
+            \Activation::complete($user, $activation['code']);
         return redirect()->route('login')->with('success','Dang ky thanh cong');
-        
+
 
 
     }
@@ -114,7 +114,7 @@ class DashboardController extends Controller
         $request -> validate([
             'email' =>"required | email |exists:users",
             'password' =>"required ",
-            
+
         ]);
 
         $updatePassword = DB::table('password_reset_tokens')->where([
@@ -137,6 +137,7 @@ class DashboardController extends Controller
     public function logout()
     {
         \Sentinel::logout();
-        return redirect()->route('/');
+        return redirect()->to(route('home'));
+
     }
 }

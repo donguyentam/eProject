@@ -22,9 +22,9 @@ Route::post('/register', [DashboardController::class, 'processRegister'])
                                         ->name('processRegister');
 
 
-Route::get('/forget-password', [DashboardController::class, 'forgetPassword'])->name('forgetPassword');          
+Route::get('/forget-password', [DashboardController::class, 'forgetPassword'])->name('forgetPassword');
 
-Route::post('/forget-password', [DashboardController::class, 'forgetPasswordPost'])->name('forgetPasswordPost');     
+Route::post('/forget-password', [DashboardController::class, 'forgetPasswordPost'])->name('forgetPasswordPost');
 
 Route::get('/reset-password/{token}', [DashboardController::class, 'resetPassword'])->name('resetPassword');
 
@@ -65,7 +65,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
     Route::get('/admin', [DashboardController::class, 'home'])->name('admin');
 
-    
+
 
     Route::group(['middleware'=>'isadmin', 'prefix'=>'admin', 'as'=>'admin.'], function() {
 

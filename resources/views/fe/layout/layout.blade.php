@@ -35,27 +35,27 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-            @php 
+            @php
                             $user = Sentinel::check();
                             @endphp
                                 @if(Sentinel::check())
-                                    
-                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a> 
-                                        <a style="background-color: coral; padding: 3px;" href="{{'logout'}}">Log Out</a>
-                                    
-                                    
+
+                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
+                                        <a style="background-color: coral; padding: 3px;" href="{{Route('logout')}}">Log Out</a>
+
+
                                @else
                                <a href="{{ Route('login') }}">Sign in</a>
                                @endif
             </div>
             <div class="offcanvas__top__hover">
                 <span>Usd <i class="arrow_carrot-down"></i></span>
-                
+
             </div>
         </div>
         <div class="offcanvas__nav__option">
                 <a style="text-decoration: none; color: black;" href="{{Route('viewCart')}}"><i class="icon_bag_alt"></i></a>
-               
+
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
@@ -77,24 +77,24 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                            @php 
+                            @php
                             $user = Sentinel::check();
                             @endphp
                                 @if(Sentinel::check())
-                                    
-                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a> 
+
+                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
                                         <a style="background-color: coral; padding: 3px;" href="{{'logout'}}">Log Out</a>
-                                    
-                                    
-                               
-                               
+
+
+
+
                                @endif
                             </div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>
                                     <li>USD</li>
-                                   
+
                                 </ul>
                             </div>
                         </div>
@@ -116,15 +116,15 @@
                             <li><a href="{{ Route('productSearch') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                   
-                                  
+
+
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
                                     <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">Blog</a></li>
-                
+
                         </ul>
                     </nav>
                 </div>
@@ -135,7 +135,7 @@
                             <li><a style="padding:  4px 20px; background-color: wheat;border: 2px solid black; color: black; right: 10px; " href="{{ Route('login') }}">Sign in</a></li>
                             @endif
                             <li class="cart-icon">
-                               
+
                                 <a href="#">
                                     <i class="icon_bag_alt"></i>
                                     @if(Session::has("Cart") != null)
@@ -188,7 +188,7 @@
                                         <a href="{{ Route('viewCart') }}" style="margin-right: 0px;"
                                             class="primary-btn view-card">VIEW
                                             CARD</a>
-                                        
+
                                     </div>
                                 </div>
                             </li>
@@ -220,8 +220,8 @@
                     <div class="footer__widget">
                         <h6>Shopping</h6>
                         <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Furniture</a></li>
+                            <li><a href="#">Trending Products</a></li>
                             <li><a href="#">Accessories</a></li>
                             <li><a href="#">Sale</a></li>
                         </ul>
@@ -233,7 +233,7 @@
                         <ul>
                             <li><a href="#">Contact Us</a></li>
                             <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Delivery</a></li>
                             <li><a href="#">Return & Exchanges</a></li>
                         </ul>
                     </div>
@@ -242,7 +242,7 @@
                     <div class="footer__widget">
                         <h6>NewLetter</h6>
                         <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <p>Be the first to know about new arrivals, products, sales & promos!</p>
                             <form action="#">
                                 <input type="text" placeholder="Your email">
                                 <button type="submit"><span class="icon_mail_alt"></span></button>
@@ -254,15 +254,12 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <p>Copyright ©
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            All rights reserved
                         </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
             </div>

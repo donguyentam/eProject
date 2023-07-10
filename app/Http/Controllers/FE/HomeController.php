@@ -165,19 +165,19 @@ class HomeController extends Controller
     //     foreach (Session::get('Cart')->products as $product) {
     //          }
     //         foreach ($cart as $item) {
-                
+
     //             $detail->product_id = $product['productInfo']->id;
     //                     $detail->price = $product['productInfo']->price;
     //                     $detail->quantity = $product['quanty'];
     //                     $detail->save();
-               
-                
+
+
     //             }
-       
-                
 
 
-        
+
+
+
 
     //     //$details[] = $detail;
 
@@ -195,8 +195,10 @@ class HomeController extends Controller
     // }
     public function saveCart(Request $request)
 {
+    $cart = $request->session()->get('Cart');
 
-    foreach (Session::get('Cart')->products as $product) {}
+try {
+    // foreach (Session::get('Cart')->products as $product) {}
 
 
     $uid = $request->uid;
@@ -208,7 +210,8 @@ class HomeController extends Controller
     $address = $request->address;
     $payment_method = $request->payment_method;
     $note = $request->note;
-    $cart = $request->session()->get('Cart');
+
+    
     $ord = new Order();
     $ord->user_id = $uid;
     $ord->total = $total;
@@ -222,28 +225,34 @@ class HomeController extends Controller
     $ord->order_date = date('Y-m-d', time());
 
     $ord->save(); // Save the order first to get the order ID
-    
+
     foreach (Session::get('Cart')->products as $product) {
-                
-    
+
+
         $detail = new OrderDetail();
         $detail->product_id = $product['productInfo']->id;
         $detail->price = $product['productInfo']->price;
         $detail->quantity = $product['quanty'];
         $detail->order_id = $ord->id; // Assign the order ID to the order detail
         $detail->save();
-    
+
      }
-    $request->session()->forget('Cart');
 
     $token = Str::random(64);
-
-    Mail::send("admin.emails.forget-password",['token'=>$token], function ($message) use ($request) {
+    $data['info'] = $request->all();
+    $email = $request->customer_email;
+    $data['total'] = Cart::total();
+    $data['cart'] = Cart::content();
+    Mail::send("admin.emails.checkout-email",['token'=>$token], function ($message) use ($request) {
         $message -> to($request->email);
-        $message -> subject("Reset Password");
+        $message -> subject("Order Successful!");
     });
-    
-    return redirect()->route("home");
+    $request->session()->forget('Cart');
+
+    return redirect()->route("complete");}
+    catch (Exception $e) {
+        echo $e->getMessage();
+    }
 }
 
     public function blognews()

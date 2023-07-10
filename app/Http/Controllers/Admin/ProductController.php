@@ -29,8 +29,7 @@ class ProductController extends Controller
     public function create()
     {
         $cates = Category::all();
-        $invens = Inventory::all();
-        return view('admin.product.create', compact('cates','invens'));
+        return view('admin.product.create', compact('cates'));
     }
 
     /**
@@ -46,11 +45,10 @@ class ProductController extends Controller
             $file = $request->file('photo');
             $ext = $file->getClientOriginalExtension();
             if($ext != 'jpg' && $ext != 'png' && $ext !='jpeg')
-            { 
-                $invens = Inventory::all();
+            {
                 $cates = Category::all();
-               
-                return view('admin.product.create', compact('cates','invens'))
+
+                return view('admin.product.create', compact('cates'))
                     ->with('error','Bạn chỉ được chọn file có đuôi jpg,png,jpeg');
             }
             $imgName = $file->getClientOriginalName();
@@ -59,7 +57,7 @@ class ProductController extends Controller
             $imgName = null;
         }
         $prods['image'] = $imgName;
-       
+
         Product::create($prods);
         return redirect()->route('admin.product.index');
     }
@@ -71,7 +69,7 @@ class ProductController extends Controller
     {
         $cates = Category::all();
         return view('admin.product.edit', compact(
-            'cates', 
+            'cates',
             'product'
         ));
     }
@@ -112,13 +110,23 @@ class ProductController extends Controller
         //
     }
 
-    public function searchProduct()
+    public function searchProduct(Request $req)
     {
         $search = $_GET['search'];
-        $prods = Product::where('name','LIKE','%' . $search . '%')->get();
+        $prods = Product::where('product_name','like','%'.$req->key.'%')
+        ->orWhere('product_unit_price',$req->key)
+        //->orWhere('product_promotion_price',$req->key)
+        ->get();
         return view('admin.product.index', compact('prods'));
     }
-
+    public function getSearch(Request $req)
+    {
+        $product = Product::where('product_name','like','%'.$req->key.'%')
+                            ->orWhere('product_unit_price',$req->key)
+                            //->orWhere('product_promotion_price',$req->key)
+                            ->get();
+        return view('page.search',compact('product'));
+    }
 
 
     public function user ()

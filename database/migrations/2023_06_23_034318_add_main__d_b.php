@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        
+
         // Schema::create('roles', function (Blueprint $table) {
         //     $table->increments('id');
         //     $table->string('slug');
@@ -40,7 +40,7 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->unique('email');
         });
-             
+
         // Schema::create('password_reset_tokens', function (Blueprint $table) {
         //     $table->string('email')->primary();
         //     $table->string('token');
@@ -98,9 +98,9 @@ return new class extends Migration
             $table->integer('price')->nullable();
             $table->timestamps();
         });
-        
 
-        
+
+
         // Schema::create('cart_item', function (Blueprint $table) {
         //     $table->integer('shopping_cart_id')->unsigned();
         //     $table->integer('product_id')->unsigned();
@@ -109,7 +109,7 @@ return new class extends Migration
         //     $table->integer('total_price')->nullable();
         //     $table->primary(['shopping_cart_id', 'product_id']);
         // });
-        
+
     }
 
     /**

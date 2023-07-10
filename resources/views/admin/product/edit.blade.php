@@ -23,7 +23,7 @@
 
   <!-- Main content -->
   <section class="content">
-    <form action="{{ Route('admin.product.update', $product->id) }}" class="row" method="post" 
+    <form action="{{ Route('admin.product.update', $product->id) }}" class="row" method="post"
                         enctype="multipart/form-data">
       @csrf
       @method('put')
@@ -51,7 +51,7 @@
             </div>
             @if($product->image!=null)
             <div class="form-group">
-            <img src="{{ asset('images/' . $product->image) }}" alt="" 
+            <img src="{{ asset('images/' . $product->image) }}" alt=""
                             style="width:500px; height:auto;"/>
             </div>
             @endif
@@ -68,13 +68,19 @@
                 @endforeach
               </select>
             </div>
+            <div class="form-group">
+            <label for="quantity">Inventory</label>
+              <input id="quantity" type="number" class="form-control" name="quantity"/>
+
+              </select>
+              </div>
           </div>
           <!-- /.card-body -->
         </div>
         <!-- /.card -->
       </div>
       <div class="col-md-12">
-        <input type="submit" value="Create" class="btn btn-success float-right">
+        <input type="submit" value="Edit" class="btn btn-success float-right">
       </div>
     </form>
   </section>

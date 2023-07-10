@@ -14,7 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- for-mobile-apps -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Classy Login form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <!-- //for-mobile-apps -->
 <!--Google Fonts-->
@@ -27,23 +27,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header-main">
 		       <h1>Register</h1>
 			<div class="header-bottom">
-				
-				
+
+
 				<div class="header-right w3agile">
-					
-					
+
+
 					<div class="header-left-bottom agileinfo">
-						
+
 					 <form action="{{ Route('processRegister') }}" method="post">
 					 <span style="color:#ff6c6c ;width: 10px">
-								
+
 								@error('email')
 
 								{{$message}}
 
 								@enderror
-							
-								
+
+
 							</span>
 					 @csrf
 						<div class="input-group mb-3">
@@ -71,17 +71,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						</div>
 
-						
-					   
+
+
 						<input type="submit" class="btn btn-primary btn-block" value="Login">
 
-					</form>	
-				
-					
-						
+					</form>
+
+
+
 				</div>
 				</div>
-			  
+
 			</div>
 		</div>
 </div>
