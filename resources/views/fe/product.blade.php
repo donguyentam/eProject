@@ -215,33 +215,7 @@
                             <div class="product__details__pic__item">
                                 <img src="{{ asset('/images/' . $prod->image) }}" alt="">
                             </div>
-                            <div style="padding-left: 0px;" class="col-lg-3 col-md-3">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li style="display: inline-flex;" class="nav-item">
-                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
-
-                                            </div>
-                                        </a>
-
-                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
-
-                                            </div>
-                                        </a>
-
-                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
-
-                                            </div>
-                                        </a>
-
-
-
-
-                                    </li>
-                                </ul>
-                            </div>
+                           
 
                         </div>
 
