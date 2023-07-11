@@ -134,13 +134,10 @@
                                     @else
                                     <span style="left: 14px;" id="total-quanty-show">0</span>
                                     @endif
-
                                 </a>
                                 <div class="cart-hover" style="top:40px;">
                                     <div id="change-item-cart">
                                         @if(Session::has("Cart") != null)
-
-
                                         <div class="select-items">
                                             <table>
                                                 <tbody>
@@ -172,13 +169,10 @@
 
                                         @endif
                                     </div>
-
-
                                     <div class="select-button">
                                         <a href="{{ Route('viewCart') }}" style="margin-right: 0px;"
                                             class="primary-btn view-card">VIEW
                                             CART</a>
-                                        
                                     </div>
                                 </div>
                             </li>
@@ -252,7 +246,10 @@
                 <div class="shop__product__option">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                             
+                            <p class="pull-left">@forelse ($prods as $prods) sản phẩm</p>
+                            @empty
+                            <p>No products found</p>
+                            @endforelse
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
@@ -267,18 +264,30 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach($products as $item)
+                    @if (isset($prods))
+                    @foreach($prods as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg">
                                 <img src="{{ asset('/images/'. $item->image) }}" alt="">
-                                
+                                <ul class="product__hover">
+                                    <li><a href="#"><img src="{{ asset('/fe/img/icon/heart.png') }}" alt=""></a></li>
+                                    <li><a href="#"><img src="{{ asset('/fe/img/icon/compare.png') }}" alt="">
+                                            <span>Compare</span></a></li>
+                                    <li><a href="#"><img src="{{ asset('/fe/img/icon/search.png') }}" alt=""></a></li>
+                                </ul>
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $item->price }} đ</h6>
                                 <a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To
                                     Cart</a>
-                                
+                                <div class="rating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
 
                             </div>
                             <h5>
@@ -287,8 +296,9 @@
                         </div>
                     </div>
                     @endforeach
-                    
+                    @endif
                 </div>
+                <!-- Begin pagination !-->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__pagination">

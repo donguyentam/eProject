@@ -193,7 +193,7 @@
                                     <div class="select-button">
                                         <a href="{{ Route('viewCart') }}" style="margin-right: 0px;"
                                             class="primary-btn view-card">VIEW
-                                            CARD</a>
+                                            CART</a>
 
                                     </div>
                                 </div>

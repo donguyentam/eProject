@@ -115,18 +115,25 @@ return redirect()->route('admin.product.index');
     public function searchProduct(Request $req)
     {
         $search = $_GET['search'];
+<<<<<<< Updated upstream
         $prods = Product::where('name','LIKE','%' . $search . '%')->get();
+=======
+        $prods = Product::where('name','like','%'.$req->key.'%')
+        ->orWhere('price',$req->key)
+        //->orWhere('product_promotion_price',$req->key)
+        ->get();
+>>>>>>> Stashed changes
         return view('admin.product.index', compact('prods'));
     }
 
     
     public function getSearch(Request $req)
     {
-        $product = Product::where('product_name','like','%'.$req->key.'%')
-                            ->orWhere('product_unit_price',$req->key)
+        $product = Product::where('name','like','%'.$req->key.'%')
+                            ->orWhere('price',$req->key)
                             //->orWhere('product_promotion_price',$req->key)
                             ->get();
-        return view('page.search',compact('product'));
+        return view('admin.search',compact('product'));
     }
 
 
@@ -175,5 +182,17 @@ return redirect()->route('admin.product.index');
         $users = User::where('email','LIKE','%' . $search . '%')->get();
         return view('admin.adUser.user', compact('users'));
     }
+<<<<<<< Updated upstream
+=======
+
+    public function itemSearch(){
+        $search = $_GET['itemSearch'];
+        $prods = Product::where('name','LIKE','%'. $search .'%');
+        return view('fe.itemSearch', compact('prods'));
+    }
+    
+}
+
+>>>>>>> Stashed changes
 
 }

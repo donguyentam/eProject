@@ -13,8 +13,8 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{{ Route('admin.product.index') }}">Products</a></li>
-            <li class="breadcrumb-item active">Edit Product</li>
+            <li class="breadcrumb-item"><a href="{{ Route('admin.product.index') }}">Orders</a></li>
+            <li class="breadcrumb-item active">Edit Order</li>
           </ol>
         </div>
       </div>
@@ -32,7 +32,7 @@
       <div class="col-md-12">
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Product Information</h3>
+            <h3 class="card-title">Order Information</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
