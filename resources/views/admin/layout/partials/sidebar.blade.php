@@ -40,7 +40,7 @@
             </p>
           </a>
         </li>
-        
+
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -78,6 +78,23 @@
               <a href="{{ Route('admin.user') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>User</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Order
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ Route('admin.order.index') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>View orders</p>
               </a>
             </li>
           </ul>

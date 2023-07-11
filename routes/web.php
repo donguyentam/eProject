@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\FE\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -56,7 +57,7 @@ Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart')
 
 Route::get('/search',[ProductController::class,
 	'searchProduct'
-	
+
 ])->name('search');
 
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
@@ -69,7 +70,10 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::resource('/product', ProductController::class);
 
+        Route::resource('/order', OrderController::class);
+
         Route::get('/user', [ProductController::class, 'user'])->name('user');
+
 
         Route::get('/edituser/{id}', [ProductController::class, 'edituser'])->name('edituser');
 
@@ -77,7 +81,17 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/deleteuser/{id}', [ProductController::class, 'deleteuser'])->name('deleteuser');
 
+        Route::get('/edituser/{id}', [ProductController::class, 'edituser'])->name('edituser');
+
+        Route::get('/editOrders/{id}', [OrderController::class, 'editOrders'])->name('editOrders');
+
+        Route::post('/editOrders/{id}', [OrderController::class, 'updateOrders'])->name('updateOrders');
+
+        Route::get('/deleteOrders/{id}', [OrderController::class, 'deleteOrders'])->name('deleteOrders');
+
         Route::get('/searchUser', [ProductController::class, 'searchUser'])->name('searchUser');
+
+        Route::get('/searchOrders', [OrderController::class, 'searchOrders'])->name('searchOrders');
 
         Route::get('/searchProduct', [ProductController::class, 'searchProduct'])->name('searchProduct');
 

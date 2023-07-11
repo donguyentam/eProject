@@ -17,7 +17,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords"
-        content="Classy Login form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        content="Forgot password" />
     <!-- //for-mobile-apps -->
     <!--Google Fonts-->
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
@@ -27,7 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--header start here-->
     <div class="header">
         <div class="header-main">
-            
+
 
             <h1>Welcome to Login</h1>
             <div class="header-bottom">
@@ -50,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
-                           
+
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--header end here-->
     <div class="copyright">
         <p>You want good, quality, durable and beautiful furniture? Come to the Free Shop of the best quality furniture
-            in Vietnamese © 2023<a href="http://w3layouts.com/" target="_blank"> W3layouts </a></p>
+            in Vietnamese © 2023</p>
     </div>
     <!--footer end here-->
     <!-- jQuery -->

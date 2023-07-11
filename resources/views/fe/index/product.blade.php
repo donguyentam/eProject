@@ -9,7 +9,7 @@
               </ul>
           </div>
       </div>
-        
+
 
       <div class="row product__filter">
         @foreach($products as $item)
@@ -47,7 +47,7 @@
                       </div> -->
                   </div>
                   <h5>
-                    <a href="{{ Route('productDetails', $item->slug) }}">{{ $item->name }}</a>
+                    <a href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
                   </h5>
               </div>
           </div>

@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\Inventory;
+use App\Models\Order;
+use App\Models\OrderDetails;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -119,7 +120,7 @@ class ProductController extends Controller
         ->get();
         return view('admin.product.index', compact('prods'));
     }
-    
+
     public function getSearch(Request $req)
     {
         $product = Product::where('product_name','like','%'.$req->key.'%')
@@ -170,5 +171,6 @@ class ProductController extends Controller
         $users = User::where('email','LIKE','%' . $search . '%')->get();
         return view('admin.adUser.user', compact('users'));
     }
+
 }
 
