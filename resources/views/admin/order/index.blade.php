@@ -63,17 +63,13 @@
                     <td>{{ $order->note }}</td>
                     <td>{{ $order->payment_method }}</td>
                     <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a>
-                        <a class="btn btn-info btn-sm" href="{{ Route('admin.order.edit', $item->id) }}">
+                        
+                        <a class="btn btn-info btn-sm" href="{{ Route('admin.order.edit', $order->id) }}">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit
                         </a>
-                        <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteuser', $user->id) }}">
+                        <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteuser', $order->id) }}">
                         
                         <a class="btn btn-danger btn-sm" href="#">
                             <i class="fas fa-trash">

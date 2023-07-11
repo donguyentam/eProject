@@ -73,7 +73,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 
-						<input type="submit" class="btn btn-primary btn-block" value="Login">
+						<input type="submit" class="btn btn-primary btn-block" value="Register">
 
 					</form>
 

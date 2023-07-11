@@ -62,11 +62,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->password }}</td>
                     <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a>
+                        
                         <!-- <a class="btn btn-info btn-sm" href="{{ Route('admin.edituser', $user->id) }}">
                             <i class="fas fa-pencil-alt">
                             </i>

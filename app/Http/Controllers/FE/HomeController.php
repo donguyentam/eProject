@@ -19,6 +19,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = DB::table('product_detail')->get();
+        
         return view('fe.index', compact('products'));
     }
 
@@ -34,7 +35,8 @@ class HomeController extends Controller
     {
         // hàm where() sẽ trả về 1 mảng
         $prod = Product::where('id', $id)->first();
-        return view('fe.product', compact('prod'));
+        $prodsd=Product:: orderBy('id', 'ASC')->take(4)->get();
+        return view('fe.product', compact('prod','prodsd'));
     }
 
 
@@ -57,6 +59,8 @@ class HomeController extends Controller
 
         
     }
+
+    
 
     
     
@@ -248,17 +252,16 @@ try {
      }
 
     $token = Str::random(64);
-    $data['info'] = $request->all();
+    $data = $request->all();
     $email = $request->customer_email;
-    $data['total'] = Cart::total();
-    $data['cart'] = Cart::content();
-    Mail::send("admin.emails.checkout-email",['token'=>$token], function ($message) use ($request) {
+    
+    Mail::send("admin.emails.checkout-email",['data'=>$data], function ($message) use ($request) {
         $message -> to($request->email);
         $message -> subject("Order Successful!");
     });
     $request->session()->forget('Cart');
 
-    return redirect()->route("complete");}
+    return redirect()->route('home');}
     catch (Exception $e) {
         echo $e->getMessage();
     }

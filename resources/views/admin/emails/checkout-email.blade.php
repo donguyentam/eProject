@@ -1,10 +1,11 @@
+
 <font face="Arial">
 	<div>
 	<div></div>
 		<h3><font color="#FF9600">Thông tin khách hàng</font></h3>
 		<p>
 			<strong class="info">Customer Name: </strong>
-			{{$info['customer_name']}}
+			{{$data->$uid}}
 		</p>
 		<p>
 			<strong class="info">Email: </strong>

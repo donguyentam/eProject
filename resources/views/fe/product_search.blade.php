@@ -271,24 +271,13 @@
                         <div class="product__item">
                             <div class="product__item__pic set-bg">
                                 <img src="{{ asset('/images/'. $item->image) }}" alt="">
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="{{ asset('/fe/img/icon/heart.png') }}" alt=""></a></li>
-                                    <li><a href="#"><img src="{{ asset('/fe/img/icon/compare.png') }}" alt="">
-                                            <span>Compare</span></a></li>
-                                    <li><a href="#"><img src="{{ asset('/fe/img/icon/search.png') }}" alt=""></a></li>
-                                </ul>
+                                
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $item->price }} đ</h6>
                                 <a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To
                                     Cart</a>
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
+                                
 
                             </div>
                             <h5>

@@ -34,15 +34,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 					 <form action="{{ Route('processLogin') }}" method="post">
 					 @csrf
+					 <span style="color:#ff6c6c ;width: 10px">
+
+								@error('email')
+
+								{{$message}}
+
+								@enderror
+
+
+							</span>
 						<div class="input-group mb-3">
-						<input type="text" class="form-control"  placeholder="User name" name="email" />
+						<input type="text" class="form-control"  placeholder="Email" name="email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 							<span class="fas fa-lock"></span>
 							</div>
 						</div>
 						</div>
+						<span style="color:#ff6c6c ;width: 10px">
 
+								@error('password')
+
+								{{$message}}
+
+								@enderror
+
+
+							</span>
 						<div class="input-group mb-3">
 						<input type="password" class="form-control"  placeholder="Password" name="password"/>
 						<div class="input-group-append">
@@ -53,9 +72,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 
 						<div class="remember">
-			             <span class="checkbox1">
-							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
-						 </span>
+			            <input type="submit" class="btn btn-primary col-6" value="Login">
+
+                                <a class="btn4" href="{{ Route('register') }}">Register</a>
+
 						 <div class="forgot">
 						 	<h6><a href="{{ Route('forgetPassword') }}">Forgot Password?</a></h6>
 						 </div>
@@ -63,10 +83,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  </div>
                         <div class="row">
 
-                            <input type="submit" class="btn btn-primary col-6" value="Login">
-
-                                <a class="btn4" href="{{ Route('register') }}">Register</a>
-
+                            
                         </div>
 
 					</form>

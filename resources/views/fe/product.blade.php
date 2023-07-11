@@ -69,7 +69,7 @@
                             <div class="header__top__links">
                             @php 
                             $user = Sentinel::check();
-                            @endphp
+@endphp
                                 @if(Sentinel::check())
                                     
                                         <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a> 
@@ -127,7 +127,7 @@
                             <li class="cart-icon">
                                
                                 <a href="#">
-                                    <i class="icon_bag_alt"></i>
+<i class="icon_bag_alt"></i>
                                     @if(Session::has("Cart") != null)
                                     <span style="left: 14px;"
                                         id="total-quanty-show">{{Session::get("Cart")->totalQuanty}}</span>
@@ -173,8 +173,7 @@
                                         @endif
                                     </div>
 
-
-                                    <div class="select-button">
+<div class="select-button">
                                         <a href="{{ Route('viewCart') }}" style="margin-right: 0px;"
                                             class="primary-btn view-card">VIEW
                                             CARD</a>
@@ -215,7 +214,33 @@
                             <div class="product__details__pic__item">
                                 <img src="{{ asset('/images/' . $prod->image) }}" alt="">
                             </div>
-                           
+                            <div style="padding-left: 0px;" class="col-lg-3 col-md-3">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li style="display: inline-flex;" class="nav-item">
+                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
+
+                                            </div>
+                                        </a>
+
+                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
+
+                                            </div>
+                                        </a>
+
+                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
+
+                                            </div>
+                                        </a>
+
+
+
+
+                                    </li>
+</ul>
+                            </div>
 
                         </div>
 
@@ -279,7 +304,7 @@
                                         enhancing the value of your home. With us, you will surely be satisfied with your living space.</p>
                                     <div class="product__details__tab__content__item">
                                         <h5>What is Interior Design?</h5>
-                                        <p>When it comes to interior design, many people are not clear about this concept.
+<p>When it comes to interior design, many people are not clear about this concept.
                                             Interior design is understood as the harmonious coordination between objects, colors, lighting, decorations,
                                             architectural aesthetics and spiritual and feng shui elements to create a comfortable living environment for you.
                                             , convenient.</p>
@@ -319,88 +344,28 @@
             </div>
         </div>
         <div class="row">
+            @foreach($prodsd as $item)
             <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                 <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/fe/img/blog/details/details-1.png') }}">
-                        <span class="label">New</span>
-
+                
+                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/images/'. $item->image) }}">
                     </div>
-                    <div class="product__item__text">
-                        <h6>Sports style study table and chair</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                   
+                    <div class="product__item__text" style="padding-top: 40px;">
+                        
+<a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To
+                                    Cart</a>
                         <div class="rating">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
+                             
                         </div>
-                        <h5>50.000.000</h5>
+                        
+                        <h5>{{ $item->price }} đ</h5>
 
                     </div>
+                    <h6><a style="color:black" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a></h6>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/fe/img/blog/details/details-2.png') }}">
-
-                    </div>
-                    <div class="product__item__text">
-                        <h6>Luxury style coffee table and chairs</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
-                        <div class="rating">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                        <h5>10.000.000</h5>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                <div class="product__item sale">
-                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/fe/img/blog/details/details-3.png') }}">
-                        <span class="label">Sale</span>
-
-                    </div>
-                    <div class="product__item__text">
-                        <h6>Classic desk and chair</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                        <h5>20.000.000</h5>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/fe/img/blog/details/details-4.png') }}">
-
-                    </div>
-                    <div class="product__item__text">
-                        <h6>Luxury living room furniture</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
-                        <div class="rating">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                        <h5>100.000.000</h5>
-
-                    </div>
-                </div>
-            </div>
+</div>
+                @endforeach
         </div>
     </div>
 </section>
@@ -457,7 +422,7 @@
             <div class="col-lg-12 text-center">
                 <div class="footer__copyright__text">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <p>Copyright ©
+<p>Copyright ©
                         <script>
                             document.write(new Date().getFullYear());
                         </script>2020
@@ -508,7 +473,7 @@
 <script>
     function AddCart(id) {
         $.ajax({
-            url:'AddCart/'+id,
+            url:'AddCart2/'+id,
             type:'GET',
         }).done(function(response){
             RenderCart(response);

@@ -19,10 +19,10 @@ class IsLogin
         {
             if ($user->id == 1)
                 return $next($request);
-            else if ($user->id == 5) {
+            else {
                  return redirect('/')->with('notify','You do not have access to this page.');
-            } else
-            return redirect('login')->with('notify','Unsuccessful login!');
+            } 
+            
         }
 
 

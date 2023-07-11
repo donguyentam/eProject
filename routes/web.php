@@ -35,7 +35,9 @@ Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
 Route::get('/blognews', [HomeController::class, 'blognews'])->name('blognews');
 
-Route::get('/{any}/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
+Route::get('/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
+
+Route::get('/{any}/AddCart2/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
 
 Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart');
 
@@ -78,6 +80,8 @@ Route::group(['middleware'=>'islogin'], function() {
         Route::get('/edituser/{id}', [ProductController::class, 'edituser'])->name('edituser');
 
         Route::post('/edituser/{id}', [ProductController::class, 'updateuser'])->name('updateuser');
+
+        Route::get('/deleteproduct/{id}', [ProductController::class, 'deleteproduct'])->name('deleteproduct');
 
         Route::get('/deleteuser/{id}', [ProductController::class, 'deleteuser'])->name('deleteuser');
 

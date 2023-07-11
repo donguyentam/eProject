@@ -4,8 +4,7 @@
           <div class="col-lg-12">
               <ul class="filter__controls">
                   <li class="active" data-filter="*">Best Sellers</li>
-                  <li data-filter=".new-arrivals">New Arrivals</li>
-                  <li data-filter=".hot-sales">Hot Sales</li>
+                  
               </ul>
           </div>
       </div>
@@ -18,22 +17,12 @@
                   <div class="product__item__pic set-bg" >
                     <img src="{{ asset('/images/'. $item->image) }}" alt="">
                       <!-- <span class="label">New</span> -->
-                      <ul class="product__hover">
-                          <li><a href="#"><img src="{{ asset('/fe/img/icon/heart.png') }}" alt=""></a></li>
-                          <li><a href="#"><img src="{{ asset('/fe/img/icon/compare.png') }}" alt=""> <span>Compare</span></a></li>
-                          <li><a href="#"><img src="{{ asset('/fe/img/icon/search.png') }}" alt=""></a></li>
-                      </ul>
+                      
                   </div>
                   <div class="product__item__text">
                       <h6>{{ $item->price }} đ</h6>
                       <a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To Cart</a>
-                      <div class="rating">
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
-                      </div>
+                     
                       <!-- <div class="product__color__select">
                           <label for="pc-1">
                               <input type="radio" id="pc-1">

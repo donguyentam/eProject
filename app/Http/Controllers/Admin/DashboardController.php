@@ -26,6 +26,18 @@ class DashboardController extends Controller
 
     public function processLogin(Request $request)
     {
+        $request -> validate([
+            'email' =>"required | email |exists:users",
+            'password' =>"required",
+
+        ],
+        [
+            'email.required' => 'ENTER EMAIL',
+            'email.email' => 'ENTER THE CORRECT EMAIL TYPE',
+            'password.required' => 'ENTER PASSWORD',
+            'email.exists'=>'EMAIL IS NOT REGISTERED'
+        ]);
+
         $email = $request->email;
         $pwd = $request->password;
 
@@ -55,10 +67,10 @@ class DashboardController extends Controller
             'password'    => 'required',
         ],
         [
-            'email.required' => 'Bat buoc nhap email',
-            'email.max' => 'Nhap khong qua 50 ki tu',
-            'password.required' => 'Bat buoc nhap password',
-            'email.unique'=>'Email nay da duoc dang ky'
+            'email.required' => 'ENTER EMAIL',
+            'email.max' => 'ENTER NO MORE THAN 50 CHARACTERS',
+            'password.required' => 'ENTER PASSWORD',
+            'email.unique'=>'THE EMAIL WAS REGISTERED'
         ]);
 
         $email = $request->email;
@@ -88,7 +100,12 @@ class DashboardController extends Controller
     function forgetPasswordPost(Request $request){
         $request->validate([
             'email' =>"required | email |exists:users",
+        ],
+        [
+            'email.required' => 'ENTER EMAIL',      
+            'email.email' => 'ENTER THE CORRECT EMAIL TYPE',
         ]);
+    
 
         $token = Str::random(64);
 
@@ -115,7 +132,14 @@ class DashboardController extends Controller
             'email' =>"required | email |exists:users",
             'password' =>"required ",
 
-        ]);
+        ],
+    [
+        'email.required' => 'ENTER EMAIL',
+            'email.email' => 'ENTER THE CORRECT EMAIL TYPE',
+            'password.required' => 'ENTER PASSWORD',
+            'email.exists'=>'EMAIL IS NOT REGISTERED'
+    ]);
+    
 
         $updatePassword = DB::table('password_reset_tokens')->where([
             'email' => $request -> email,

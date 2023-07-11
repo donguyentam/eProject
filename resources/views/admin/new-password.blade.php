@@ -34,16 +34,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						
 					 <form action="{{ Route('resetPasswordPost') }}" method="post">
 					 @csrf
-                     <input  type="text" name="token" hidden  value="{{$token}}">
+					 <span style="color:#ff6c6c ;width: 10px">
+
+								@error('email')
+
+								{{$message}}
+
+								@enderror
+
+
+							</span>
+                     <input  type="hidden" name="token"  value="{{$token}}">
 						<div class="input-group mb-3">
-						<input type="text" class="form-control"  placeholder="User name" name="email" />
+						<input type="text" class="form-control"   placeholder="Email" name="email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 							<span class="fas fa-lock"></span>
 							</div>
 						</div>
 						</div>
-        
+						<span style="color:#ff6c6c ;width: 10px">
+
+								@error('password')
+
+								{{$message}}
+
+								@enderror
+
+
+							</span>
 						<div class="input-group mb-3">
 						<input type="password" class="form-control"  placeholder="Password" name="password"/>
 						<div class="input-group-append">
@@ -53,18 +72,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						</div>
 
-                        <div class="input-group mb-3">
-                            <input type="password" class="form-control"  placeholder="cPassword" name="cpassword"/>
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                                </div>
-                            </div>
-                            </div>
-						
 						
 					   
-						<input type="submit" class="btn btn-primary btn-block" value="Login">
+						<input type="submit" class="btn btn-primary btn-block" value="Reset">
 						
 					</form>	
 					

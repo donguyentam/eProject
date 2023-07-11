@@ -49,7 +49,7 @@ class OrderController extends Controller
      {
          $orders = Order::find($id);
          $orders ->delete();
-         return redirect()->route('admin.order');
+         return redirect()->route('admin.order.index');
      }
 
      public function searchOrders()
