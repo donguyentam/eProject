@@ -70,7 +70,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::resource('/product', ProductController::class);
 
-        Route::get('/order/{id}', [ProductController::class, 'orderList'])->name('orderList');
+        Route::resource('/order', OrderController::class);
 
         Route::get('/user', [ProductController::class, 'user'])->name('user');
 
@@ -83,15 +83,15 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/edituser/{id}', [ProductController::class, 'edituser'])->name('edituser');
 
-        Route::get('/editOrders/{id}', [ProductController::class, 'editOrders'])->name('editOrders');
+        Route::get('/editOrders/{id}', [OrderController::class, 'editOrders'])->name('editOrders');
 
-        Route::post('/editOrders/{id}', [ProductController::class, 'updateOrders'])->name('updateOrders');
+        Route::post('/editOrders/{id}', [OrderController::class, 'updateOrders'])->name('updateOrders');
 
-        Route::get('/deleteOrders/{id}', [ProductController::class, 'deleteOrders'])->name('deleteOrders');
+        Route::get('/deleteOrders/{id}', [OrderController::class, 'deleteOrders'])->name('deleteOrders');
 
         Route::get('/searchUser', [ProductController::class, 'searchUser'])->name('searchUser');
 
-        Route::get('/searchOrders', [ProductController::class, 'searchOrders'])->name('searchOrders');
+        Route::get('/searchOrders', [OrderController::class, 'searchOrders'])->name('searchOrders');
 
         Route::get('/searchProduct', [ProductController::class, 'searchProduct'])->name('searchProduct');
 

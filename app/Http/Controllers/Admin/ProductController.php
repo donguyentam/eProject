@@ -182,7 +182,7 @@ class ProductController extends Controller
          // return view('admin.product.index')->with([
          //     'prods' => $prods
          // ]);
-         return view('admin.order.orderlist', compact('orders'));
+         return view('admin.order.orderList', compact('orders'));
      }
      public function updateOrders(Request $request, $id)
      {
