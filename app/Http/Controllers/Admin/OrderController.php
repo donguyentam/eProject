@@ -1,4 +1,3 @@
-@@ -0,0 +1,62 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
@@ -34,7 +33,7 @@ class OrderController extends Controller
          $orders -> email = $request->email;
          $orders -> email = $request->email;
          $orders -> email = $request->email;
-         $user ->save();
+         $orders ->save();
          return redirect()->route('admin.order.index');
      }
 
