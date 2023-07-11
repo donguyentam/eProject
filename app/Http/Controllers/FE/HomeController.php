@@ -30,27 +30,36 @@ class HomeController extends Controller
     }
 
 
-    public function productDetails($slug)
+    public function productDetails($id)
     {
         // hàm where() sẽ trả về 1 mảng
-        $prod = Product::where('slug', $slug)->first();
-        return view('fe.product_details', compact('prod'));
+        $prod = Product::where('id', $id)->first();
+        return view('fe.product', compact('prod'));
     }
 
 
     public function AddCart(Request $request, $id)
     {
         $product = DB::table('product_detail')->where('id', $id)->first();
+        // $product = Product::where('id', $id)->first();
         if ($product != null) {
             $oldCart = Session('Cart') ? Session('Cart') : null;
             $newCart = new CartItem($oldCart);
             $newCart->AddCart($product, $id);
 
             $request->session()->put('Cart', $newCart);
+            return view('fe.cart'); 
+
+        } else {
+            return view('fe.cart');
+
         }
-        return view('fe.cart');
+
+        
     }
 
+    
+    
 
 
     public function clearCart(Request $request)

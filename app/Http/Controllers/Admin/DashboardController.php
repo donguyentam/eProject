@@ -134,9 +134,12 @@ class DashboardController extends Controller
     }
 
 
-    public function logout()
+    public function logout(Request $request)
     {
         \Sentinel::logout();
+        // xóa cart
+        $cart = $request->session()->get('Cart');
+        $request->session()->forget('Cart');
         return redirect()->to(route('home'));
 
     }

@@ -7,7 +7,7 @@ use App\Http\Controllers\FE\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/product/{slug}', [HomeController::class, 'productDetails'])
+Route::get('/product/{id}', [HomeController::class, 'productDetails'])
         ->name('productDetails');
 
 
@@ -34,7 +34,7 @@ Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
 Route::get('/blognews', [HomeController::class, 'blognews'])->name('blognews');
 
-Route::get('/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
+Route::get('/{any}/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
 
 Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart');
 
@@ -54,10 +54,10 @@ Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
 Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart');
 
-Route::get('search',[ProductController::class,
-	'as'=>'search',
-	'uses'=>'ProductController@getSearch'
-])->name('ProductController@getSearch');
+Route::get('/search',[ProductController::class,
+	'searchProduct'
+	
+])->name('search');
 
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
 

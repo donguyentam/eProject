@@ -224,7 +224,7 @@
                                 </div>
                             </div>
                             
-                            <div class="card">
+                            <!-- <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
                                 </div>
@@ -242,7 +242,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -258,8 +258,8 @@
                                 <p>Sort by Price:</p>
                                 <select>
                                     <option value="">Low To High</option>
-                                    <option value="">$0 - $55</option>
-                                    <option value="">$55 - $100</option>
+                                    <option value="">High to Low</option>
+
                                 </select>
                             </div>
                         </div>
@@ -292,7 +292,7 @@
 
                             </div>
                             <h5>
-                    <a href="{{ Route('productDetails', $item->slug) }}">{{ $item->name }}</a>
+                    <a href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
                   </h5>
                         </div>
                     </div>
@@ -371,8 +371,7 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            All rights reserved
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>

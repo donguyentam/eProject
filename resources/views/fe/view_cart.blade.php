@@ -177,7 +177,7 @@
                                     <div class="select-button">
                                         <a href="{{ Route('viewCart') }}" style="margin-right: 0px;"
                                             class="primary-btn view-card">VIEW
-                                            CARD</a>
+                                            CART</a>
                                         
                                     </div>
                                 </div>
@@ -289,7 +289,19 @@
                                     <li>Total Quantity: <span>{{ $totalQ }} </span></li>
                                     <li>Total Price: <span>{{ $totalP }} đ</span></li>
                                 </ul>
+                                @php
+                            $user = Sentinel::check();
+                            @endphp
+                                @if(Sentinel::check())
+
                                 <a href="{{ Route('checkout') }}" class="primary-btn">Proceed to checkout</a>
+
+
+
+                               @else
+                               <a href="{{ Route('login') }}" class="primary-btn">Sign in to checkout</a>
+                               @endif
+
                             </div>
                         </div>
                         @endif
@@ -356,8 +368,7 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            All rights reserved
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
