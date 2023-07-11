@@ -23,7 +23,6 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Orders</h3>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
@@ -32,7 +31,7 @@
       </div>
 
       <form type="get" action="{{ Route('admin.searchOrders') }}">
-          <input type="search" style="width:350px; height:35px; " name="search" class="but1"  placeholder="Search Orders">
+          <input type="search" style="width:350px; height:35px; " name="search" class="but1 m-2"  placeholder="Search Orders">
           <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="but1" value="Search">
       </form>
 
@@ -67,7 +66,7 @@
                     <td>{{ $order->payment_method }}</td>
                     <td class="project-actions text-right">
 <<<<<<< Updated upstream
-                        
+
                         <a class="btn btn-info btn-sm" href="{{ Route('admin.order.edit', $order->id) }}">
 =======
                         <a class="btn btn-primary btn-sm" href="#">
@@ -83,7 +82,7 @@
                         </a>
 <<<<<<< Updated upstream
                         <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteuser', $order->id) }}">
-                        
+
                         <a class="btn btn-danger btn-sm" href="#">
 =======
                         <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteOrders', $user->id) }}">
@@ -91,7 +90,7 @@
                             <i class="fas fa-trash">
                             </i>
                             Delete
-                        </a>    
+                        </a>
               @endforeach
               @else
               <tr>

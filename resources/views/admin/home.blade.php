@@ -13,7 +13,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
-            <li class="breadcrumb-item active">Projects</li>
+            <li class="breadcrumb-item active">Active Projects</li>
           </ol>
         </div>
       </div>
@@ -26,7 +26,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Projects</h3>
+        <h3 class="card-title">Current Projects</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -67,11 +67,11 @@
                     </td>
                     <td>
                         <a>
-                            AdminLTE v3
+                            WoodExpress
                         </a>
                         <br/>
                         <small>
-                            Created 01.01.2019
+                            Created 06.14.2023
                         </small>
                     </td>
                     <td>
@@ -92,11 +92,11 @@
                     </td>
                     <td class="project_progress">
                         <div class="progress progress-sm">
-                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 89%">
                             </div>
                         </div>
                         <small>
-                            57% Complete
+                            89% Complete
                         </small>
                     </td>
                     <td class="project-state">
@@ -120,7 +120,7 @@
                         </a>
                     </td>
                 </tr>
-                
+
             </tbody>
         </table>
       </div>

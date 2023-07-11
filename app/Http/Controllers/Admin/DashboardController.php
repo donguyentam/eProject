@@ -96,16 +96,19 @@ class DashboardController extends Controller
     function forgetPassword(){
         return view('admin.forget-password');
     }
+    function complete(){
+        return view('fe.complete');
+    }
 
     function forgetPasswordPost(Request $request){
         $request->validate([
             'email' =>"required | email |exists:users",
         ],
         [
-            'email.required' => 'ENTER EMAIL',      
+            'email.required' => 'ENTER EMAIL',
             'email.email' => 'ENTER THE CORRECT EMAIL TYPE',
         ]);
-    
+
 
         $token = Str::random(64);
 
@@ -139,7 +142,7 @@ class DashboardController extends Controller
             'password.required' => 'ENTER PASSWORD',
             'email.exists'=>'EMAIL IS NOT REGISTERED'
     ]);
-    
+
 
         $updatePassword = DB::table('password_reset_tokens')->where([
             'email' => $request -> email,

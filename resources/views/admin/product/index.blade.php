@@ -26,19 +26,16 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Products</h3>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
           </button>
-          <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-            <i class="fas fa-times"></i>
-          </button>
+
         </div>
       </div>
 
       <form type="get" action="{{ Route('admin.searchProduct') }}">
-          <input type="search" style="width:350px; height:35px; " name="search" class="but1"  placeholder="Search Product">
+          <input type="search" style="width:350px; height:35px; " name="search" class="but1 m-2"  placeholder="Search Product">
           <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="but1" value="Search">
       </form>
 
@@ -66,12 +63,12 @@
                     <td>{{ $item->quantity}}</td>
                     <td>
                       @if ($item->image!=null)
-                      <img src="{{ asset('images/' . $item->image) }}" alt="" 
+                      <img src="{{ asset('images/' . $item->image) }}" alt=""
                             style="width:200px; height:auto;"/>
                       @endif
                     </td>
                     <td class="project-actions text-right">
-                        
+
                         <a class="btn btn-info btn-sm" href="{{ Route('admin.product.edit', $item->id) }}">
                             <i class="fas fa-pencil-alt">
                             </i>

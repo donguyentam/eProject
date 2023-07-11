@@ -32,6 +32,7 @@ Route::get('/reset-password/{token}', [DashboardController::class, 'resetPasswor
 Route::post('/reset-password', [DashboardController::class, 'resetPasswordPost'])->name('resetPasswordPost');
 
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
+Route::get('/complete', [DashboardController::class, 'complete'])->name('complete');
 
 Route::get('/blognews', [HomeController::class, 'blognews'])->name('blognews');
 
@@ -98,7 +99,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/searchProduct', [ProductController::class, 'searchProduct'])->name('searchProduct');
 
-        Route::get('/itemSearch', [ProductController::class, 'itemSearch'])->name('itemSearch');
+        Route::get('/itemSearch', [HomeController::class, 'itemSearch'])->name('itemSearch');
 
     });
 });

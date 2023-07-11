@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = DB::table('product_detail')->get();
-        
+
         return view('fe.index', compact('products'));
     }
 
@@ -30,7 +30,12 @@ class HomeController extends Controller
         return view('fe.product_search', compact('products'));
     }
 
+    public function itemSearch(){
+        $search = $_GET['itemSearch'];
+        $products = Product::where('slug','LIKE','%'. $search .'%')->orwhere('name','LIKE','%'. $search .'%')->get();
 
+        return view('fe.product_search', compact('products'));
+    }
     public function productDetails($id)
     {
         // hàm where() sẽ trả về 1 mảng
@@ -50,20 +55,20 @@ class HomeController extends Controller
             $newCart->AddCart($product, $id);
 
             $request->session()->put('Cart', $newCart);
-            return view('fe.cart'); 
+            return view('fe.cart');
 
         } else {
             return view('fe.cart');
 
         }
 
-        
+
     }
 
-    
 
-    
-    
+
+
+
 
 
     public function clearCart(Request $request)
@@ -224,7 +229,7 @@ try {
     $payment_method = $request->payment_method;
     $note = $request->note;
 
-    
+
     $ord = new Order();
     $ord->user_id = $uid;
     $ord->total = $total;
@@ -254,14 +259,14 @@ try {
     $token = Str::random(64);
     $data = $request->all();
     $email = $request->customer_email;
-    
+
     Mail::send("admin.emails.checkout-email",['data'=>$data], function ($message) use ($request) {
         $message -> to($request->email);
         $message -> subject("Order Successful!");
     });
     $request->session()->forget('Cart');
 
-    return redirect()->route('home');}
+    return redirect()->route('complete');}
     catch (Exception $e) {
         echo $e->getMessage();
     }

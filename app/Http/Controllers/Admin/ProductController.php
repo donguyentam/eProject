@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,10 +16,11 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $prods = Product::all();
-        
+
         // return view('admin.product.index')->with([
         //     'prods' => $prods
         // ]);
@@ -115,18 +117,14 @@ return redirect()->route('admin.product.index');
     public function searchProduct(Request $req)
     {
         $search = $_GET['search'];
-<<<<<<< Updated upstream
-        $prods = Product::where('name','LIKE','%' . $search . '%')->get();
-=======
-        $prods = Product::where('name','like','%'.$req->key.'%')
-        ->orWhere('price',$req->key)
+        $prods = Product::where('name','like','%'.$search.'%')
+        ->orWhere('price',$search->key)
         //->orWhere('product_promotion_price',$req->key)
         ->get();
->>>>>>> Stashed changes
         return view('admin.product.index', compact('prods'));
     }
 
-    
+
     public function getSearch(Request $req)
     {
         $product = Product::where('name','like','%'.$req->key.'%')
@@ -182,17 +180,10 @@ return redirect()->route('admin.product.index');
         $users = User::where('email','LIKE','%' . $search . '%')->get();
         return view('admin.adUser.user', compact('users'));
     }
-<<<<<<< Updated upstream
-=======
 
-    public function itemSearch(){
-        $search = $_GET['itemSearch'];
-        $prods = Product::where('name','LIKE','%'. $search .'%');
-        return view('fe.itemSearch', compact('prods'));
-    }
-    
-}
 
->>>>>>> Stashed changes
 
 }
+
+
+
