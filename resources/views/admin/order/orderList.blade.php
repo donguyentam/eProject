@@ -48,13 +48,13 @@
                 <tr>
                     <th style="width: 5%">Id</th>
                     <th style="width: 5%">User Id</th>
-                    <th style="width: 10%">First Name</th>
-                    <th style="width: 10%">Last Name</th>
-                    <th style="width: 15%">Address</th>
-                    <th style="width: 10%">Phone Number</th>
-                    <th style="width: 15%">Email</th>
-                    <th style="width: 10%">Note</th>
-                    <th style="width: 10%">Payment Method</th>
+                    <th style="width: 5%">First Name</th>
+                    <th style="width: 5%">Last Name</th>
+                    <th style="width: 5%">Address</th>
+                    <th style="width: 5%">Phone Number</th>
+                    <th style="width: 5%">Email</th>
+                    <th style="width: 5%">Note</th>
+                    <th style="width: 5%">Payment Method</th>
                     <th></th>
                 </tr>
             </thead>

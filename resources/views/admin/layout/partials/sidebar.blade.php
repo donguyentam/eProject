@@ -92,7 +92,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{ Route('admin.order.index') }}" class="nav-link">
+              <a href="{{ Route('admin.order.orderList') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>View orders</p>
               </a>

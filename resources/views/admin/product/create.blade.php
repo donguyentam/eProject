@@ -57,17 +57,12 @@
                 @foreach($cates as $item)
                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
-                
-              </select>
-              
+                </select> 
             </div>
-
             <div class="form-group">
-            <label for="quantity">Inventory</label>
-              <input id="quantity" type="number" class="form-control" name="quantity"/>
-                
-              </select>
-              </div>
+              <label for="quantity">Inventory</label>
+                <input id="product_inventory_id" type="number" class="form-control" name="product_inventory_id"/>
+            </div>
           </div>
           <!-- /.card-body -->
         </div>
