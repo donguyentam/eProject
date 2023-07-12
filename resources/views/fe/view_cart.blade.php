@@ -80,13 +80,7 @@
                                
                                @endif
                             </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                   
-                                </ul>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

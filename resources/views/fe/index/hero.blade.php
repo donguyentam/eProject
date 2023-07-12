@@ -9,12 +9,7 @@
                           <h2>Space Creation - Live and experience</h2>
                           <p style="color: black;">Keep your face always towards the sun, and the shadows will fall behind you.</p>
                           <a href="{{ Route('productSearch') }}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                          <div class="hero__social">
-                              <a href="#"><i class="fa fa-facebook"></i></a>
-                              <a href="#"><i class="fa fa-twitter"></i></a>
-                              <a href="#"><i class="fa fa-pinterest"></i></a>
-                              <a href="#"><i class="fa fa-instagram"></i></a>
-                          </div>
+                          
                       </div>
                   </div>
               </div>
@@ -29,12 +24,7 @@
                           <h2>Space Creation - Live and experience</h2>
                           <p style="color: black;">Keep your face always towards the sun, and the shadows will fall behind you.</p>
                           <a href="{{ Route('productSearch') }}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                          <div class="hero__social">
-                              <a href="#"><i class="fa fa-facebook"></i></a>
-                              <a href="#"><i class="fa fa-twitter"></i></a>
-                              <a href="#"><i class="fa fa-pinterest"></i></a>
-                              <a href="#"><i class="fa fa-instagram"></i></a>
-                          </div>
+                         
                       </div>
                   </div>
               </div>

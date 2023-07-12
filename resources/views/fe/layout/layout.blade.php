@@ -90,13 +90,7 @@
 
                                @endif
                             </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-
-                                </ul>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -137,11 +131,7 @@
                             <li><a style="padding:  4px 20px; background-color: wheat;border: 2px solid black; color: black; right: 10px; " href="{{ Route('login') }}">Sign in</a></li>
                             @endif
 
-                            <li class="search-switch">
-                                <a href="#">
-                                    <i class="icon_search-2" style="color: black;"></i>
-                                </a>
-                            </li>
+                            
 
                             <li class="cart-icon">
                                 <a href="#">

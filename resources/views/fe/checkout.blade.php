@@ -29,8 +29,7 @@
               <input type="hidden" name="uid" value="{{ $user->id}}"/>
               <div class="row">
                   <div class="col-lg-8 col-md-6">
-                      <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
-                      here</a> to enter your code</h6>
+                      
                       <h6 class="checkout__title">Billing Details</h6>
                       <div class="row">
                           <div class="col-lg-6">
