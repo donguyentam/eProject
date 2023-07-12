@@ -134,61 +134,17 @@
                             
 
                             <li class="cart-icon">
-                                <a href="#">
+                                <a href="{{ Route('viewCart') }}">
                                     <i class="icon_bag_alt"></i>
-                                    @if(Session::has("Cart") != null)
+                                    <!-- @if(Session::has("Cart") != null)
                                     <span style="left: 14px;"
                                         id="total-quanty-show">{{Session::get("Cart")->totalQuanty}}</span>
                                     @else
                                     <span style="left: 14px;" id="total-quanty-show">0</span>
-                                    @endif
+                                    @endif -->
 
                                 </a>
-                                <div class="cart-hover" style="top:40px;">
-                                    <div id="change-item-cart">
-                                        @if(Session::has("Cart") != null)
-
-
-                                        <div class="select-items">
-                                            <table>
-                                                <tbody>
-                                                    @foreach(Session::get("Cart")->products as $item)
-                                                    <tr>
-                                                        <td class="si-pic" style="width: 90px"><img
-                                                                src="{{ asset('/images/'. $item['productInfo']->image) }}"
-                                                                alt=""></td>
-                                                        <td class="si-text">
-                                                            <div class="product-selected">
-                                                                <p> {{ number_format ($item['productInfo'] -> price) }}
-                                                                    đ x {{ $item['quanty'] }}</p>
-                                                                <h6>{{ $item['productInfo']->name }}</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td class="si-close">
-                                                            <i class="fa fa-close"
-                                                                data-id="{{ $item['productInfo']->id }}"></i>
-                                                        </td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="select-total " style="color: #533c10;">
-                                            <span style="color: #533c10;">total:</span>
-                                            <h5 style="color: #533c10;">{{ number_format(Session::get("Cart")->totalPrice ) }} đ</h5>
-                                        </div>
-
-                                        @endif
-                                    </div>
-
-
-                                    <div class="select-button">
-                                        <a href="{{ Route('viewCart') }}" style="margin-right: 0px;"
-                                            class="primary-btn view-card">VIEW
-                                            CART</a>
-
-                                    </div>
-                                </div>
+                               
                             </li>
 
                         </ul>

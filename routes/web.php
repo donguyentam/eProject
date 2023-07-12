@@ -36,9 +36,14 @@ Route::get('/complete', [DashboardController::class, 'complete'])->name('complet
 
 Route::get('/blognews', [HomeController::class, 'blognews'])->name('blognews');
 
-Route::get('/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
+Route::post('/add-cart', [HomeController::class, 'addCart'])->name('addCart');
 
-Route::get('/{any}/AddCart2/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
+Route::post('/remove-cart-item', [HomeController::class, 'removeCartItem'])
+            ->name('removeCartItem');
+
+// Route::get('/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
+
+// Route::get('/{any}/AddCart2/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
 
 Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart');
 

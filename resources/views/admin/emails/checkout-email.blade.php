@@ -27,23 +27,23 @@
 	<div>
 		<h3><font color="#FF9600">Bill</font></h3>
 		<table border="1" cellspacing="0">
-			<tr>
+		<tr>
 				<td><strong>Product name</strong></td>
 				<td><strong>Price</strong></td>
 				<td><strong>Quantity</strong></td>
 				<td><strong>Total</strong></td>
 			</tr>
-			@foreach($cart as $item)
+		@foreach($cart as $item)
 			<tr>
-				<td>{{$item->name}}</td>
-				<td>{{number_format($item->totalPrice)}} VNĐ</td>
-				<td>{{$item->totalQuanty}}</td>
-				<td>{{number_format($item->totalPrice*$item->totalQuanty,0,',','.')}}</td>
+				<td>{{$item-> product->name}}</td>
+				<td>{{number_format($item-> product->price)}} VNĐ</td>
+				<td>{{$item-> product->quantity}}</td>
+				<td>{{number_format($item-> product->price*$item-> product->quantity,0,',','.')}}</td>
 			</tr>
 			@endforeach
 			<tr>
 				<td>Total:</td>
-				<td colspan="3" align="right">{{$total}} VNĐ</td>
+				<td colspan="3" align="right">{{ number_format($total)}} VNĐ</td>
 			</tr>
 		</table>
 	</div>

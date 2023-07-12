@@ -21,7 +21,7 @@
                   </div>
                   <div class="product__item__text">
                       <h6>{{ $item->price }} đ</h6>
-                      <a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To Cart</a>
+                      <a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
                      
                       <!-- <div class="product__color__select">
                           <label for="pc-1">

@@ -35,7 +35,8 @@ class DashboardController extends Controller
             'email.required' => 'ENTER EMAIL',
             'email.email' => 'ENTER THE CORRECT EMAIL TYPE',
             'password.required' => 'ENTER PASSWORD',
-            'email.exists'=>'EMAIL IS NOT REGISTERED'
+            'email.exists'=>'EMAIL IS NOT REGISTERED',
+            'password.exists' => 'ENTER PASSWORD',
         ]);
 
         $email = $request->email;

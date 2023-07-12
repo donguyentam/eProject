@@ -35,33 +35,33 @@
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>First Name<span>*</span></p>
-                                  <input type="text" name="first_name" value="{{ isset($user->firstname) ? $user->firstname: '' }}">
+                                  <input type="text" name="first_name" required value="{{ isset($user->firstname) ? $user->firstname: '' }}">
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Last Name<span>*</span></p>
-                                  <input type="text" name="last_name">
+                                  <input type="text" required name="last_name">
                               </div>
                           </div>
                       </div>
                       
                       <div class="checkout__input">
                           <p>Address<span>*</span></p>
-                          <input type="text" name="address" placeholder="Street Address" class="checkout__input__add">
+                          <input type="text" name="address" required placeholder="Street Address" class="checkout__input__add">
                       </div>
                       
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Phone<span>*</span></p>
-                                  <input type="text" name="phone_number">
+                                  <input type="number" min="1" required name="phone_number">
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Email<span>*</span></p>
-                                  <input type="text" name="email" value="{{ isset($user->email) ? $user->email: '' }}">
+                                  <input type="text" required name="email" value="{{ isset($user->email) ? $user->email: '' }}">
                               </div>
                           </div>
                       </div>
@@ -89,11 +89,11 @@
                             $totalQ=0;
                             @endphp
                           
-                          @if(Session::has("Cart") != null)
-                          @foreach(Session::get('Cart')->products as $item)
+                          @if(Session::has("cart") != null)
+                          @foreach(Session::get('cart') as $item)
                           @php
-                            $totalP+=($item['productInfo'] -> price) * ($item['quanty']);
-                            $totalQ=Session::get('Cart')->totalQuanty;
+                          $totalQ+=$item->quantity;
+                          $totalP+=$item->product->price * $item->quantity;
                             @endphp
                           @endforeach
                           
@@ -126,7 +126,7 @@
                                   <span class="checkmark"></span>
                               </label>
                           </div>
-                          @if(Session::has("Cart") == null)
+                          @if(Session::has("cart") == null)
                           <button disabled class="site-btn">NO ITEMS IN CART</button>
 
                           @else

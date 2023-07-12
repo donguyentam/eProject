@@ -28,31 +28,24 @@
 
 @section('myjs')
 <script>
-   function AddCart(id) {
+    $('.product__item__text a').click(function(e) {
+        e.preventDefault(); // huỷ tác dụng thẻ a
+        let pid = $(this).data('pid');
+        let quantity = 1;
+        //alert(quantity);
+        const url = "{{ Route('addCart') }}";
         $.ajax({
-            url:'AddCart/'+id,
-            type:'GET',
-        }).done(function(response){
-            RenderCart(response);
-            alertify.success('Added To Cart');
-        });
-    }
-
-    $("#change-item-cart").on("click",".si-close i",function(){
-        $.ajax({
-            url:'DeleteItemCart/'+$(this).data("id"),
-            type:'GET',
-        }).done(function(response){
-            RenderCart(response);
-            location.reload();
+            url: url,
+            method: 'post',
+            data: {
+                pid: pid,
+                quantity: quantity,
+                _token: "{{ csrf_token() }}"
+            },
+            success: function(data) {
+                alertify.success('Added To Cart');
+            }
         });
     });
-
-    function RenderCart(response){
-        $("#change-item-cart").empty();
-        $("#change-item-cart").html(response);
-        $("#total-quanty-show").text($("#total-quanty-cart").val());
-        
-    }
- </script>   
+</script> 
 @endsection
