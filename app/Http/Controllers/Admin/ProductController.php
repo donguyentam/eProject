@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,10 +16,11 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $prods = Product::all();
-        
+
         // return view('admin.product.index')->with([
         //     'prods' => $prods
         // ]);
@@ -119,9 +121,10 @@ return redirect()->route('admin.product.index');
         //->orWhere('product_promotion_price',$req->key)
 
         return view('product.index', compact('prods'));
+
     }
 
-    
+
     public function getSearch(Request $req)
     {
         $product = Product::where('name','like','%'.$req->key.'%')
@@ -187,4 +190,11 @@ return redirect()->route('admin.product.index');
     }
     
 }
+
+
+
+
+
+
+
 

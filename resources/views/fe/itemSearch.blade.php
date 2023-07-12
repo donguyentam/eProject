@@ -40,12 +40,12 @@
             </div>
             <div class="offcanvas__top__hover">
                 <span>Usd <i class="arrow_carrot-down"></i></span>
-                
+
             </div>
         </div>
         <div class="offcanvas__nav__option">
                 <a style="text-decoration: none; color: black;" href="{{Route('viewCart')}}"><i class="icon_bag_alt"></i></a>
-               
+
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
@@ -67,24 +67,24 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                            @php 
+                            @php
                             $user = Sentinel::check();
                             @endphp
                                 @if(Sentinel::check())
-                                    
-                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a> 
+
+                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
                                         <a style="background-color: coral; padding: 3px;" href="{{'logout'}}">Log Out</a>
-                                    
-                                    
-                               
-                               
+
+
+
+
                                @endif
                             </div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>
                                     <li>USD</li>
-                                   
+
                                 </ul>
                             </div>
                         </div>
@@ -106,15 +106,15 @@
                             <li><a href="{{ Route('productSearch') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                   
-                                  
+
+
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
                                     <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">Blog</a></li>
-                
+
                         </ul>
                     </nav>
                 </div>
@@ -125,7 +125,7 @@
                             <li><a style="padding:  4px 20px; background-color: wheat;border: 2px solid black; color: black; right: 10px; " href="{{ Route('login') }}">Sign in</a></li>
                             @endif
                             <li class="cart-icon">
-                               
+
                                 <a href="#">
                                     <i class="icon_bag_alt"></i>
                                     @if(Session::has("Cart") != null)
@@ -218,7 +218,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
@@ -269,7 +269,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg">
-                                <img src="{{ asset('/images/'. $item->image) }}" alt="">
+                            <img src="{{ asset('/images/'. $item->image) }}" alt="">
+
                                 <ul class="product__hover">
                                     <li><a href="#"><img src="{{ asset('/fe/img/icon/heart.png') }}" alt=""></a></li>
                                     <li><a href="#"><img src="{{ asset('/fe/img/icon/compare.png') }}" alt="">
@@ -440,9 +441,9 @@
         $("#change-item-cart").empty();
         $("#change-item-cart").html(response);
         $("#total-quanty-show").text($("#total-quanty-cart").val());
-        
+
     }
- </script> 
+ </script>
 </body>
 
 </html>

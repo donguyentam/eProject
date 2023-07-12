@@ -40,12 +40,12 @@
             </div>
             <div class="offcanvas__top__hover">
                 <span>Usd <i class="arrow_carrot-down"></i></span>
-                
+
             </div>
         </div>
         <div class="offcanvas__nav__option">
                 <a style="text-decoration: none; color: black;" href="{{Route('viewCart')}}"><i class="icon_bag_alt"></i></a>
-               
+
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
@@ -67,24 +67,24 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                            @php 
+                            @php
                             $user = Sentinel::check();
                             @endphp
                                 @if(Sentinel::check())
-                                    
-                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a> 
+
+                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
                                         <a style="background-color: coral; padding: 3px;" href="{{'logout'}}">Log Out</a>
-                                    
-                                    
-                               
-                               
+
+
+
+
                                @endif
                             </div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>
                                     <li>USD</li>
-                                   
+
                                 </ul>
                             </div>
                         </div>
@@ -106,15 +106,15 @@
                             <li><a href="{{ Route('productSearch') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                   
-                                  
+
+
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     <li><a href="./checkout.html">Check Out</a></li>
                                     <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">Blog</a></li>
-                
+
                         </ul>
                     </nav>
                 </div>
@@ -125,7 +125,7 @@
                             <li><a style="padding:  4px 20px; background-color: wheat;border: 2px solid black; color: black; right: 10px; " href="{{ Route('login') }}">Sign in</a></li>
                             @endif
                             <li class="cart-icon">
-                               
+
                                 <a href="#">
                                     <i class="icon_bag_alt"></i>
                                     @if(Session::has("Cart") != null)
@@ -178,7 +178,7 @@
                                         <a href="{{ Route('viewCart') }}" style="margin-right: 0px;"
                                             class="primary-btn view-card">VIEW
                                             CART</a>
-                                        
+
                                     </div>
                                 </div>
                             </li>
@@ -224,7 +224,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
@@ -252,7 +252,7 @@
                 <div class="shop__product__option">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                             
+
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
@@ -272,34 +272,35 @@
                         <div class="product__item">
                             <div class="product__item__pic set-bg">
                                 <img src="{{ asset('/images/'. $item->image) }}" alt="">
-                                
-                            </div>
-                            <div class="product__item__text">
-                                <h6>{{ $item->price }} đ</h6>
-                                <a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To
-                                    Cart</a>
-                                
 
                             </div>
-                            <h5>
-                    <a href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
-                  </h5>
+                            <div class="product__item__text">
+                                <h6>{{ $item->price }} VNĐ</h6>
+                                <a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To
+                                    Cart</a>
+
+
+                            </div>
+                            <h4>
+                    <a style="color: #0d0d0d;
+    font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
+                  </h4>
                         </div>
                     </div>
                     @endforeach
-                    
+
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-lg-12">
                         <div class="product__pagination">
                             <a class="active" href="#">1</a>
                             <a href="#">2</a>
                             <a href="#">3</a>
                             <span>...</span>
-                            <a href="#">21</a>
+                            <a href="#">9</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -322,8 +323,8 @@
                     <div class="footer__widget">
                         <h6>Shopping</h6>
                         <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Furniture</a></li>
+                            <li><a href="#">Trending</a></li>
                             <li><a href="#">Accessories</a></li>
                             <li><a href="#">Sale</a></li>
                         </ul>
@@ -344,7 +345,7 @@
                     <div class="footer__widget">
                         <h6>NewLetter</h6>
                         <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <p>Be the first to know about new arrivals, sales & promos!</p>
                             <form action="#">
                                 <input type="text" placeholder="Your email">
                                 <button type="submit"><span class="icon_mail_alt"></span></button>
@@ -429,9 +430,9 @@
         $("#change-item-cart").empty();
         $("#change-item-cart").html(response);
         $("#total-quanty-show").text($("#total-quanty-cart").val());
-        
+
     }
- </script> 
+ </script>
 </body>
 
 </html>

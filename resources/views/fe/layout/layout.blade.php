@@ -119,7 +119,9 @@
 
 
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
+                                    @if(Sentinel::check())
+                                    <li><a href="{{ Route('checkout')}}">Check Out</a></li>
+                                    @endif
                                     <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
@@ -140,7 +142,7 @@
                                     <i class="icon_search-2" style="color: black;"></i>
                                 </a>
                             </li>
-                            
+
                             <li class="cart-icon">
                                 <a href="#">
                                     <i class="icon_bag_alt"></i>
