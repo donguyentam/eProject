@@ -198,9 +198,9 @@
             <div class="col-lg-3">
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
-                        <form type="get" action="{{ Route('admin.itemSearch') }}">
-                            <input type="text" name="itemSearch" placeholder="Search..." style="border-color: black;">
-                            <button type="submit" value="itemSearch"><span class="icon_search"></span></button>
+                        <form type="get" action="{{ Route('itemSearch') }}">
+                            <input type="text" name="search" placeholder="Search..." style="border-color: black;">
+                            <button type="submit" value="Search"><span class="icon_search"></span></button>
                         </form>
 
                     </div>
@@ -411,7 +411,7 @@
             type:'GET',
         }).done(function(response){
             RenderCart(response);
-            alertify.success('Them vao thanh cong');
+            alertify.success('Added To Cart');
         });
     }
 
@@ -421,7 +421,6 @@
             type:'GET',
         }).done(function(response){
             RenderCart(response);
-            alertify.success('Xoa thanh cong');
             location.reload();
         });
     });

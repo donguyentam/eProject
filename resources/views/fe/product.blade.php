@@ -215,31 +215,7 @@
                                 <img src="{{ asset('/images/' . $prod->image) }}" alt="">
                             </div>
                             <div style="padding-left: 0px;" class="col-lg-3 col-md-3">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li style="display: inline-flex;" class="nav-item">
-                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
-
-                                            </div>
-                                        </a>
-
-                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
-
-                                            </div>
-                                        </a>
-
-                                        <a style="margin-right: 5px;" class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div class="product__thumb__pic set-bg" data-setbg="{{ asset('/images/' . $prod->image) }}">
-
-                                            </div>
-                                        </a>
-
-
-
-
-                                    </li>
-</ul>
+                                
                             </div>
 
                         </div>
@@ -270,11 +246,11 @@
                         <div class="product__details__cart__option">
                             <div class="quantity">
                                 
-                                <div class="pro-qty">
-                                    <input type="number" name="quanty" value="1" min="1">
+                                <div class="pro-qty2">
+                                    <input style="width:57.2px" type="number" name="quanty" value="1" min="1">
                                 </div>
                             </div>      
-                            <a onclick="AddCart({{$prod->id}} )" id="{{$prod->id}}" href="javascript:" class="add-cart">+ Add To
+                            <a onclick="AddCart({{$prod->id}} )" id="{{$prod->id}}" href="javascript:" class="primary-btn">+ Add To
                                     Cart</a>
                         </div>
 

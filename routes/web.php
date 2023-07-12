@@ -51,6 +51,8 @@ Route::get('/DeleteListItemCart/{id}', [HomeController::class, 'DeleteListItemCa
 
 Route::post('/SaveListItemCart/{id}/{quanty}', [HomeController::class, 'SaveListItemCart'])->name('SaveListItemCart');
 
+Route::get('/itemSearch', [ProductController::class, 'itemSearch'])->name('itemSearch');
+
 Route::post('/SaveAll', [HomeController::class, 'SaveAll'])->name('SaveAll');
 
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
@@ -58,7 +60,7 @@ Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart');
 
 Route::get('/search',[ProductController::class,
-	'searchProduct'
+	'search'
 ])->name('search');
 
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
@@ -98,7 +100,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/searchProduct', [ProductController::class, 'searchProduct'])->name('searchProduct');
 
-        Route::get('/itemSearch', [ProductController::class, 'itemSearch'])->name('itemSearch');
+        
 
     });
 });

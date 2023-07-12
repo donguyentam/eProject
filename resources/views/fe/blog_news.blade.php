@@ -355,6 +355,35 @@
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <script>
+   function AddCart(id) {
+        $.ajax({
+            url:'AddCart/'+id,
+            type:'GET',
+        }).done(function(response){
+            RenderCart(response);
+            alertify.success('Added To Cart');
+        });
+    }
+
+    $("#change-item-cart").on("click",".si-close i",function(){
+        $.ajax({
+            url:'DeleteItemCart/'+$(this).data("id"),
+            type:'GET',
+        }).done(function(response){
+            RenderCart(response);
+            location.reload();
+        });
+    });
+
+    function RenderCart(response){
+        $("#change-item-cart").empty();
+        $("#change-item-cart").html(response);
+        $("#total-quanty-show").text($("#total-quanty-cart").val());
+        
+    }
+ </script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
     <!-- Default theme -->
@@ -363,4 +392,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    </body>
+
+</html>
    

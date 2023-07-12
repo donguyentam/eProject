@@ -34,7 +34,7 @@
             type:'GET',
         }).done(function(response){
             RenderCart(response);
-            alertify.success('Them vao thanh cong');
+            alertify.success('Added To Cart');
         });
     }
 
@@ -44,7 +44,6 @@
             type:'GET',
         }).done(function(response){
             RenderCart(response);
-            alertify.success('Xoa thanh cong');
             location.reload();
         });
     });

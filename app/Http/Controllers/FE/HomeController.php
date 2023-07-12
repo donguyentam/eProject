@@ -19,7 +19,6 @@ class HomeController extends Controller
     public function index()
     {
         $products = DB::table('product_detail')->get();
-        
         return view('fe.index', compact('products'));
     }
 
@@ -223,7 +222,7 @@ try {
     $address = $request->address;
     $payment_method = $request->payment_method;
     $note = $request->note;
-
+    $total = 0;
     
     $ord = new Order();
     $ord->user_id = $uid;
@@ -246,19 +245,21 @@ try {
         $detail->product_id = $product['productInfo']->id;
         $detail->price = $product['productInfo']->price;
         $detail->quantity = $product['quanty'];
+        $total += intval($detail->price) * intval($detail->quantity);
         $detail->order_id = $ord->id; // Assign the order ID to the order detail
         $detail->save();
 
      }
 
-    $token = Str::random(64);
-    $data = $request->all();
-    $email = $request->customer_email;
-    
-    Mail::send("admin.emails.checkout-email",['data'=>$data], function ($message) use ($request) {
-        $message -> to($request->email);
-        $message -> subject("Order Successful!");
-    });
+    // $token = Str::random(64);
+    // $data['info'] = $request->all();
+    // $email = $request->customer_email;
+    // $data['total'] = $total;
+    // $data['cart'] = $cart;
+    // Mail::send("admin.emails.checkout-email",$data, function ($message) use ($request) {
+    //     $message -> to($request->email);
+    //     $message -> subject("Order Successful!");
+    // });
     $request->session()->forget('Cart');
 
     return redirect()->route('home');}

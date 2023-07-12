@@ -192,7 +192,7 @@
             <div class="col-lg-3">
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
-                        <form type="get" action="{{ Route('admin.itemSearch') }}">
+                        <form type="get" action="{{ Route('itemSearch') }}">
                             <input type="text" name="itemSearch" placeholder="Search..." style="border-color: black;">
                             <button type="submit" value="itemSearch"><span class="icon_search"></span></button>
                         </form>
@@ -246,7 +246,7 @@
                 <div class="shop__product__option">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <p class="pull-left">@forelse ($prods as $prods) sản phẩm</p>
+                            <p class="pull-left">@forelse ($products as $products) sản phẩm</p>
                             @empty
                             <p>No products found</p>
                             @endforelse
@@ -264,8 +264,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    @if (isset($prods))
-                    @foreach($prods as $item)
+                    @if (isset($products))
+                    @foreach($products as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg">

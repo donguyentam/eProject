@@ -253,8 +253,6 @@
                                     $totalQ=Session::get('Cart')->totalQuanty;
                                     @endphp
                                     <td class="cart__close" style="text-align: center;">
-                                        <i style="margin-right: 14px;" class="fa fa-refresh"
-                                            onclick="SaveListItemCart({{$item['productInfo']->id}});"></i>
 
                                         <i class="fa fa-close"
                                             onclick="DeleteListItemCart({{$item['productInfo']->id}});"></i>
