@@ -30,9 +30,13 @@ class OrderController extends Controller
          $orderDetails = OrderDetails::all($orders -> id);
 
          $orders -> email = $request->email;
+         $orders -> first_name = $request->first_name;
+         $orders -> last_name = $request->last_name;
+         $orders -> address = $request->address;
+         $orders -> phone_number = $request->phone_number;
          $orders -> email = $request->email;
-         $orders -> email = $request->email;
-         $orders -> email = $request->email;
+         $orders -> note = $request->note;
+         $orders -> payment_method = $request->payment_method;
          $orders ->save();
          return redirect()->route('admin.order.index');
      }
@@ -42,7 +46,7 @@ class OrderController extends Controller
      {
          $orders = Order::find($id);
 
-         return view('admin.order.edit', compact('user'));
+         return view('admin.order.edit', compact('orders'));
      }
 
      public function deleteOrders( $id)
@@ -56,6 +60,6 @@ class OrderController extends Controller
      {
          $search = $_GET['search'];
          $orders = OrderDetail::where('%' . $search . '%' ,' IN ','(first_name, last_name, address, phone_number, email, note, payment_method, payment_type)',)->get();
-         return view('admin.order.index', compact('users'));
+         return view('admin.order.index', compact('orders'));
      }
 }

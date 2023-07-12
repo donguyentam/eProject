@@ -109,7 +109,9 @@
 
 
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
+                                    @if(Sentinel::check())
+                                    <li><a href="{{ Route('checkout')}}">Check Out</a></li>
+                                    @endif
                                     <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
@@ -165,9 +167,9 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="select-total">
-                                            <span>total:</span>
-                                            <h5>{{ number_format(Session::get("Cart")->totalPrice ) }} đ</h5>
+                                        <div class="select-total " style="color: #533c10;">
+                                            <span style="color: #533c10;">total:</span>
+                                            <h5 style="color: #533c10;">{{ number_format(Session::get("Cart")->totalPrice ) }} đ</h5>
                                         </div>
 
                                         @endif

@@ -175,9 +175,9 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="select-total">
-                                            <span>total:</span>
-                                            <h5>{{ number_format(Session::get("Cart")->totalPrice ) }} đ</h5>
+                                        <div class="select-total " style="color: #533c10;">
+                                            <span style="color: #533c10;">total:</span>
+                                            <h5 style="color: #533c10;">{{ number_format(Session::get("Cart")->totalPrice ) }} đ</h5>
                                         </div>
 
                                         @endif

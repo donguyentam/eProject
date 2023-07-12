@@ -255,7 +255,7 @@
                         </div>
 
                         <div class="product__details__last__option">
-                            <h5><span>Guaranteed Safe Checkout</span></h5>
+                            <h5><span><a href="{{Route('checkout')}}" style="">Checkout Now</a></span></h5>
                             <img src="img/shop-details/details-payment.png" alt="">
 
                         </div>
@@ -338,7 +338,7 @@
                         <h5>{{ $item->price }} đ</h5>
 
                     </div>
-                    <h6><a style="color:black" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a></h6>
+                    <h6 style="color:black;"><a style="color:black;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a></h6>
                 </div>
 </div>
                 @endforeach

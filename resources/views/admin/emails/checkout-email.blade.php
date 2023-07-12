@@ -2,7 +2,7 @@
 <font face="Arial">
 	<div>
 	<div></div>
-		<h3><font color="#FF9600">Thông tin khách hàng</font></h3>
+		<h3><font color="#FF9600">Customer information</font></h3>
 		<p>
 			<strong class="info">Customer Name: </strong>
 			{{$info['first_name']}} {{$info['last_name']}}
@@ -35,7 +35,7 @@
 			</tr>
 			@foreach($cart as $item)
 			<tr>
-				<td>{{$item->products->name}}</td>
+				<td>{{$item->name}}</td>
 				<td>{{number_format($item->totalPrice)}} VNĐ</td>
 				<td>{{$item->totalQuanty}}</td>
 				<td>{{number_format($item->totalPrice*$item->totalQuanty,0,',','.')}}</td>

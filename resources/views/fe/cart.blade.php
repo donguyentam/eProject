@@ -24,9 +24,9 @@
         </tbody>
     </table>
 </div>
-<div class="select-total">
+<div class="select-total" style="color: #533c10!important;">
     <span>total:</span>
-    <h5>{{ number_format(Session::get('Cart')->totalPrice ) }} đ</h5>
+    <h5 style="color: #533c10!important;">{{ number_format(Session::get('Cart')->totalPrice ) }} đ</h5>
     <input hidden id="total-quanty-cart" type="text" value="{{Session::get('Cart')->totalQuanty}}">
 </div>
 

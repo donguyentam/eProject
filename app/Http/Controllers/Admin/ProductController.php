@@ -116,11 +116,20 @@ return redirect()->route('admin.product.index');
 
     public function searchProduct(Request $req)
     {
-        $search = $_GET['search1'];
+        $search = $_GET['search'];
         $prods = Product::where('name','LIKE','%' . $search . '%')->get();
         //->orWhere('product_promotion_price',$req->key)
 
         return view('product.index', compact('prods'));
+
+    }
+    public function searchProductAdmin(Request $req)
+    {
+        $search = $_GET['search'];
+        $prods = Product::where('name','LIKE','%' . $search . '%')->get();
+        //->orWhere('product_promotion_price',$req->key)
+
+        return view('admin.product.index', compact('prods'));
 
     }
 

@@ -227,13 +227,16 @@
                                 @if(Session::has('Cart') != null)
                                 @foreach(Session::get('Cart')->products as $item)
                                 <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
+                                    <td class="product__cart__item" >
+                                        <div class="product__cart__item__pic" >
                                             <img src="{{ asset('/images/'. $item['productInfo']->image) }}" alt=""
                                                 style="width:200px;height:auto">
                                         </div>
                                         <div class="product__cart__item__text">
-                                            <h6>{{ $item['productInfo']->name }}</h6>
+                                        <h5>
+                    <a style="color: #0d0d0d;
+    font-weight: 700;" href="{{ Route('productDetails', $item['productInfo']->id) }}">{{ $item['productInfo']->name }}</a>
+                  </h5>
                                         </div>
                                     </td>
                                     <td class="quantity__item">

@@ -127,7 +127,13 @@
                                   <span class="checkmark"></span>
                               </label>
                           </div>
+                          @if(Session::has("Cart") == null)
+                          <button disabled class="site-btn">NO ITEMS IN CART</button>
+
+                          @else
                           <button type="submit" class="site-btn">PLACE ORDER</button>
+
+                          @endif
                       </div>
                   </div>
               </div>

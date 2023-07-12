@@ -258,10 +258,12 @@ try {
      }
 
     $token = Str::random(64);
-    $data = $request->all();
+    $data['info'] = $request->all();
+    $data['total'] = $total;
+    $data['cart'] = $cart;
     $email = $request->customer_email;
 
-    Mail::send("admin.emails.checkout-email",['data'=>$data], function ($message) use ($request) {
+    Mail::send("admin.emails.checkout-email",$data, function ($message) use ($request) {
         $message -> to($request->email);
         $message -> subject("Order Successful!");
     });

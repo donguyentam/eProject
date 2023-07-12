@@ -99,7 +99,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/searchOrders', [OrderController::class, 'searchOrders'])->name('searchOrders');
 
-        Route::get('/searchProduct', [ProductController::class, 'searchProduct'])->name('searchProduct');
+        Route::get('/searchProductAdmin', [ProductController::class, 'searchProductAdmin'])->name('searchProduct');
 
         
 

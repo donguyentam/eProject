@@ -29,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="header-main">
 
 
-            <h1>Welcome to Login</h1>
+            <h1>Forgot password?</h1>
             <div class="header-bottom">
                 <div class="header-right w3agile">
 
@@ -55,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </div>
                                 </div>
                             </div>
-                             <input type="submit" class="btn btn-primary btn-block" value="Enter">
+                             <input type="submit" class="btn btn-primary btn-block" value="Send e-mail to reset password">
                         </form>
 
 

@@ -23,7 +23,9 @@ body {
     text-shadow: 2px 2px 5px black;
     
   }
-  
+  td {
+    text-align: center;
+  }
   
   /* Declare heights because of positioning of img element */
   .carousel-item {

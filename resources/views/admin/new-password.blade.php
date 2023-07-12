@@ -26,7 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header-main">
 			
 			
-		       <h1>Welcome to Login</h1>
+		       <h1>Reset Password</h1>
 			<div class="header-bottom">
 				<div class="header-right w3agile">
 					

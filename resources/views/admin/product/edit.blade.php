@@ -57,7 +57,7 @@
             @endif
             <div class="form-group">
               <label for="photo">Image</label>
-              <input type="file" id="photo" class="form-control" name="photo"/>
+              <input type="file" id="photo" class="form-control" name="photo" value="{{ asset('images/' . $product->image)}}"/>
             </div>
             <div class="form-group">
               <label for="category">Category</label>
@@ -70,7 +70,7 @@
             </div>
             <div class="form-group">
             <label for="quantity">Inventory</label>
-              <input id="quantity" type="number" class="form-control" name="quantity"/>
+              <input id="quantity" type="number" class="form-control" value="{{ $product->quantity }}" name="quantity"/>
 
               </select>
               </div>
