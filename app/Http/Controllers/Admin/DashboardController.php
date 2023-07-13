@@ -101,7 +101,8 @@ class DashboardController extends Controller
     }
     function complete($id){
         $order=Order::where('id', $id)->get();
-        return view('fe.complete',compact('order'));
+        $orderd=OrderDetail::where('order_id',$id)->get();
+        return view('fe.complete',compact('order','orderd'));
     }
 
     function forgetPasswordPost(Request $request){
