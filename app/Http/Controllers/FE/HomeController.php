@@ -46,16 +46,13 @@ class HomeController extends Controller
         return view('fe.news.diningroom', compact('products'));
     }
 
-    public function category()
-    {
-        $categories = Category::all();
-        return view('fe.product_search', compact('categories'));
-    }
+   
 
     public function productSearch()
     {
+        $categories = Category::all();
         $products = Product::all();
-        return view('fe.product_search', compact('products'));
+        return view('fe.product_search', compact('products','categories'));
     }
 
     public function itemSearch(){

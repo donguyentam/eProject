@@ -31,7 +31,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="header-right w3agile">
 
 					<div class="header-left-bottom agileinfo">
-
+						@if(session()->has('error'))
+						<div style="color:#ff6c6c; font-size: larger;" class ="alert alert_error">
+							{{session()->get('error')}}
+						</div>
+						@endif
 					 <form action="{{ Route('processLogin') }}" method="post">
 					 @csrf
 					 <span style="color:#ff6c6c ;width: 10px">

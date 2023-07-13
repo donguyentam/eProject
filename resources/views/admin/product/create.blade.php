@@ -48,11 +48,11 @@
             </div>
             <div class="form-group">
               <label for="photo">Image</label>
-              <input type="file" id="photo"  class="form-control" name="photo"/>
+              <input type="file" id="photo" required  class="form-control" name="photo"/>
             </div>
             <div class="form-group">
               <label for="category">Category</label>
-              <select id="category" class="form-control custom-select" required name="product_category_id">
+              <select id="category" class="form-control custom-select" required  name="product_category_id">
                 <option  selected disabled>Select one</option>
                 @foreach($cates as $item)
                 <option  value="{{ $item->id }}">{{ $item->name }}</option>
@@ -61,7 +61,7 @@
             </div>
             <div class="form-group">
               <label for="quantity">Quantity</label>
-                <input id="quantity" type="number" min="1" class="form-control" name="quantity"/>
+                <input id="quantity" type="number" required min="1" class="form-control" name="quantity"/>
             </div>
           </div>
           <!-- /.card-body -->
