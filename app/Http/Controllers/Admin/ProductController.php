@@ -194,9 +194,10 @@ return redirect()->route('admin.product.index');
 
 
     public function itemSearch(){
-        $search = $_GET['search'];
+        $search = $_GET['search1'];
+        $categories = Category::all();
         $products = Product::where('name','LIKE','%'. $search .'%')->get();
-        return view('fe.product_search', compact('products'));
+        return view('fe.product_search', compact('products','categories'));
     }
 
     public function pagination(){

@@ -8,7 +8,7 @@
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
                         <form type="get" action="{{ Route('itemSearch') }}">
-                            <input type="text" name="search" placeholder="Search..." style="border-color: black;">
+                            <input type="text" name="search1" placeholder="Search..." style="border-color: black;">
                             <button type="submit" value="Search"><span class="icon_search"></span></button>
                         </form>
 
@@ -23,9 +23,11 @@
                                     <div class="card-body">
                                         <div class="shop__sidebar__categories" >
                                             <ul class="nice-scroll" style="border-color: black;">
+                                            @if(isset($categories))
                                                 @foreach($categories as $cates)
                                                     <li><a href="{{ Route('category',['id'=>$cates->id])}}">{{ ($cates->name) }}</a></li>
                                                 @endforeach
+                                            @endif
                                             </ul>
                                         </div>
                                     </div>

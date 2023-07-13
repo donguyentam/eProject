@@ -56,6 +56,7 @@ class HomeController extends Controller
     }
 
     public function itemSearch(){
+        
         $search = $_GET['itemSearch'];
         $products = Product::where('slug','LIKE','%'. $search .'%')->orwhere('name','LIKE','%'. $search .'%')->get();
 
