@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 
+
 class ProductController extends Controller
 {
     /**
@@ -195,20 +196,20 @@ return redirect()->route('admin.product.index');
     public function itemSearch(){
         $search = $_GET['search1'];
         $categories = Category::all();
-        $products = Product::where('name','LIKE','%'. $search .'%')->get();
+        $products = Product::orderBy('price', 'asc')->where('name','LIKE','%'. $search .'%')->paginate(6);
         return view('fe.product_search', compact('products','categories'));
     }
 
-    public function pagination(){
-        $products = Product::paginate(6);
-        return view('fe.product_search', compact('products'));
-    }
+    // public function pagination(){
+    //     $products = Product::paginate(6);
+    //     return view('fe.product_search', compact('products'));
+    // }
 
     public function sort_by(Request $request){
-        if($request->sort_by == 'lowest_price'){
+        if($request->sort_by == 1){
             $products = Product::orderBy('price', 'asc')->get();
         }
-        if($request->sort_by == 'highed_price'){
+        if($request->sort_by == 2){
             $products = Product::orderBy('price', 'desc')->get();
         }
         return view('fe.product_search', compact('products'))->render(); 

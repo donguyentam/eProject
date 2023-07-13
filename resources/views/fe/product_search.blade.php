@@ -66,8 +66,8 @@
                             <div class="shop__product__option__right">
                                 <p>Sort by Price:</p>
                                 <select name="sort_by" id="sort_by" class="form-control">
-                                    <option value="lowest_price">Low To High</option>
-                                    <option value="highed_price">High To Low</option>
+                                    <option value=1>Low To High</option>
+                                    <option value=2>High To Low</option>
                                 </select>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__pagination">
-                            <!-- $products->links() -->
+                            {{$products->appends(request()->all())->links()}}
                         </div>
                     </div>
                 </div>
@@ -136,12 +136,14 @@
     $('#sort_by').on('change', function(){
         let sort_by = $('#sort_by').val();
         const url = "{{Route('sort_by')}}";
+        
         $.ajax({
             url: url,
             method:"GET",
             data:{sort_by:sort_by},
             success:function(res){
                 $('fe.product_search').html(res);
+                alertify.success('Ku leo rank vang');
             }
         });
     })

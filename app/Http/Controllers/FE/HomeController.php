@@ -46,14 +46,18 @@ class HomeController extends Controller
         return view('fe.news.diningroom', compact('products'));
     }
 
-   
-
-    public function productSearch()
-    {
+    public function productSearch(){
         $categories = Category::all();
-        $products = Product::all();
+        $products = Product::orderBy('price', 'asc')->paginate(6);
         return view('fe.product_search', compact('products','categories'));
     }
+
+    // public function productSearch()
+    // {
+        
+    //     $products = Product::all();
+    //     return view('fe.product_search', compact('products','categories'));
+    // }
 
 
     public function productDetails($id)
@@ -66,7 +70,7 @@ class HomeController extends Controller
 
     public function category($id){
         $categories = Category::all();
-        $products = Product::where('product_category_id', $id)->get();
+        $products = Product::where('product_category_id', $id)->orderBy('price', 'asc')->paginate(6);
         return view('fe.product_search', compact('products','categories'));
     }
 
