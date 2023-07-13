@@ -7,7 +7,7 @@
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Male-Fashion | Template</title>
+    <title>WoodExpress Shop</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -170,37 +170,24 @@
                         <a href="#"><img src="img/payment.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-                    <div class="footer__widget">
+                <div class="col-lg-4 offset-lg-1 col-md-3 col-sm-6">
+                    <div style="text-align: center; " class="footer__widget">
                         <h6>Shopping</h6>
                         <ul>
-                            <li><a href="#">Furniture</a></li>
-                            <li><a href="#">Trending Products</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
+                           
+                            <li><a href="{{ Route('productSearch') }}">Trending Products</a></li>
+                            <li><a href="{{ Route('blognews') }}">About</a></li>
+                            <li><a href="{{ Route('viewCart')}}">View Cart</a></li>
                         </ul>
-                    </div>
+                    </div>  
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivery</a></li>
-                            <li><a href="#">Return & Exchanges</a></li>
-                        </ul>
-                    </div>
-                </div>
+                
                 <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
                     <div class="footer__widget">
                         <h6>NewLetter</h6>
                         <div class="footer__newslatter">
                             <p>Be the first to know about new arrivals, products, sales & promos!</p>
-                            <form action="#">
-                                <input type="text" placeholder="Your email">
-                                <button type="submit"><span class="icon_mail_alt"></span></button>
-                            </form>
+                           
                         </div>
                     </div>
                 </div>

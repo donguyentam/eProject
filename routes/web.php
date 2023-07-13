@@ -113,7 +113,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/category',[HomeController::class, 'category'])->name('category');
 
-        
+        Route::get('/logoutad', [DashboardController::class, 'logoutad'])->name('logoutad');
 
     });
 });

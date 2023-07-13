@@ -34,19 +34,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						
 					 <form action="{{ Route('resetPasswordPost') }}" method="post">
 					 @csrf
-					 <span style="color:#ff6c6c ;width: 10px">
-
-								@error('email')
-
-								{{$message}}
-
-								@enderror
-
-
-							</span>
+					
                      <input  type="hidden" name="token"  value="{{$token}}">
 						<div class="input-group mb-3">
-						<input type="text" class="form-control"   placeholder="Email" name="email" />
+						<input type="text" class="form-control" disabled value="{{$email -> email}}" name="email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 							<span class="fas fa-lock"></span>

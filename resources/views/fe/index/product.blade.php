@@ -3,7 +3,7 @@
       <div class="row">
           <div class="col-lg-12">
               <ul class="filter__controls">
-                  <li class="active" data-filter="*">Best Sellers</li>
+                  <li class="active" data-filter="*">New Product</li>
                   
               </ul>
           </div>
@@ -16,7 +16,7 @@
               <div class="product__item">
                   <div class="product__item__pic set-bg" >
                     <img src="{{ asset('/images/'. $item->image) }}" alt="">
-                      <!-- <span class="label">New</span> -->
+                      <span class="label">New</span>
                       
                   </div>
                   <div class="product__item__text">

@@ -124,34 +124,35 @@ class DashboardController extends Controller
             'created_at' => Carbon::now(),
         ]);
 
-        Mail::send("admin.emails.forget-password",['token'=>$token], function ($message) use ($request) {
+        Mail::send("admin.emails.forget-password",['token'=>$token,'email' => $request -> email], function ($message) use ($request) {
             $message -> to($request->email);
             $message -> subject("Reset Password");
         });
-
-        return redirect()->to(route('forgetPassword'))->with('success','eeeeeeeeeeeeeeeee');
+        $success = 'SENDING LINK RESET PASSWORD TO YOUR MAIL';
+        session()->flash('success', $success);
+        return view('admin.forget-password',compact('success'));
     }
 
     function resetPassword($token){
-        return view('admin.new-password',compact('token'));
+        $email=DB::table('password_reset_tokens')->where('token',$token)->first();
+        return view('admin.new-password',compact('token','email'));
     }
 
     function resetPasswordPost(Request $request){
         $request -> validate([
-            'email' =>"required | email |exists:users",
+            
             'password' =>"required ",
 
         ],
     [
-        'email.required' => 'ENTER EMAIL',
-            'email.email' => 'ENTER THE CORRECT EMAIL TYPE',
+        
+            
             'password.required' => 'ENTER PASSWORD',
-            'email.exists'=>'EMAIL IS NOT REGISTERED'
+           
     ]);
 
 
         $updatePassword = DB::table('password_reset_tokens')->where([
-            'email' => $request -> email,
             'token' => $request -> token
         ])->first();
 
@@ -163,7 +164,9 @@ class DashboardController extends Controller
 
         DB::table('password_reset_tokens')->where(['email'=>$request->email])->delete();
 
-        return redirect()->to(route('login'));
+        $success = 'RESET PASSWORD SUCCESSFUL';
+        session()->flash('success', $success);
+        return redirect()->to(route('login',compact('success')));
     }
 
 
@@ -174,6 +177,15 @@ class DashboardController extends Controller
         $cart = $request->session()->get('Cart');
         $request->session()->forget('Cart');
         return redirect()->to(route('home'));
+
+    }
+    public function logoutad(Request $request)
+    {
+        \Sentinel::logout();
+        // xóa cart
+        $cart = $request->session()->get('Cart');
+        $request->session()->forget('Cart');
+        return redirect()->to(route('login'));
 
     }
 }

@@ -34,7 +34,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="header-right w3agile">
 
                     <div class="header-left-bottom agileinfo">
-
+                    @if(session()->has('success'))
+						<div style="color:#3aff76; font-size: larger;" class ="alert alert_success">
+							{{session()->get('success')}}
+						</div>
+						@endif
                         <form action="{{ Route('forgetPasswordPost') }}" method="post">
                             @csrf
                             <span style="color:#ff6c6c ;width: 10px">

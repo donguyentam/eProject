@@ -14,11 +14,10 @@
     <!-- Notifications Dropdown Menu -->
    
     <li class="nav-item">
-    @if(Sentinel::check())
-    <a class="nav-link" data-toggle="dropdown" href="{{Route('logout')}}">
-        <span>Log Out</span>
-      </a>
-@endif   
+
+    <a class="nav-link" href="{{Route('logoutad')}}">
+        Log Out
+      </a>  
     </li>
     <li class="nav-item">
       <a class="nav-link" data-widget="fullscreen" href="#" role="button">
