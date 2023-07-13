@@ -175,7 +175,7 @@
                 _token: "{{ csrf_token() }}"
             },
             success: function(data) {
-                alert("Add item to cart successfully.");
+                alertify.success('Added To Cart');
             }
         });
     });

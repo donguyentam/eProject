@@ -8,6 +8,12 @@ use App\Http\Controllers\FE\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/bedroom', [HomeController::class, 'bedroom'])->name('bedroom');
+
+Route::get('/workroom', [HomeController::class, 'workroom'])->name('workroom');
+
+Route::get('/diningroom', [HomeController::class, 'diningroom'])->name('diningroom');
+
 Route::get('/product/{id}', [HomeController::class, 'productDetails'])
         ->name('productDetails');
 

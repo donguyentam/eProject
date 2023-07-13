@@ -25,6 +25,31 @@ class HomeController extends Controller
     }
 
 
+    public function bedroom()
+    {
+        $products = Product::all();
+        return view('fe.news.bedroom', compact('products'));
+    }
+
+
+    public function workroom() 
+    {
+        $products = Product::all();
+        return view('fe.news.workroom', compact('products'));
+    }
+
+
+    public function diningroom()
+    {
+        $products = Product::all();
+        return view('fe.news.diningroom', compact('products'));
+    }
+
+
+
+
+
+
     public function productSearch()
     {
         $products = Product::all();
