@@ -93,8 +93,9 @@
         </div>
         <div class="row">
             
-            @if(\Session::has('cart'))
+            
                         <div style="margin-top: 10px;" class="col-lg-4 offset-lg-8">
+                            @if(!empty(session('cart')))
                             <div class="cart__total">
                                 <ul>
                                     <li>Total Quantity <span>{{ $totalQ }} </span></li>

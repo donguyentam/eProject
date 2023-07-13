@@ -89,7 +89,7 @@
                             $totalQ=0;
                             @endphp
                           
-                          @if(Session::has("cart") != null)
+                          @if(!empty(session('cart')))
                           @foreach(Session::get('cart') as $item)
                           @php
                           $totalQ+=$item->quantity;
@@ -126,13 +126,14 @@
                                   <span class="checkmark"></span>
                               </label>
                           </div>
-                          @if(Session::has("cart") == null)
-                          <button disabled class="site-btn">NO ITEMS IN CART</button>
+                          @if(empty(session('cart')))
+    <button disabled class="site-btn">NO ITEMS IN CART</button>
+@else
+    <button type="submit" class="site-btn">PLACE ORDER</button>
+@endif
 
-                          @else
-                          <button type="submit" class="site-btn">PLACE ORDER</button>
 
-                          @endif
+
                       </div>
                   </div>
               </div>

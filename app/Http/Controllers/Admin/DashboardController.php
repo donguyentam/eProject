@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
+use App\Models\OrderDetail;
+use App\Models\Order;
 
 class DashboardController extends Controller
 {
@@ -97,8 +99,9 @@ class DashboardController extends Controller
     function forgetPassword(){
         return view('admin.forget-password');
     }
-    function complete(){
-        return view('fe.complete');
+    function complete($id){
+        $order=Order::where('id', $id)->get();
+        return view('fe.complete',compact('order'));
     }
 
     function forgetPasswordPost(Request $request){

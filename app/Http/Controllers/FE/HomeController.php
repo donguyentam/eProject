@@ -195,28 +195,28 @@ class HomeController extends Controller
         return view("fe.checkout", compact('user'));
     }
 
-    public function SaveListItemCart(Request $request, $id, $quanty)
-    {
-        $oldCart = Session('Cart') ? Session('Cart') : null;
-        $newCart = new CartItem($oldCart);
-        $newCart->UpdateItemCart($id, $quanty);
+    // public function SaveListItemCart(Request $request, $id, $quanty)
+    // {
+    //     $oldCart = Session('Cart') ? Session('Cart') : null;
+    //     $newCart = new CartItem($oldCart);
+    //     $newCart->UpdateItemCart($id, $quanty);
 
-        $request->session()->put('Cart', $newCart);
+    //     $request->session()->put('Cart', $newCart);
 
 
-        return view('fe.cart');
-    }
+    //     return view('fe.cart');
+    // }
 
-    public function SaveAll(Request $request)
-    {
-        foreach ($request->data as $item) {
-            $oldCart = Session('Cart') ? Session('Cart') : null;
-            $newCart = new CartItem($oldCart);
-            $newCart->UpdateItemCart($item["key"], $item["value"]);
-            $request->session()->put('Cart', $newCart);
-        }
+    // public function SaveAll(Request $request)
+    // {
+    //     foreach ($request->data as $item) {
+    //         $oldCart = Session('Cart') ? Session('Cart') : null;
+    //         $newCart = new CartItem($oldCart);
+    //         $newCart->UpdateItemCart($item["key"], $item["value"]);
+    //         $request->session()->put('Cart', $newCart);
+    //     }
 
-    }
+    // }
 
     // public function saveCart(Request $request)
     // {
@@ -314,8 +314,8 @@ try {
         $message -> subject("Order Successful!");
     });
     $request->session()->forget('cart');
-
-    return redirect()->route('complete');}
+    
+    return redirect()->route('complete',$ord->id);}
     catch (Exception $e) {
         echo $e->getMessage();
     }
@@ -323,6 +323,7 @@ try {
 
     public function blognews()
     {
+        
         return view('fe.blog_news');
     }
 }

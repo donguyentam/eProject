@@ -32,7 +32,8 @@ Route::get('/reset-password/{token}', [DashboardController::class, 'resetPasswor
 Route::post('/reset-password', [DashboardController::class, 'resetPasswordPost'])->name('resetPasswordPost');
 
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
-Route::get('/complete', [DashboardController::class, 'complete'])->name('complete');
+
+Route::get('/complete/{id}', [DashboardController::class, 'complete'])->name('complete');
 
 Route::get('/blognews', [HomeController::class, 'blognews'])->name('blognews');
 
