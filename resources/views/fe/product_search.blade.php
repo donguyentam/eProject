@@ -23,11 +23,9 @@
                                     <div class="card-body">
                                         <div class="shop__sidebar__categories" >
                                             <ul class="nice-scroll" style="border-color: black;">
-                                                <li><a href="#">Table</a></li>
-                                                <li><a href="#">Chair</a></li>
-                                                <li><a href="#">Cabinet</a></li>
-                                                <li><a href="#">Bed</a></li>
-                                                <li><a href="#">Shelves</a></li>
+                                                @foreach($categories as $cates)
+                                                    <li><a href="#">{{ ($cates->name) }}</a></li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
@@ -81,34 +79,26 @@
                         <div class="product__item">
                             <div class="product__item__pic set-bg">
                                 <img src="{{ asset('/images/'. $item->image) }}" alt="">
-
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $item->price }} VNĐ</h6>
                                 <a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
-
-
                             </div>
                             <h4>
-                    <a style="color: #0d0d0d;
-    font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
-                  </h4>
+                                <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
+                            </h4>
                         </div>
                     </div>
                     @endforeach
-
+                    <!-- $products->links() -->
                 </div>
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-lg-12">
                         <div class="product__pagination">
-                            <a class="active" href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <span>...</span>
-                            <a href="#">9</a>
+                            
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>

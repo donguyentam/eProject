@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+
 class ProductController extends Controller
 {
     /**
@@ -197,7 +198,12 @@ return redirect()->route('admin.product.index');
         $products = Product::where('name','LIKE','%'. $search .'%')->get();
         return view('fe.product_search', compact('products'));
     }
-    
+
+    public function pagination(){
+        $products = Product::paginate(6);
+        return view('fe.product_search', compact('products'));
+    }
+
 }
 
 

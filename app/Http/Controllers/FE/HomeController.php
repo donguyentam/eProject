@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\CartItem;
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use Illuminate\Support\Facades\Hash;
@@ -45,10 +46,11 @@ class HomeController extends Controller
         return view('fe.news.diningroom', compact('products'));
     }
 
-
-
-
-
+    public function category()
+    {
+        $categories = Category::all();
+        return view('fe.product_search', compact('categories'));
+    }
 
     public function productSearch()
     {

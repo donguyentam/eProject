@@ -113,7 +113,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/searchProductAdmin', [ProductController::class, 'searchProductAdmin'])->name('searchProduct');
 
-        
+        Route::get('/category',[HomeController::class, 'category'])->name('category');
 
     });
 });
