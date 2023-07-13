@@ -33,7 +33,21 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="middle">
+                            <div id="multi_range">
+                                <span id="left_value">25</span><span>--</span><span id="right_value">75</span>
+                            </div>    
+                            <div class="multi-range-slider my-2">
+                                <input type="range" id="input_left" class="range_slider" min="0" max="100" value="25" onmousemove="left">
+                                <input type="range" id="input_right" class="range_slider" min="0" max="100" value="75" onmousemove="right">
+                                <div class="slider">
+                                    <div class="track"></div>
+                                    <div class="range"></div>
+                                    <div class="thumb left"></div>
+                                    <div class="thumb right"></div>
+                            </div>   
+                        </div>   
                             <!-- <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
@@ -66,8 +80,9 @@
                             <div class="shop__product__option__right">
                                 <p>Sort by Price:</p>
                                 <select name="sort_by" id="sort_by" class="form-control">
-                                    <option value=1>Low To High</option>
-                                    <option value=2>High To Low</option>
+                                    <!-- <option value="0">Sort By</option>
+                                    <option value="1">Low To High</option>
+                                    <option value="2">High To Low</option> -->
                                 </select>
                             </div>
                         </div>
@@ -133,20 +148,20 @@
         });
     });
 
-    $('#sort_by').on('change', function(){
-        let sort_by = $('#sort_by').val();
-        const url = "{{Route('sort_by')}}";
+    // $('#sort_by').on('change', function(){
+    //     let sort_by = $('#sort_by').val();
+    //     const url = "#";
         
-        $.ajax({
-            url: url,
-            method:"GET",
-            data:{sort_by:sort_by},
-            success:function(res){
-                $('fe.product_search').html(res);
-                alertify.success('Ku leo rank vang');
-            }
-        });
-    })
+    //     $.ajax({
+    //         url: url,
+    //         method:"GET",
+    //         data:{sort_by:sort_by},
+    //         success:function(res){
+    //             $('fe.product_search').html(res);
+    //             alertify.success('Ku leo rank vang');
+    //         }
+    //     });
+    // })
 
 </script> 
 @endsection

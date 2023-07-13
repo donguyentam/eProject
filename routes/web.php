@@ -27,7 +27,6 @@ Route::get('/register', [DashboardController::class, 'register'])->name('registe
 
 Route::post('/register', [DashboardController::class, 'processRegister'])
                                         ->name('processRegister');
-Route::get('/sort-by',[ProductController::class, 'sort_by'])->name('sort_by');
 
 Route::get('/forget-password', [DashboardController::class, 'forgetPassword'])->name('forgetPassword');
 
@@ -115,7 +114,9 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/category',[HomeController::class, 'category'])->name('category');
 
-        
+        // Route::get('/sort-by',[ProductController::class, 'sort_by'])->name('sort_by');
+
+        Route::get('/',[ProductController::class, 'filter'])->name('filter');
 
     });
 });

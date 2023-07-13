@@ -206,13 +206,18 @@ return redirect()->route('admin.product.index');
     // }
 
     public function sort_by(Request $request){
-        if($request->sort_by == 1){
+        if($request->sort_by == '1'){
             $products = Product::orderBy('price', 'asc')->get();
         }
-        if($request->sort_by == 2){
+        if($request->sort_by == '2'){
             $products = Product::orderBy('price', 'desc')->get();
         }
         return view('fe.product_search', compact('products'))->render(); 
+    }
+
+    public function filter(){
+        $filter = Product::all();
+        return view('fe.product_search', compact('filter'));
     }
 
 }
