@@ -80,6 +80,8 @@ Route::group(['middleware'=>'islogin'], function() {
 
     Route::get('/admin', [DashboardController::class, 'home'])->name('admin');
 
+    Route::get('/logoutad', [DashboardController::class, 'logoutad'])->name('logoutad');
+
     Route::group(['middleware'=>'isadmin', 'prefix'=>'admin', 'as'=>'admin.'], function() {
 
         Route::resource('/product', ProductController::class);
@@ -113,7 +115,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/category',[HomeController::class, 'category'])->name('category');
 
-        Route::get('/logoutad', [DashboardController::class, 'logoutad'])->name('logoutad');
+        
 
     });
 });
