@@ -24,7 +24,7 @@
                                         <div class="shop__sidebar__categories" >
                                             <ul class="nice-scroll" style="border-color: black;">
                                                 @foreach($categories as $cates)
-                                                    <li><a href="#">{{ ($cates->name) }}</a></li>
+                                                    <li><a href="{{ Route('category',['id'=>$cates->id])}}">{{ ($cates->name) }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>

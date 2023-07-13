@@ -69,6 +69,11 @@ class HomeController extends Controller
         return view('fe.product', compact('prod','prodsd'));
     }
 
+    public function category($id){
+        $categories = Category::all();
+        $products = Product::where('product_category_id', $id)->get();
+        return view('fe.product_search', compact('products','categories'));
+    }
 
     // public function AddCart(Request $request, $id)
     // {

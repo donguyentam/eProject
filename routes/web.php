@@ -35,6 +35,8 @@ Route::post('/forget-password', [DashboardController::class, 'forgetPasswordPost
 
 Route::get('/reset-password/{token}', [DashboardController::class, 'resetPassword'])->name('resetPassword');
 
+Route::get('/category/{id}',[HomeController::class, 'category'])->name('category');
+
 Route::post('/reset-password', [DashboardController::class, 'resetPasswordPost'])->name('resetPasswordPost');
 
 Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
