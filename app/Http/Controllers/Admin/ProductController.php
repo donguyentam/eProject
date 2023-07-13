@@ -192,7 +192,6 @@ return redirect()->route('admin.product.index');
     }
 
 
-
     public function itemSearch(){
         $search = $_GET['search1'];
         $categories = Category::all();
@@ -203,6 +202,16 @@ return redirect()->route('admin.product.index');
     public function pagination(){
         $products = Product::paginate(6);
         return view('fe.product_search', compact('products'));
+    }
+
+    public function sort_by(Request $request){
+        if($request->sort_by == 'lowest_price'){
+            $products = Product::orderBy('price', 'asc')->get();
+        }
+        if($request->sort_by == 'highed_price'){
+            $products = Product::orderBy('price', 'desc')->get();
+        }
+        return view('fe.product_search', compact('products'))->render(); 
     }
 
 }

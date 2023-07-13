@@ -61,21 +61,20 @@
                 <div class="shop__product__option">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
                                 <p>Sort by Price:</p>
-                                <select>
-                                    <option value="1">Low To High</option>
-                                    <option value="2">High to Low</option>
-
+                                <select name="sort_by" id="sort_by" class="form-control">
+                                    <option value="lowest_price">Low To High</option>
+                                    <option value="highed_price">High To Low</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                @if($products->count() >=1)
                     @foreach($products as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
@@ -92,12 +91,16 @@
                         </div>
                     </div>
                     @endforeach
-                    <!-- $products->links() -->
+                @else
+                    <div class="col-md-12 my-5 text-center">
+                        <h2> Nothing Found</h2>
+                    </div>
+                @endif
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__pagination">
-                            
+                            <!-- $products->links() -->
                         </div>
                     </div>
                 </div>
@@ -129,5 +132,19 @@
             }
         });
     });
+
+    $('#sort_by').on('change', function(){
+        let sort_by = $('#sort_by').val();
+        const url = "{{Route('sort_by')}}";
+        $.ajax({
+            url: url,
+            method:"GET",
+            data:{sort_by:sort_by},
+            success:function(res){
+                $('fe.product_search').html(res);
+            }
+        });
+    })
+
 </script> 
 @endsection

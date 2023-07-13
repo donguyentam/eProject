@@ -55,13 +55,7 @@ class HomeController extends Controller
         return view('fe.product_search', compact('products','categories'));
     }
 
-    public function itemSearch(){
-        
-        $search = $_GET['itemSearch'];
-        $products = Product::where('slug','LIKE','%'. $search .'%')->orwhere('name','LIKE','%'. $search .'%')->get();
 
-        return view('fe.product_search', compact('products'));
-    }
     public function productDetails($id)
     {
         // hàm where() sẽ trả về 1 mảng
@@ -134,9 +128,6 @@ class HomeController extends Controller
         return 0;   // you may consider returning an appropriate HTTP status code, e.g., 404
     }
 }
-
-
-
 
     // public function clearCart(Request $request)
     // {
