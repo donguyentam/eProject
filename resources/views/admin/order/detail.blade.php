@@ -14,7 +14,7 @@
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ Route('admin.order.index') }}">Orders</a></li>
-            <li class="breadcrumb-item active">Edit Order</li>
+            <li class="breadcrumb-item active">View Order Detail</li>
           </ol>
         </div>
       </div>
@@ -23,8 +23,6 @@
 
   <!-- Main content -->
   <section class="content">
-    <form action="{{ Route('admin.order.update', $orders->id) }}" class="row" method="post"
-                        enctype="multipart/form-data">
       @csrf
       @method('put')
       <!-- <input type="hidden" name="_method" value="put"/> -->
@@ -32,7 +30,7 @@
       <div class="col-md-12">
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Order Information</h3>
+            <h3 class="card-title">Order #{{ $orders->id }} Detail</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -41,49 +39,61 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="form-group">
-              <label for="first_name">First name</label>
-              <input id="first_name" disabled class="form-control" name="first_name" value="{{ $orders->first_name }}"/>
-            </div>
-            <div class="form-group">
-              <label for="last_name">Last Name</label>
-              <input id="last_name" disabled class="form-control" name="last_name" value="{{ $orders->last_name }}"/>
-            </div>
-            <div class="form-group">
-              <label for="address">Address</label>
-              <input id="address" disabled class="form-control" name="address" value="{{ $orders->address }}"/>
-            </div>
-            <div class="form-group">
-              <label for="phone_number">Phone Number</label>
-              <input id="phone_number" disabled class="form-control" name="phone_number" value="{{ $orders->phone_number }}"/>
-            </div>
-            <div class="form-group">
-              <label for="note">Note</label>
-              <input id="note" disabled class="form-control" name="note" value="{{ $orders->note }}"/>
-            </div>
-            <div class="form-group">
-            <input id="order_success" type="checkbox" disabled class="form-control" name="order_success" value="{{ $orders->order_success }}"/>
-              <label for="order_success">Order Completed?</label>
+            <div id="wrap-inner">
+						<div id="complete">
+							<p class="info">Order successful!</p>
+							@foreach($order as $item)
+						<div><h5>Customer Name: {{$item->first_name}} {{$item->last_name}}</h5> </div><br>
+						<div><h5>Email: {{$item->email}}</h5> </div><br>
+						<div><h5>Phone Number: {{$item->phone_number}}</h5> </div><br>
+						<div><h5>Address: {{$item->address}}</h5> </div><br>
+						<div><h5>Note: {{$item->note}}</h5> </div><br>
+						@endforeach
+						@php
+						$total =0
+					@endphp
 
-            </div>
-            <div class="form-group">
-              <label for="created_at">Created at</label>
-              <input id="created_at" type="checkbox" disabled class="form-control" name="created_at" value="{{ $orders->created_at }}"/>
-            </div>
+						<table border="1" cellspacing="0">
+							<tr>
+									<td><strong>Product name</strong></td>
+									<td><strong>Price</strong></td>
+									<td><strong>Quantity</strong></td>
+									<td><strong>Total</strong></td>
+								</tr>
+								@foreach($order as $item)
+								<tr>
+									<td>{{$item-> product->name}}</td>
+									<td>{{number_format($item-> product->price)}} VNĐ</td>
+									<td>{{$item->quantity}}</td>
+									<td>{{number_format($item-> product->price*$item->quantity,0,',','.')}}</td>
+								</tr>
+								@php
+									$total += $item->product->price * $item->quantity;
+								@endphp
+								@endforeach
+
+								<tr>
+									<td>Total:</td>
+									<td colspan="3" align="right">{{ number_format( $total )}} VNĐ</td>
+								</tr>
+							</table>
+						</div>
+						<a class="btn btn-primary mb-2" href="{{Route('home')}}">Back to home page</a>
+					</div>
             <p>Payment method?</p>
-            <div class="form-group">
+                <div class="form-group">
 
                           <div class="checkout__input__checkbox">
                               <label for="cod">
                                   COD
-                                  <input type="radio" name="payment_method" value="COD" id="cod">
+                                  <input type="radio" disabled name="payment_method" value="COD" id="cod">
                                   <span class="checkmark"></span>
                               </label>
                           </div>
                           <div class="checkout__input__checkbox">
                               <label for="paypal">
                                   Paypal
-                                  <input type="radio" name="payment_method" value="Paypal" id="paypal">
+                                  <input type="radio" disabled name="payment_method" value="Paypal" id="paypal">
                                   <span class="checkmark"></span>
                               </label>
                           </div>
@@ -96,7 +106,7 @@
       <div class="col-md-12">
         <input type="submit" value="Edit" class="btn btn-success float-right">
       </div>
-    </form>
+
   </section>
   <!-- /.content -->
 </div>

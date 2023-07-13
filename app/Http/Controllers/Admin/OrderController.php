@@ -29,14 +29,7 @@ class OrderController extends Controller
          $orders = Order::find($id);
          $orderDetails = OrderDetails::all($orders -> id);
 
-         $orders -> email = $request->email;
-         $orders -> first_name = $request->first_name;
-         $orders -> last_name = $request->last_name;
-         $orders -> address = $request->address;
-         $orders -> phone_number = $request->phone_number;
-         $orders -> email = $request->email;
-         $orders -> note = $request->note;
-         $orders -> payment_method = $request->payment_method;
+         $orders -> order_success = $request->order_success;
          $orders ->save();
          return redirect()->route('admin.order.index');
      }

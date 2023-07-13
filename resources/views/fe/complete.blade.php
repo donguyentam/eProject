@@ -14,13 +14,13 @@
 			<div class="row">
 				<div id="main" class="col-md-9">
 					<div class="ta">
-						
-						
+
+
 					</div>
 					<div id="wrap-inner">
 						<div id="complete">
 							<p class="info">Order successful!</p>
-							@foreach($order as $item) 
+							@foreach($order as $item)
 						<div><h5>Customer Name: {{$item->first_name}} {{$item->last_name}}</h5> </div><br>
 						<div><h5>Email: {{$item->email}}</h5> </div><br>
 						<div><h5>Phone Number: {{$item->phone_number}}</h5> </div><br>
@@ -30,7 +30,7 @@
 						@php
 						$total =0
 					@endphp
-						
+
 						<table border="1" cellspacing="0">
 							<tr>
 									<td><strong>Product name</strong></td>
@@ -38,7 +38,7 @@
 									<td><strong>Quantity</strong></td>
 									<td><strong>Total</strong></td>
 								</tr>
-								@foreach($orderd as $item)
+								@foreach($order as $item)
 								<tr>
 									<td>{{$item-> product->name}}</td>
 									<td>{{number_format($item-> product->price)}} VNĐ</td>
@@ -49,7 +49,7 @@
 									$total += $item->product->price * $item->quantity;
 								@endphp
 								@endforeach
-								
+
 								<tr>
 									<td>Total:</td>
 									<td colspan="3" align="right">{{ number_format( $total )}} VNĐ</td>
