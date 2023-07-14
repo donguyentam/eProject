@@ -72,9 +72,10 @@ class DashboardController extends Controller
         ],
         [
             'email.required' => 'ENTER EMAIL',
+            'username.max' => 'ENTER NO MORE THAN 50 CHARACTERS',
             'email.max' => 'ENTER NO MORE THAN 50 CHARACTERS',
             'password.required' => 'ENTER PASSWORD',
-            'email.unique'=>'THE EMAIL WAS REGISTERED'
+            'email.unique'=>'THE EMAIL WAS REGISTERED',
         ]);
 
         $email = $request->email;
@@ -91,7 +92,7 @@ class DashboardController extends Controller
             $user = \Sentinel::create($credentials);
             $activation = \Activation::create($user);
             \Activation::complete($user, $activation['code']);
-        return redirect()->route('login')->with('success','Dang ky thanh cong');
+        return redirect()->route('login')->with('success','Register success');
 
 
 

@@ -72,10 +72,10 @@ Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart');
 
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
+Route::get('/itemSearch', [ProductController::class, 'itemSearch'])->name('itemSearch');
 
 Route::group(['prefix'=>'product-search', 'as'=>'product-search.'], function() {
     Route::get('/filter',[ProductController::class, 'filter'])->name('filter');
-    Route::get('/itemSearch', [ProductController::class, 'itemSearch'])->name('itemSearch');
 
 });
 Route::group(['middleware'=>'islogin'], function() {

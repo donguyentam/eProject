@@ -7,7 +7,7 @@
             <div class="col-lg-3">
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
-                        <form type="get" action="{{ Route('product_search.itemSearch') }}">
+                        <form type="get" action="{{ Route('itemSearch') }}">
                             <input type="text" name="search1" placeholder="Search..." style="border-color: black;">
                             <button type="submit" value="Search"><span class="icon_search"></span></button>
                         </form>
@@ -34,13 +34,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="middle">
+                         <div class="middle">
                             <div id="multi_range">
-                                <span id="left_value">25</span><span>--</span><span id="right_value">75</span>
+                                <span id="left_value"></span>
                             </div>    
                             <div class="multi-range-slider my-2">
-                                <input type="range" id="input_left" class="range_slider" min="0" max="100" value="25" onmousemove="left">
-                                <input type="range" id="input_right" class="range_slider" min="0" max="100" value="75" onmousemove="right">
+
                                 <div class="slider">
                                     <div class="track"></div>
                                     <div class="range"></div>

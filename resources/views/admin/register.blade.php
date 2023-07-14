@@ -35,24 +35,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="header-left-bottom agileinfo">
 
 					 <form action="{{ Route('processRegister') }}" method="post">
-					 <span style="color:#ff6c6c ;width: 10px">
 
-								@error('email')
-
-								{{$message}}
-
-								@enderror
-
-
-							</span>
 					 @csrf
+
+								<span style="color:#ff6c6c">
+									@error('email')
+
+									{{$message}}
+
+									@enderror
+								</span>
 						<div class="input-group mb-3">
-						<input type="text" class="form-control"  placeholder="Email" name="email" />
-						<div class="input-group-append">
-							<div class="input-group-text">
-							<span class="fas fa-lock"></span>
+							<input type="text" class="form-control"  placeholder="Email" name="email" />
+							<div class="input-group-append">
+								<div class="input-group-text">
+								<span class="fas fa-lock"></span>
+								</div>
 							</div>
-						</div>
 						</div>
 								<span style="color:#ff6c6c">
 									@error('password')

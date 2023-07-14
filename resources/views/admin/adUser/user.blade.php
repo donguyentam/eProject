@@ -48,9 +48,11 @@
             <thead>
                 <tr>
                     <th style="width: 10%">Id</th>
-                    <th style="width: 20%">Name</th>
+                    <th style="width: 20%">Username</th>
                     <th style="width: 20%">Email</th>
-                    <th style="width: 10%">Phone Number</th>
+                    <th style="width: 15%">Phone Number</th>
+                    <th style="width: 20%">Address</th>
+                    <th style="width: 15%">Action</th>
                     <th></th>
                 </tr>
             </thead>
@@ -59,21 +61,11 @@
               @foreach($users as $user)
               <tr>
                     <td>{{ $user->id }}</td>
+                    <td>{{ $user->username }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->password }}</td>
-                    <td class="project-actions text-right">
-                        
-                        <!-- <a class="btn btn-info btn-sm" href="{{ Route('admin.edituser', $user->id) }}">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            Edit
-                        </a> -->
-                        <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteuser', $user->id) }}">
-                            <i class="fas fa-trash">
-                            </i>
-                            Delete
-                        </a>
-                    </td>
+                    <td>{{ $user->phone_number }}</td>
+                    <td>{{ $user->address }}</td>
+                    
                 </tr>
               @endforeach
               @else

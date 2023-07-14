@@ -45,20 +45,15 @@ class ProductController extends Controller
     {
        
         $request->validate([
-            'name'    => 'required|max:100|unique:products',
+            'name'    => 'required|max:100',
             'price'    => 'required',
-            'photo'    => 'required',
-            'category_id'    => 'required|not_in:0',
             'quantity'    => 'required',
         ],
         [
             'name.required' => 'ENTER PRODUCT NAME',
             'name.max' => 'ENTER NO MORE THAN 100 CHARACTERS',
             'price.required' => 'ENTER PRICE',
-            'photo.required' => 'ADD PHOTO',
-            'category_id.required' => 'SELECT CATEGORY',
             'quantity.required' => 'ENTER QUANTITY',
-            'name.unique'=>'THIS PRODUCT NAME ALREADY EXISTS',
         ]);
         // $prods là mảng liên hợp (associative array)
         $prods = $request->all();

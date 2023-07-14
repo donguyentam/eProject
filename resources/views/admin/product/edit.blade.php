@@ -57,7 +57,7 @@
             @endif
             <div class="form-group mt-2">
               <label for="photo">Image</label>
-              <input type="file" required id="photo" class="form-control" name="photo" value="{{ asset('images/' . $product->image)}}"/>
+              <input type="file" id="photo" class="form-control" name="photo" value="{{ asset('images/' . $product->image)}}"/>
             </div>
             <div class="form-group">
               <label for="category">Category</label>
