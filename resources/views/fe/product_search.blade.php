@@ -108,7 +108,7 @@
                     @endforeach
                 @else
                     <div class="col-md-12 my-5 text-center">
-                        <h2> Nothing Found</h2>
+                        <h2> No Data</h2>
                     </div>
                 @endif
                 </div>
