@@ -11,7 +11,7 @@
 
                 <div id="comp-kcyf0tt5" class="BaOVQ8 tz5f0K comp-kcyf0tt5 wixui-rich-text" data-testid="richTextElement">
                     <h1 class="font_0 wixui-rich-text__text" style="line-height:1.3em; font-size:60px;">
-                        <span style="letter-spacing:0.03em;" class="wixui-rich-text__text">BED ROON</span>
+                        <span style="letter-spacing:0.03em;" class="wixui-rich-text__text">BED ROOM</span>
                     </h1>
                 </div>
 
