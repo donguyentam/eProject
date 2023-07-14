@@ -76,12 +76,14 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="shop__product__option__right">
+                            <div class="shop__product">
+                                
+                                <form style="margin-left: 25%;" action="{{ Route('productSearch') }}"   method="GET">
                                 <p>Sort by Price:</p>
-                                <select name="sort_by" id="sort_by" class="form-control">
-                                    <option value="1">Low To High</option>
-                                    <option value="2">High To Low</option> 
-                                </select>
+  <input required min="1" style="width: 30%;" type="number" name="min_price" placeholder="Minimum Price">
+  <input required min="1" style="width: 30%;" type="number" name="max_price" placeholder="Maximum Price">
+  <button class="btn5" style="padding-top: 3px;padding-bottom: 7px;" type="submit">Filter</button>
+</form>
                             </div>
                         </div>
                     </div>
@@ -148,11 +150,12 @@
 
     $('#sort_by').on('change', function(){
         let sort_by = $('#sort_by').val();
-        const url = "#";
+        
+        // const url = "{{ Route('productSearch') }}";
         
         $.ajax({
-            url: url,
-            method:"GET",
+            url: "{{ Route('sort_by') }}",
+            method:"get",
             data:{sort_by:sort_by},
             success:function(res){
                 $('fe.product_search').html(res);

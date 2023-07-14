@@ -47,12 +47,7 @@
                 <p>Product List</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="{{ Route('admin.product.create') }}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Create</p>
-              </a>
-            </li>
+            
           </ul>
         </li>
 

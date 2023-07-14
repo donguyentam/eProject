@@ -68,11 +68,11 @@ class DashboardController extends Controller
     {
         $request->validate([
             'email'    => 'required|max:50|email|unique:users',
-            'password'    => 'required',
+            'password'    => 'required|confirmed',
         ],
         [
             'email.required' => 'ENTER EMAIL',
-            'username.max' => 'ENTER NO MORE THAN 50 CHARACTERS',
+            'password.confirmed' => 'VERIFICATION PASSWORD IS NOT THE SAME',
             'email.max' => 'ENTER NO MORE THAN 50 CHARACTERS',
             'password.required' => 'ENTER PASSWORD',
             'email.unique'=>'THE EMAIL WAS REGISTERED',
@@ -142,13 +142,14 @@ class DashboardController extends Controller
     function resetPasswordPost(Request $request){
         $request -> validate([
             
-            'password' =>"required ",
+            'password'    => 'required|confirmed',
 
         ],
     [
         
             
             'password.required' => 'ENTER PASSWORD',
+            'password.confirmed' => 'VERIFICATION PASSWORD IS NOT THE SAME'
            
     ]);
 

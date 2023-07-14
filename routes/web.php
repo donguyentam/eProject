@@ -69,6 +69,8 @@ Route::post('/SaveAll', [HomeController::class, 'SaveAll'])->name('SaveAll');
 
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
+Route::get('/sort-by',[ProductController::class, 'sort_by'])->name('sort_by');
+
 Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart');
 
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
@@ -117,7 +119,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/category',[HomeController::class, 'category'])->name('category');
 
-        // Route::get('/sort-by',[ProductController::class, 'sort_by'])->name('sort_by');
+        
 
 
     });

@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $prods = Product::all();
+        $prods = Product::orderBy('created_at', 'DESC')->paginate(1);
 
         // return view('admin.product.index')->with([
         //     'prods' => $prods
@@ -140,11 +140,18 @@ return redirect()->route('admin.product.index');
     public function searchProductAdmin(Request $req)
     {
         $search = $_GET['search'];
-        $prods = Product::where('name','LIKE','%' . $search . '%')->get();
+        if( $search==""){
+            $prods = Product::orderBy('created_at', 'DESC')->where('name','LIKE','%' . $search . '%')->paginate(1);
+            return redirect()->route('admin.product.index');
+        }
+        else{
+            $prods = Product::orderBy('created_at', 'DESC')->where('name','LIKE','%' . $search . '%')->paginate(1);
         //->orWhere('product_promotion_price',$req->key)
 
         return view('admin.product.index', compact('prods'));
 
+        }
+        
     }
 
 
@@ -207,12 +214,17 @@ return redirect()->route('admin.product.index');
 
     public function itemSearch(){
         $search = $_GET['search1'];
-        if(!isset($search)){
-            return redirect()->route('fe.product_search', compact('products','categories'));
-        }
-        $categories = Category::all();
+        if($search==""){ 
+            $categories = Category::all();
         $products = Product::orderBy('price', 'asc')->where('name','LIKE','%'. $search .'%')->paginate(6);
+            return redirect()->route('productSearch');
+        }else
+        {
+            $categories = Category::all();
+            $products = Product::orderBy('price', 'asc')->where('name','LIKE','%'. $search .'%')->paginate(6);
         return view('fe.product_search', compact('products','categories'));
+        }
+        
     }
 
     // public function pagination(){
@@ -220,16 +232,16 @@ return redirect()->route('admin.product.index');
     //     return view('fe.product_search', compact('products'));
     // }
 
-    public function sort_by(Request $request){
-        if($request->sort_by == '1'){
-            $products = Product::orderBy('price', 'asc')->get();
-        }
-        if($request->sort_by == '2'){
-            $products = Product::orderBy('price', 'desc')->get();
-        }
-        return view('fe.product_search', compact('products'))->render(); 
+    public function sort_by(Request $request)
+{
+    if ($request->sort_by == '1') {
+        $products = Product::orderBy('price', 'asc')->paginate(6);
     }
-
+    if ($request->sort_by == '2') {
+        $products = Product::orderBy('price', 'desc')->paginate(6);
+    }
+    return view('fe.product_search', compact('products'));
+}
     public function filter(){
         $filter = Product::all();
         return view('fe.product_search', compact('filter'));

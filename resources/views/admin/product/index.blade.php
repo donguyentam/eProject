@@ -35,10 +35,11 @@
       </div>
 
       <form type="get" action="{{ Route('admin.searchProduct') }}">
-          <input type="search" style="width:350px; height:35px; " name="search" class="but1 m-2"  placeholder="Search Product">
+          <input type="search" style="width:350px; height:35px; " name="search" class="but1 m-2" value = ""  placeholder="Search Product">
           <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="but1" value="Search">
+          <a style="margin-left: 48%; text-align: right; background-color: #1ea5ff; color: black; padding: 5px; border: 3px solid #003cff;" href="{{ Route('admin.product.create') }}">Create Product</a>
       </form>
-
+       
       <div class="card-body p-0">
         <table class="table table-striped projects">
             <thead>
@@ -88,7 +89,15 @@
               </tr>
               @endif
             </tbody>
+            
         </table>
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product__pagination">
+                            {{$prods->appends(request()->all())->links()}}
+                        </div>
+                    </div>
+                </div>
       </div>
       <!-- /.card-body -->
     </div>

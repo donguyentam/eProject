@@ -46,10 +46,24 @@ class HomeController extends Controller
         return view('fe.news.diningroom', compact('products'));
     }
 
-    public function productSearch(){
+    public function productSearch(Request $request){
+
+        $minPrice = $request->input('min_price');
+        $maxPrice = $request->input('max_price');
+
+        if ($minPrice != null && $maxPrice != null) {
         $categories = Category::all();
+        // if())
+        $products = Product::whereBetween('price', [$minPrice, $maxPrice])->paginate(6);
+        return view('fe.product_search', compact('products','categories'));
+
+        }else{
+             $categories = Category::all();
         $products = Product::orderBy('price', 'asc')->paginate(6);
         return view('fe.product_search', compact('products','categories'));
+        }
+
+       
     }
 
     // public function productSearch()

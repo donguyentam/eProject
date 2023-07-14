@@ -63,6 +63,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						</div>
 
+						<div class="input-group mb-3">
+							<input type="password" class="form-control" id="password" name="password_confirmation"  placeholder="Confirm-Password" required />
+							<div class="input-group-append">
+								<div class="input-group-text">
+								<span class="fas fa-lock"></span>
+								</div>
+							</div>
+							</div>
+
 						
 					   
 						<input type="submit" class="btn btn-primary btn-block" value="Reset">
