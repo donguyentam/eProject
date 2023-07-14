@@ -333,7 +333,7 @@ try {
         $detail = new OrderDetail();
         $detail->product_id =$item-> product->id;
         $detail->price = $item-> product->price;
-        $detail->quantity =$item-> product->quantity;
+        $detail->quantity =$item->quantity;
         $total += intval($detail->price) * intval($detail->quantity);
         $detail->order_id = $ord->id; // Assign the order ID to the order detail
         $detail->save();
@@ -354,7 +354,8 @@ try {
     });
     $request->session()->forget('cart');
     
-    return redirect()->route('complete',$ord->id);}
+    return redirect()->route('complete',$ord->id );}
+
     catch (Exception $e) {
         echo $e->getMessage();
     }

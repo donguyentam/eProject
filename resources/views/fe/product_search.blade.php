@@ -78,7 +78,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product">
                                 
-                                <form style="margin-left: 25%;" action="{{ Route('productSearch') }}"   method="GET">
+                                <form style="margin-left: 30%;" action="{{ Route('productSearch') }}"   method="GET">
                                 <p>Sort by Price:</p>
   <input required min="1" style="width: 30%;" type="number" name="min_price" placeholder="Minimum Price">
   <input required min="1" style="width: 30%;" type="number" name="max_price" placeholder="Maximum Price">
