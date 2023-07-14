@@ -7,7 +7,7 @@
             <div class="col-lg-3">
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
-                        <form type="get" action="{{ Route('itemSearch') }}">
+                        <form type="get" action="{{ Route('product_search.itemSearch') }}">
                             <input type="text" name="search1" placeholder="Search..." style="border-color: black;">
                             <button type="submit" value="Search"><span class="icon_search"></span></button>
                         </form>
@@ -80,9 +80,8 @@
                             <div class="shop__product__option__right">
                                 <p>Sort by Price:</p>
                                 <select name="sort_by" id="sort_by" class="form-control">
-                                    <!-- <option value="0">Sort By</option>
                                     <option value="1">Low To High</option>
-                                    <option value="2">High To Low</option> -->
+                                    <option value="2">High To Low</option> 
                                 </select>
                             </div>
                         </div>
@@ -148,20 +147,19 @@
         });
     });
 
-    // $('#sort_by').on('change', function(){
-    //     let sort_by = $('#sort_by').val();
-    //     const url = "#";
+    $('#sort_by').on('change', function(){
+        let sort_by = $('#sort_by').val();
+        const url = "#";
         
-    //     $.ajax({
-    //         url: url,
-    //         method:"GET",
-    //         data:{sort_by:sort_by},
-    //         success:function(res){
-    //             $('fe.product_search').html(res);
-    //             alertify.success('Ku leo rank vang');
-    //         }
-    //     });
-    // })
+        $.ajax({
+            url: url,
+            method:"GET",
+            data:{sort_by:sort_by},
+            success:function(res){
+                $('fe.product_search').html(res);
+            }
+        });
+    })
 
 </script> 
 @endsection

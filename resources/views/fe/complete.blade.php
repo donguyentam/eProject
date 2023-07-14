@@ -31,30 +31,7 @@
 						$total =0
 					@endphp
 
-						<table border="1" cellspacing="0">
-							<tr>
-									<td><strong>Product name</strong></td>
-									<td><strong>Price</strong></td>
-									<td><strong>Quantity</strong></td>
-									<td><strong>Total</strong></td>
-								</tr>
-								@foreach($order as $item)
-								<tr>
-									<td>{{$item-> product->name}}</td>
-									<td>{{number_format($item-> product->price)}} VNĐ</td>
-									<td>{{$item->quantity}}</td>
-									<td>{{number_format($item-> product->price*$item->quantity,0,',','.')}}</td>
-								</tr>
-								@php
-									$total += $item->product->price * $item->quantity;
-								@endphp
-								@endforeach
-
-								<tr>
-									<td>Total:</td>
-									<td colspan="3" align="right">{{ number_format( $total )}} VNĐ</td>
-								</tr>
-							</table>
+						
 
 
                             <p>• Your order and contact information has been forwarded to the Email written in the order.</p>

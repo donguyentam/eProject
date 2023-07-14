@@ -37,7 +37,7 @@
 			<tr>
 				<td>{{$item-> product->name}}</td>
 				<td>{{number_format($item-> product->price)}} VNĐ</td>
-				<td>{{$item-> product->quantity}}</td>
+				<td>{{$item->quantity}}</td>
 				<td>{{number_format($item-> product->price*$item-> product->quantity,0,',','.')}}</td>
 			</tr>
 			@endforeach

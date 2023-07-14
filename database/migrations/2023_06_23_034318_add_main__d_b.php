@@ -86,7 +86,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('note')->nullable();
             $table->string('payment_method')->nullable();
-            $table->boolean('order_success')->nullable();
+            $table->string('order_status')->nullable();
             $table->timestamp('order_date')->nullable();
             $table->timestamps();
         });

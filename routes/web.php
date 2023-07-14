@@ -65,8 +65,6 @@ Route::get('/DeleteListItemCart/{id}', [HomeController::class, 'DeleteListItemCa
 
 Route::post('/SaveListItemCart/{id}/{quanty}', [HomeController::class, 'SaveListItemCart'])->name('SaveListItemCart');
 
-Route::get('/itemSearch', [ProductController::class, 'itemSearch'])->name('itemSearch');
-
 Route::post('/SaveAll', [HomeController::class, 'SaveAll'])->name('SaveAll');
 
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
@@ -75,6 +73,11 @@ Route::post('/save-cart', [HomeController::class, 'saveCart'])->name('saveCart')
 
 Route::get('/product-search', [HomeController::class, 'productSearch'])->name('productSearch');
 
+Route::group(['prefix'=>'product-search', 'as'=>'product-search.'], function() {
+    Route::get('/filter',[ProductController::class, 'filter'])->name('filter');
+    Route::get('/itemSearch', [ProductController::class, 'itemSearch'])->name('itemSearch');
+
+});
 Route::group(['middleware'=>'islogin'], function() {
 
     Route::get('/admin', [DashboardController::class, 'home'])->name('admin');
@@ -116,9 +119,9 @@ Route::group(['middleware'=>'islogin'], function() {
 
         // Route::get('/sort-by',[ProductController::class, 'sort_by'])->name('sort_by');
 
-        Route::get('/',[ProductController::class, 'filter'])->name('filter');
 
     });
+
 });
 
 

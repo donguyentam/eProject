@@ -38,13 +38,21 @@
             </div>
           </div>
           <div class="card-body">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" class="form-control" name="email" value="{{ $user_detail->first_name + ' ' + $user_detail->first_name}}"/>
+            </div>
             <div class="form-group">
-              <label for="name">Email</label>
+              <label for="email">Email</label>
               <input id="email" class="form-control" name="email" value="{{ $user->email }}"/>
             </div>
             <div class="form-group">
-              <label for="price">Password</label>
-              <input id="price" class="form-control" name="password" value="{{ $user->password }}"/>
+              <label for="phone_number">Phone Number</label>
+              <input id="phone_number" class="form-control" name="phone_number" value="{{ $user_detail->phone_number }}"/>
+            </div>
+            <div class="form-group">
+              <label for="phone_number">Address</label>
+              <input id="phone_number" class="form-control" name="phone_number" value="{{ $user_detail->phone_number }}"/>
             </div>
           </div>
           <!-- /.card-body -->

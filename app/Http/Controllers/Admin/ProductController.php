@@ -43,6 +43,23 @@ class ProductController extends Controller
      */
     public function store(Request $request, Category $cates)
     {
+       
+        $request->validate([
+            'name'    => 'required|max:100|unique:products',
+            'price'    => 'required',
+            'photo'    => 'required',
+            'category_id'    => 'required|not_in:0',
+            'quantity'    => 'required',
+        ],
+        [
+            'name.required' => 'ENTER PRODUCT NAME',
+            'name.max' => 'ENTER NO MORE THAN 100 CHARACTERS',
+            'price.required' => 'ENTER PRICE',
+            'photo.required' => 'ADD PHOTO',
+            'category_id.required' => 'SELECT CATEGORY',
+            'quantity.required' => 'ENTER QUANTITY',
+            'name.unique'=>'THIS PRODUCT NAME ALREADY EXISTS',
+        ]);
         // $prods là mảng liên hợp (associative array)
         $prods = $request->all();
         $prods['slug'] = \Str::slug($request->name);
@@ -195,6 +212,9 @@ return redirect()->route('admin.product.index');
 
     public function itemSearch(){
         $search = $_GET['search1'];
+        if(!isset($search)){
+            return redirect()->route('fe.product_search', compact('products','categories'));
+        }
         $categories = Category::all();
         $products = Product::orderBy('price', 'asc')->where('name','LIKE','%'. $search .'%')->paginate(6);
         return view('fe.product_search', compact('products','categories'));

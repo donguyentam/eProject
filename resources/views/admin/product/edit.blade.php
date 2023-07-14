@@ -43,11 +43,11 @@
           <div class="card-body">
             <div class="form-group">
               <label for="name">Name</label>
-              <input id="name" class="form-control" name="name" value="{{ $product->name }}"/>
+              <input id="name" required class="form-control" name="name" value="{{ $product->name }}"/>
             </div>
             <div class="form-group">
               <label for="price">Price</label>
-              <input id="price" class="form-control" name="price" value="{{ $product->price }}"/>
+              <input type="number" required min="0" max="9999999999" id="price" class="form-control" name="price" value="{{ $product->price }}"/>
             </div>
             @if($product->image!=null)
             <div class="form-group">
@@ -55,22 +55,22 @@
                             style="width:500px; height:auto;"/>
             </div>
             @endif
-            <div class="form-group">
+            <div class="form-group mt-2">
               <label for="photo">Image</label>
-              <input type="file" id="photo" class="form-control" name="photo" value="{{ asset('images/' . $product->image)}}"/>
+              <input type="file" required id="photo" class="form-control" name="photo" value="{{ asset('images/' . $product->image)}}"/>
             </div>
             <div class="form-group">
               <label for="category">Category</label>
-              <select id="category" class="form-control custom-select" name="category_id">
-                <option selected disabled>Select one</option>
+              <select id="category" required class="form-control custom-select" name="category_id" required id="category_id">
+                <option disabled>Select one</option>
                 @foreach($cates as $item)
-                <option value="{{ $item->id }}" @if ($product->category_id==$item->id) selected @endif>{{ $item->name }}</option>
+                <option value="{{ $item->id }}" @selected($product -> category_id == $item -> id)>{{ $item->name }}</option>
                 @endforeach
               </select>
             </div>
             <div class="form-group">
-            <label for="quantity">Inventory</label>
-              <input id="quantity" type="number" class="form-control" value="{{ $product->quantity }}" name="quantity"/>
+            <label for="quantity" >Inventory</label>
+              <input id="quantity" required type="number" min="0" max="999" class="form-control" value="{{ $product->quantity }}" name="quantity"/>
 
               </select>
               </div>

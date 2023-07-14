@@ -48,8 +48,9 @@
             <thead>
                 <tr>
                     <th style="width: 10%">Id</th>
+                    <th style="width: 20%">Name</th>
                     <th style="width: 20%">Email</th>
-                    <th style="width: 10%">Password</th>
+                    <th style="width: 10%">Phone Number</th>
                     <th></th>
                 </tr>
             </thead>

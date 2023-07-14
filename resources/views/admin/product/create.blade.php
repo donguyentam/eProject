@@ -46,14 +46,20 @@
               <label for="price">Price</label>
               <input type="number" id="price" min="1" required class="form-control" name="price"/>
             </div>
+            @if($product->image!=null)
             <div class="form-group">
+            <img src="{{ asset('images/' . $product->image) }}" alt=""
+                            style="width:500px; height:auto;"/>
+            </div>
+            @endif
+            <div class="form-group mt-2">
               <label for="photo">Image</label>
               <input type="file" id="photo" required  class="form-control" name="photo"/>
             </div>
             <div class="form-group">
               <label for="category">Category</label>
-              <select id="category" class="form-control custom-select" required  name="product_category_id">
-                <option  selected disabled>Select one</option>
+              <select id="category" class="form-control custom-select" required name="product_category_id">
+                <option value="0" selected disabled>Select one</option>
                 @foreach($cates as $item)
                 <option  value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach

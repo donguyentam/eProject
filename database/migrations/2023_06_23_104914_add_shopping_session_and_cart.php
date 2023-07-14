@@ -20,16 +20,16 @@ return new class extends Migration
         Schema::table('shopping_session', function ($table) {
             $table->foreignId('user_id')->constrained('users');
         });
-        Schema::create('user_address', function (Blueprint $table) {
-            $table->id();
-            $table->string('address')->nullable();
-            $table->string('country')->nullable();
-            $table->string('phone_number')->nullable();
-            $table->timestamps();
-        });
-        Schema::table('user_address', function ($table) {
-            $table->foreignId('user_id')->constrained('users');
-        });
+        // Schema::create('user_address', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('address')->nullable();
+        //     $table->string('country')->nullable();
+        //     $table->string('phone_number')->nullable();
+        //     $table->timestamps();
+        // });
+        // Schema::table('user_address', function ($table) {
+        //     $table->foreignId('user_id')->constrained('users');
+        // });
         Schema::create('cart_item', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('quantity');

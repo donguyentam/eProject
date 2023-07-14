@@ -55,7 +55,7 @@
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Phone<span>*</span></p>
-                                  <input type="number" min="1" required name="phone_number">
+                                  <input type="tel" min="10" required name="phone_number">
                               </div>
                           </div>
                           <div class="col-lg-6">
@@ -64,14 +64,6 @@
                                   <input type="text" required name="email" value="{{ isset($user->email) ? $user->email: '' }}">
                               </div>
                           </div>
-                      </div>
-                      
-                      <div class="checkout__input__checkbox">
-                          <label for="diff-acc">
-                              Note about your order, e.g, special note for delivery
-                              <input type="checkbox" id="diff-acc">
-                              <span class="checkmark"></span>
-                          </label>
                       </div>
                       <div class="checkout__input">
                           <p>Order notes</p>
@@ -115,7 +107,7 @@
                           <div class="checkout__input__checkbox">
                               <label for="cod">
                                   COD
-                                  <input type="radio" name="payment_method" value="COD" id="cod">
+                                  <input type="radio" name="payment_method" value="COD" id="cod" required>
                                   <span class="checkmark"></span>
                               </label>
                           </div>
