@@ -22,7 +22,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = DB::table('product_detail')->get();
-        $prodsd=Product:: orderBy('id', 'ASC')->take(4)->get();
+        $prodsd=Product:: orderBy('id', 'DESC')->take(4)->get();
         return view('fe.index', compact('products','prodsd'));
     }
 
@@ -86,7 +86,7 @@ class HomeController extends Controller
     {
         // hàm where() sẽ trả về 1 mảng
         $prod = Product::where('id', $id)->first();
-        $prodsd=Product:: orderBy('id', 'ASC')->take(4)->get();
+        $prodsd=Product:: orderBy('id', 'DESC')->take(4)->get();
         return view('fe.product', compact('prod','prodsd'));
     }
 
@@ -155,12 +155,12 @@ class HomeController extends Controller
     }
 }
 
-    // public function clearCart(Request $request)
-    // {
-    //     if ($request->session()->has('cart')) {
-    //         $request->session()->forget('cart');
-    //     }
-    // }
+    public function clearCart(Request $request)
+    {
+        if ($request->session()->has('cart')) {
+            $request->session()->forget('cart');
+        }
+    }
 
 
     public function viewCart(Request $request)
@@ -216,18 +216,34 @@ class HomeController extends Controller
         return view('fe.cart');
     }
 
-    public function userprofile(Request $request)
+    public function userprofile($id)
     {
-        return view('fe.userprofile');
+        $user = User::find($id);
+        return view('fe.userprofile',compact('user'));
     }
 
-    public function updateuserprofile(Request $request, User $user)
+    public function updateuserprofile(Request $request, $id)
     {
 
         $ids = $request->all();
 
         $$user ->update($ids);
 
+        $user = User::find($id);
+
+        $user -> first_name = $request->fname;
+
+        $user -> last_name = $request->lname;
+
+        $user -> address = $request->address;
+
+        $user -> phone_number = $request->phone_number;
+
+        $user -> country = $request->country;
+
+        $user -> save();
+
+        return redirect()->route('home');
         // for ($i = 0; $i < count($pids); $i++) {
         //     foreach ($cart as $item) {
         //         if ($item->product->id == $pids[$i]) {
@@ -238,6 +254,8 @@ class HomeController extends Controller
         // }
 
     }
+
+
 
 
     public function DeleteListItemCart(Request $request, $id)
@@ -260,9 +278,14 @@ class HomeController extends Controller
 
     public function checkout()
     {
-        $user = \Sentinel::check();
+        if(!\Sentinel::check()){
+            return redirect()->route('login');
+        }else{
+            $user = \Sentinel::check();
 
         return view("fe.checkout", compact('user'));
+        }
+
     }
 
     // public function SaveListItemCart(Request $request, $id, $quanty)

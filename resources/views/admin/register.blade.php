@@ -71,7 +71,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 
 						<div class="input-group mb-3">
-							<input type="password" class="form-control" id="password" name="password_confirmation"  placeholder="Confirm-Password" required />
+							<input type="password" class="form-control" id="password" name="password_confirmation"  placeholder="Confirm-Password"  />
 							<div class="input-group-append">
 								<div class="input-group-text">
 								<span class="fas fa-lock"></span>

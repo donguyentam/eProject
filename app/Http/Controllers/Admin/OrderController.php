@@ -70,16 +70,18 @@ class OrderController extends Controller
      public function searchOrders()
      {
          $search = $_GET['search'];
+         $searchTerm = '%' . $search . '%';
 
-         $orders = Order::whereLike('first_name', $search)
-         ->whereLike('last_name', $search)
-         ->whereLike('address', $search)
-         ->whereLike('phone_number', $search)
-         ->whereLike('email', $search)
-         ->whereLike('note', $search)
-         ->whereLike('payment_method', $search)
-         ->whereLike('payment_type', $search)
-         ->get();
+$orders = Order::where(function ($query) use ($searchTerm) {
+    $query->where('first_name', 'LIKE', $searchTerm)
+          ->orWhere('last_name', 'LIKE', $searchTerm)
+          ->orWhere('address', 'LIKE', $searchTerm)
+          ->orWhere('phone_number', 'LIKE', $searchTerm)
+          ->orWhere('email', 'LIKE', $searchTerm)
+          ->orWhere('note', 'LIKE', $searchTerm)
+          ->orWhere('payment_method', 'LIKE', $searchTerm)
+          ->orWhere('payment_type', 'LIKE', $searchTerm);
+})->paginate(6);
          return view('admin.order.index', compact('orders'));
      }
 }

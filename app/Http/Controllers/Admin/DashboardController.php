@@ -67,6 +67,7 @@ class DashboardController extends Controller
     public function processRegister(Request $request )
     {
         $request->validate([
+
             'email'    => 'required|max:50|email|unique:users',
             'password'    => 'required|confirmed',
         ],
@@ -78,12 +79,15 @@ class DashboardController extends Controller
             'email.unique'=>'THE EMAIL WAS REGISTERED',
         ]);
 
+        
         $email = $request->email;
         $pwd = $request->password;
 
 
 
+
         $credentials = [
+
             'email'    => $email,
             'password' => $pwd,
         ];

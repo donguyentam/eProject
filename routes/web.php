@@ -49,9 +49,9 @@ Route::post('/add-cart', [HomeController::class, 'addCart'])->name('addCart');
 Route::post('/remove-cart-item', [HomeController::class, 'removeCartItem'])
             ->name('removeCartItem');
 
-Route::get('/userprofile', [HomeController::class, 'userprofile'])->name('userprofile');
+Route::get('/userprofile/{id}', [HomeController::class, 'userprofile'])->name('userprofile');
 
-Route::post('/updateuserprofile', [HomeController::class, 'updateuserprofile'])->name('updateuserprofile');
+Route::post('/userprofile/{id}', [HomeController::class, 'updateuserprofile'])->name('updateuserprofile');
 
 // Route::get('/AddCart/{id}', [HomeController::class, 'AddCart'])->name('AddCart');
 
