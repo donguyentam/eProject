@@ -62,7 +62,8 @@ Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart
 Route::get('/view-cart', [HomeController::class, 'viewCart'])->name('viewCart');
 
 Route::post('/update-cart', [HomeController::class, 'updateCart'])->name('updateCart');
-Route::post('/view-order', [HomeController::class, 'viewOrderHistory'])->name('viewOrderHistory');
+
+Route::get('/view-order', [HomeController::class, 'viewOrderHistory'])->name('viewOrderHistory');
 
 Route::get('/DeleteItemCart/{id}', [HomeController::class, 'DeleteItemCart'])->name('DeleteItemCart');
 

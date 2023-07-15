@@ -54,6 +54,7 @@
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
+
     </style>
 
     <!-- Google Font -->
@@ -162,6 +163,12 @@
                                     <li><a href="{{ Route('viewCart') }}">Shopping Cart</a></li>
                                     @if(Sentinel::check())
                                     <li><a href="{{ Route('checkout')}}">Check Out</a></li>
+                                    @endif
+                                    @if(Sentinel::check())
+                                    @php
+                                        $user = Sentinel::check();
+                                    @endphp
+                                    <li><a href="{{ Route('viewOrderHistory')}}">Order History</a></li>
                                     @endif
                                     <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>

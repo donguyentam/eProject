@@ -106,6 +106,7 @@ class DashboardController extends Controller
         return view('admin.forget-password');
     }
     function complete($id){
+        
         $order=Order::where('id', $id)->get();
         $orderd=OrderDetail::where('order_id',$id)->get();
         return view('fe.complete',compact('order','orderd'));

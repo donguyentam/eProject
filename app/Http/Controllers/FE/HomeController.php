@@ -34,10 +34,10 @@ class HomeController extends Controller
     }
     public function viewOrderHistory()
     {
-        $user = Sentinel::getUser();
-
-        $order = Order::find($user_id, $user -> id);
-        return view('fe.news.bedroom', compact('products'));
+        $user = \Sentinel::getUser();
+        $users=$user->id;
+        $order = Order::where('user_id',$users)->get();
+        return view('fe.orderhistory', compact('order'));
     }
 
 
@@ -226,8 +226,6 @@ class HomeController extends Controller
     {
 
         $ids = $request->all();
-
-        $$user ->update($ids);
 
         $user = User::find($id);
 
