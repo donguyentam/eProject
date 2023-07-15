@@ -37,13 +37,11 @@ class OrderController extends Controller
          // ]);
          return view('admin.order.index', compact('orders'));
      }
-     public function updateOrders(Request $request, $id)
+     public function update(Request $request, Order $order)
      {
-         $orders = Order::find($id);
-         $orderDetails = OrderDetails::all($orders -> id);
-
-         $orders -> order_status = $request->order_status;
-         $orders ->save();
+         $ords = $request->all();
+         $ords['order_status'] = \Str::slug($request->order_status);
+         $order ->update($ords);
          return redirect()->route('admin.order.index');
      }
 

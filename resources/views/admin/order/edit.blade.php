@@ -67,28 +67,25 @@
               <input id="created_at" disabled class="form-control" name="created_at" value="{{ $orders->created_at }}"/>
 
             </div>
-            <div class="form-group row">
-            <input id="order_success" type="checkbox" class="form-control" name="order_success" value="{{ $orders->order_success }}"/>
-              <label for="order_success">Order Completed?</label>
 
-            </div>
-            <p>Payment method?</p>
             <div class="form-group">
+              <label for="order_success">Order Status</label>
+              <select id="order_success" class="form-control custom-select" name="order_success" required>
+                <option value="Pending payment">Pending payment</option>
+                <option value="Processing">Processing</option>
+                <option value="Delivering">Delivering</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="payment_method">Payment method</label>
 
-                          <div class="checkout__input__checkbox">
-                              <label for="cod">
-                                  COD
-                                  <input type="radio" disabled name="payment_method" value="COD" id="cod">
-                                  <span class="checkmark"></span>
-                              </label>
-                          </div>
-                          <div class="checkout__input__checkbox">
-                              <label for="paypal">
-                                  Paypal
-                                  <input type="radio" disabled name="payment_method" value="Paypal" id="paypal">
-                                  <span class="checkmark"></span>
-                              </label>
-                          </div>
+            <select id="payment_method" disabled class="form-control custom-select" name="payment_method" required>
+                <option value="COD">COD</option>
+                <option value="Paypal">Paypal</option>
+
+              </select>
+
             </div>
           </div>
           <!-- /.card-body -->

@@ -376,6 +376,7 @@ try {
     $ord->email = $email;
     $ord->address = $address;
     $ord->payment_method = $payment_method;
+    $ord->order_status = "Pending payment";
     $ord->note = $note;
     $ord->order_date = date('Y-m-d', time());
 
@@ -393,7 +394,7 @@ try {
         $detail->save();
         $product = Product::find($detail->product_id);
         $product -> quantity -= $detail->quantity;
-        updateProductQuantity($request, $product, $product -> quantity);
+        $product->save();
 
      }
 

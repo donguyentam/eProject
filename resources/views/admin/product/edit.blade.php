@@ -61,7 +61,7 @@
             </div>
             <div class="form-group">
               <label for="category">Category</label>
-              <select id="category" required class="form-control custom-select" name="category_id" required id="category_id">
+              <select id="category" required class="form-control custom-select" name="product_category_id" required>
                 <option disabled>Select one</option>
                 @foreach($cates as $item)
                 <option value="{{ $item->id }}" @selected($product -> category_id == $item -> id)>{{ $item->name }}</option>
