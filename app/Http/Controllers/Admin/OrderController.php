@@ -39,7 +39,7 @@ class OrderController extends Controller
      }
      public function update(Request $request, Order $order)
      {
-        $order['order_status'] = $request->order_status;
+        $order->order_status = $request->order_status;
          $order ->save();
          return redirect()->route('admin.order.index');
      }
@@ -65,7 +65,7 @@ class OrderController extends Controller
 
         $order=Order::where('id', $id)->get();
         $orderd=OrderDetail::where('order_id',$id)->get();
-         return view('admin.order.detail', compact('order', 'orderd', 'orderId'));
+         return view('fe.userOrder.detail', compact('order', 'orderd', 'orderId'));
      }
 
      public function deleteOrders( $id)
@@ -101,6 +101,6 @@ $orders = Order::where(function ($query) use ($searchTerm) {
 })->paginate(6);
          return view('admin.order.index', compact('orders'));
          }
-         
+
      }
 }

@@ -269,9 +269,9 @@ class HomeController extends Controller
 
     return redirect()->route('viewOrderHistory');
 }
-        
-        
-    
+
+
+
 
     public function DeleteListItemCart(Request $request, $id)
     {
@@ -391,6 +391,7 @@ try {
     $ord->email = $email;
     $ord->address = $address;
     $ord->payment_method = $payment_method;
+    $ord->order_status = "Processing";
     $ord->note = $note;
     $ord->order_date = date('Y-m-d', time());
 

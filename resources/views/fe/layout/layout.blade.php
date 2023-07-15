@@ -185,7 +185,6 @@
                                     @endphp
                                     <li><a href="{{ Route('viewOrderHistory')}}">Order History</a></li>
                                     @endif
-                                    <li><a href="{{ Route('blognews') }}">Blog Details</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ Route('blognews') }}">About</a></li>

@@ -68,12 +68,12 @@
 
             </div>
             <div class="form-group">
-              <label for="order_success">Order Status</label>
-              <select id="order_success" class="form-control custom-select" name="order_status" required>
-                <option value="Pending payment">Pending payment</option>
-                <option value="Processing">Processing</option>
-                <option value="Delivering">Delivering</option>
-                <option value="Completed">Completed</option>
+              <label for="order_status">Order Status</label>
+              <select id="order_status" class="form-control custom-select" name="order_status" required>
+                <option @selected($orders -> order_status == "Pending payment") value="Pending payment">Pending payment</option>
+                <option @selected($orders -> order_status == "Processing") value="Processing">Processing</option>
+                <option @selected($orders -> order_status == "Delivering") value="Delivering">Delivering</option>
+                <option @selected($orders -> order_status == "Completed") value="Completed">Completed</option>
               </select>
             </div>
             <div class="form-group">

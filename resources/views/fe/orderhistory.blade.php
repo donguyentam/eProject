@@ -27,7 +27,7 @@
 @endif
 					</div>
 					<div id="wrap-inner">
-						
+
 							<div style="text-align: center; margin-bottom: 5%;">
 								<table class="table" style="background: white;" border="1" cellspacing="0">
 									<tr>
@@ -43,7 +43,7 @@
 										</tr>
 									@foreach($order as $item)
 										<tr>
-                                            
+
 											<td>{{$item->first_name}}</td>
 											<td>{{$item->last_name}}</td>
 											<td>{{$item->address}}</td>
@@ -53,9 +53,15 @@
                                             <td>{{$item->payment_method}}</td>
                                             <td>{{$item->order_status}}</td>
 											<td>
-												<a class="btn1 btn-danger"  onclick="hiende() " href="#">Delete</a>
+												<a class="btn1 btn-primary px-2" href="{{Route('viewOrderInfo', $item->id)}}">View</a>
+
+                                                @if($item->order_status != "Delivering")
+												<a class="btn1 btn-danger px-2"  onclick="hiende() " href="#">Delete</a>
+
+
+                                                @endif
 											</td>
-											
+
 										</tr>
                                         @endforeach
 									</table>

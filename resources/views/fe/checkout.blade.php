@@ -34,28 +34,28 @@
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="checkout__input">
-                                  <p>First Name<span>*</span></p>
-                                  <input type="text" name="first_name" required value="{{ isset($user->firstname) ? $user->firstname: '' }}">
+                                  <p>First Name <span>*</span></p>
+                                  <input type="text" name="first_name" required value="{{ isset($user->first_name) ? $user->first_name: '' }}">
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="checkout__input">
-                                  <p>Last Name<span>*</span></p>
-                                  <input type="text" required name="last_name">
+                                  <p>Last Name <span>*</span></p>
+                                  <input type="text" required name="last_name" value="{{ isset($user->last_name) ? $user->last_name: '' }}">
                               </div>
                           </div>
                       </div>
 
                       <div class="checkout__input">
-                          <p>Address<span>*</span></p>
-                          <input type="text" name="address" required placeholder="Street Address" class="checkout__input__add">
+                          <p>Address <span>*</span></p>
+                          <input type="text" name="address" value="{{ isset($user->address) ? $user->address: '' }}" required placeholder="Street Address" class="checkout__input__add">
                       </div>
 
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="checkout__input">
-                                  <p>Phone<span>*</span></p>
-                                  <input type="tel" min="10" required name="phone_number">
+                                  <p>Phone <span>*</span></p>
+                                  <input type="tel" min="10" value="{{ isset($user->phone_number) ? $user->phone_number: '' }}" required name="phone_number">
                               </div>
                           </div>
                           <div class="col-lg-6">
