@@ -44,7 +44,7 @@
             </div>
             <div class="form-group">
               <label for="price">Price</label>
-              <input type="number" id="price" min="1" required class="form-control" name="price"/>
+              <input type="number" id="price" min="1" max="100000000" required class="form-control" name="price"/>
             </div>
             <div class="form-group mt-2">
               <label for="photo">Image</label>
@@ -61,7 +61,7 @@
             </div>
             <div class="form-group">
               <label for="quantity">Quantity</label>
-                <input id="quantity" type="number" required min="1" class="form-control" name="quantity"/>
+                <input id="quantity" type="number" required min="1" max="999" class="form-control" name="quantity"/>
             </div>
           </div>
           <!-- /.card-body -->

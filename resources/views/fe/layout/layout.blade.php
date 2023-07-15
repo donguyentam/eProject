@@ -131,7 +131,7 @@
                     </div>
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
-                            <div class="header__top__links">
+                            <div class="header__top__links" style=" display: table-row-group;">
                             @php
                             $user = Sentinel::check();
                             @endphp

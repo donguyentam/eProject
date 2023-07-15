@@ -47,7 +47,7 @@
             </div>
             <div class="form-group">
               <label for="price">Price</label>
-              <input type="number" required min="0" max="9999999999" id="price" class="form-control" name="price" value="{{ $product->price }}"/>
+              <input type="number" required min="0" max="100000000" id="price" class="form-control" name="price" value="{{ $product->price }}"/>
             </div>
             @if($product->image!=null)
             <div class="form-group">
