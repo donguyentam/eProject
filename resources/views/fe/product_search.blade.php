@@ -92,20 +92,15 @@
                 @if($products->count() >=1)
                     @foreach($products as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6 align-items-center justify-content-center row" href="{{ Route('productDetails', $item->id) }}">
-                        <div  style="border: 2px solid black; padding-top: 5px; margin-top:1%"  class="product__item">
-                            <div class="product__item__pic set-bg d-block">
-                                <img class="product__item__pic set-bg" src="{{ asset('/images/'. $item->image) }}" alt="">
-                            </div>
-                            <div class="product__item__text">
-
-                            <h3><a style="margin-left: 20%; margin-top: -8%;" href="#" class="btn" data-pid="{{ $item->id }}">+ Add To Cart</a></h3>
-                            </div>
-                            <h4 class="mt-3">
-                                <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
-                            </h4>
-                            <h4 style="color: lightred;">{{ $item->price }} VNĐ</h4>
-
-                        </div>
+                    <div class="card"
+    style="background-color: antiquewhite;">
+                            <img class="card-img-top" src="{{ asset('/images/'. $item->image) }}" alt="">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
+                                    </h4>
+                                    <h4 style="color: lightred;">{{ $item->price }} VNĐ</h4>
+                                <a style="color:white;" class="btn btn-primary justify-content-center mt-2" data-pid="{{ $item->id }}">+ Add To Cart</a>
                     </div>
                     @endforeach
                 @else
@@ -130,7 +125,7 @@
 @endsection
 @section('myjs')
 <script>
-    $('.product__item__text a').click(function(e) {
+    $('.add-cart').click(function(e) {
         e.preventDefault(); // huỷ tác dụng thẻ a
         let pid = $(this).data('pid');
         let quantity = 1;
