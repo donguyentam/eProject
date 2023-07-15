@@ -44,10 +44,11 @@
                     <th style="width: 8%">First Name</th>
                     <th style="width: 10%">Last Name</th>
                     <th style="width: 10%">Address</th>
-                    <th style="width: 15%">Phone Number</th>
+                    <th style="width: 10%">Phone Number</th>
                     <th style="width: 15%">Email</th>
-                    <th style="width: 15%">Note</th>
-                    <th style="width: 20%">Payment Method</th>
+                    <th style="width: 10%">Note</th>
+                    <th style="width: 10%">Payment Method</th>
+                    <th style="width: 10%">Order Status</th>
                     <th></th>
                 </tr>
             </thead>
@@ -64,6 +65,7 @@
                     <td>{{ $order->email }}</td>
                     <td>{{ $order->note }}</td>
                     <td>{{ $order->payment_method }}</td>
+                    <td>{{ $order->order_status }}</td>
                     <td class="project-actions text-right">
 
                         <a class="btn btn-info btn-sm" href="{{ Route('admin.editOrders', $order->id) }}">
@@ -71,7 +73,7 @@
                             </i>
                             Edit
                         </a>
-                        
+
                         <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteOrders', $order->id) }}">
                             <i class="fas fa-trash">
                             </i>

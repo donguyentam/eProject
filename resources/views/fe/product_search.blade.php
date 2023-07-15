@@ -91,17 +91,19 @@
                 <div class="row">
                 @if($products->count() >=1)
                     @foreach($products as $item)
-                    <div class="col-lg-4 col-md-6 col-sm-6 align-items-center justify-content-center row" href="{{ Route('productDetails', $item->id) }}">
-                    <div class="card"
-    style="background-color: antiquewhite;">
+                    <div class="col-lg-4 col-md-6 col-sm-6 mx-2 align-items-center justify-content-center row" href="{{ Route('productDetails', $item->id) }}">
+                        <div class="card" style="background-color: antiquewhite;">
                             <img class="card-img-top" src="{{ asset('/images/'. $item->image) }}" alt="">
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
-                                    </h4>
-                                    <h4 style="color: lightred;">{{ $item->price }} VNĐ</h4>
-                                <a style="color:white;" class="btn btn-primary justify-content-center mt-2" data-pid="{{ $item->id }}">+ Add To Cart</a>
-                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
+                                        </h4>
+                                        <h4 style="color: lightred;">{{ $item->price }} VNĐ</h4>
+                                    <a style="color:white;" class="btn btn-primary justify-content-center mt-2" data-pid="{{ $item->id }}">+ Add To Cart</a>
+                                    </div>
+                            </div>
+                            </div>
+
                     @endforeach
                 @else
                     <div class="col-md-12 my-5 text-center">
