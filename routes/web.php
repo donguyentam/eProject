@@ -48,8 +48,8 @@ Route::post('/add-cart', [HomeController::class, 'addCart'])->name('addCart');
 
 Route::post('/remove-cart-item', [HomeController::class, 'removeCartItem'])
             ->name('removeCartItem');
-            
-Route::get('/userprofile', [HomeController::class, 'userprofile'])->name('userprofile');    
+
+Route::get('/userprofile', [HomeController::class, 'userprofile'])->name('userprofile');
 
 Route::post('/updateuserprofile', [HomeController::class, 'updateuserprofile'])->name('updateuserprofile');
 
@@ -62,6 +62,7 @@ Route::get('/clear-cart', [HomeController::class, 'clearCart'])->name('clearCart
 Route::get('/view-cart', [HomeController::class, 'viewCart'])->name('viewCart');
 
 Route::post('/update-cart', [HomeController::class, 'updateCart'])->name('updateCart');
+Route::post('/view-order', [HomeController::class, 'viewOrderHistory'])->name('viewOrderHistory');
 
 Route::get('/DeleteItemCart/{id}', [HomeController::class, 'DeleteItemCart'])->name('DeleteItemCart');
 
@@ -123,7 +124,7 @@ Route::group(['middleware'=>'islogin'], function() {
 
         Route::get('/category',[HomeController::class, 'category'])->name('category');
 
-        
+
 
 
     });

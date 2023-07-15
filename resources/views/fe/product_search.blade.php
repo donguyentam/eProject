@@ -37,7 +37,7 @@
                          <div class="middle">
                             <div id="multi_range">
                                 <span id="left_value"></span>
-                            </div>    
+                            </div>
                             <div class="multi-range-slider my-2">
 
                                 <div class="slider">
@@ -45,8 +45,8 @@
                                     <div class="range"></div>
                                     <div class="thumb left"></div>
                                     <div class="thumb right"></div>
-                            </div>   
-                        </div>   
+                            </div>
+                        </div>
                             <!-- <div class="card">
                                 <div class="card-heading">
                                     <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product">
-                                
+
                                 <form style="margin-left: 30%;" action="{{ Route('productSearch') }}"   method="GET">
                                 <p>Sort by Price:</p>
   <input required min="1" style="width: 30%;" type="number" name="min_price" placeholder="Minimum Price">
@@ -91,18 +91,19 @@
                 <div class="row">
                 @if($products->count() >=1)
                     @foreach($products as $item)
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6 align-items-center justify-content-center row" href="{{ Route('productDetails', $item->id) }}">
                         <div class="product__item">
-                            <div class="product__item__pic set-bg">
-                                <img src="{{ asset('/images/'. $item->image) }}" alt="">
+                            <div class="product__item__pic set-bg d-block">
+                                <img class="product__item__pic set-bg" src="{{ asset('/images/'. $item->image) }}" alt="">
                             </div>
                             <div class="product__item__text">
-                                <h6>{{ $item->price }} VNĐ</h6>
                                 <a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
                             </div>
-                            <h4>
+                            <h4 class="mt-3">
                                 <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
                             </h4>
+                            <h4 style="color: lightred;">{{ $item->price }} VNĐ</h4>
+
                         </div>
                     </div>
                     @endforeach
@@ -150,9 +151,9 @@
 
     // $('#sort_by').on('change', function(){
     //     let sort_by = $('#sort_by').val();
-        
+
     //     // const url = "{{ Route('productSearch') }}";
-        
+
     //     $.ajax({
     //         url: "{{ Route('sort_by') }}",
     //         method:"get",
@@ -163,5 +164,5 @@
     //     });
     // })
 
-</script> 
+</script>
 @endsection

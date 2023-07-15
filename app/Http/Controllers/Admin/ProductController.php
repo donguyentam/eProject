@@ -43,7 +43,7 @@ class ProductController extends Controller
      */
     public function store(Request $request, Category $cates)
     {
-       
+
         $request->validate([
             'name'    => 'required|max:100',
             'price'    => 'required',
@@ -151,7 +151,7 @@ return redirect()->route('admin.product.index');
         return view('admin.product.index', compact('prods'));
 
         }
-        
+
     }
 
 
@@ -214,7 +214,7 @@ return redirect()->route('admin.product.index');
 
     public function itemSearch(){
         $search = $_GET['search1'];
-        if($search==""){ 
+        if($search==""){
             $categories = Category::all();
         $products = Product::orderBy('price', 'asc')->where('name','LIKE','%'. $search .'%')->paginate(6);
             return redirect()->route('productSearch');
@@ -224,7 +224,7 @@ return redirect()->route('admin.product.index');
             $products = Product::orderBy('price', 'asc')->where('name','LIKE','%'. $search .'%')->paginate(6);
         return view('fe.product_search', compact('products','categories'));
         }
-        
+
     }
 
     // public function pagination(){

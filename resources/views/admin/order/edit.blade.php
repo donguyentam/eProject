@@ -61,14 +61,16 @@
               <label for="note">Note</label>
               <input id="note" disabled class="form-control" name="note" value="{{ $orders->note }}"/>
             </div>
-            <div class="form-group">
-            <input id="order_success" type="checkbox" disabled class="form-control" name="order_success" value="{{ $orders->order_success }}"/>
-              <label for="order_success">Order Completed?</label>
 
-            </div>
             <div class="form-group">
               <label for="created_at">Created at</label>
-              <input id="created_at" type="checkbox" disabled class="form-control" name="created_at" value="{{ $orders->created_at }}"/>
+              <input id="created_at" disabled class="form-control" name="created_at" value="{{ $orders->created_at }}"/>
+
+            </div>
+            <div class="form-group row">
+            <input id="order_success" type="checkbox" class="form-control" name="order_success" value="{{ $orders->order_success }}"/>
+              <label for="order_success">Order Completed?</label>
+
             </div>
             <p>Payment method?</p>
             <div class="form-group">
@@ -76,14 +78,14 @@
                           <div class="checkout__input__checkbox">
                               <label for="cod">
                                   COD
-                                  <input type="radio" name="payment_method" value="COD" id="cod">
+                                  <input type="radio" disabled name="payment_method" value="COD" id="cod">
                                   <span class="checkmark"></span>
                               </label>
                           </div>
                           <div class="checkout__input__checkbox">
                               <label for="paypal">
                                   Paypal
-                                  <input type="radio" name="payment_method" value="Paypal" id="paypal">
+                                  <input type="radio" disabled name="payment_method" value="Paypal" id="paypal">
                                   <span class="checkmark"></span>
                               </label>
                           </div>

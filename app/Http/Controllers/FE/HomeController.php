@@ -32,9 +32,16 @@ class HomeController extends Controller
         $products = Product::all();
         return view('fe.news.bedroom', compact('products'));
     }
+    public function viewOrderHistory()
+    {
+        $user = Sentinel::getUser();
+
+        $order = Order::find($user_id, $user -> id);
+        return view('fe.news.bedroom', compact('products'));
+    }
 
 
-    public function workroom() 
+    public function workroom()
     {
         $products = Product::all();
         return view('fe.news.workroom', compact('products'));
@@ -60,16 +67,16 @@ class HomeController extends Controller
 
         }else{
              $categories = Category::all();
-        $products = Product::orderBy('price', 'asc')->paginate(6);
+        $products = Product::orderBy('id', 'desc')->paginate(6);
         return view('fe.product_search', compact('products','categories'));
         }
 
-       
+
     }
 
     // public function productSearch()
     // {
-        
+
     //     $products = Product::all();
     //     return view('fe.product_search', compact('products','categories'));
     // }
@@ -164,7 +171,7 @@ class HomeController extends Controller
         // }
     }
 
-    public function removeCartItem(Request $request) 
+    public function removeCartItem(Request $request)
     {
         $pid = $request->pid;
         $cart = $request->session()->get('cart');
@@ -218,9 +225,9 @@ class HomeController extends Controller
     {
 
         $ids = $request->all();
-        
+
         $$user ->update($ids);
-        
+
         // for ($i = 0; $i < count($pids); $i++) {
         //     foreach ($cart as $item) {
         //         if ($item->product->id == $pids[$i]) {
@@ -229,7 +236,7 @@ class HomeController extends Controller
         //         }
         //     }
         // }
-        
+
     }
 
 
@@ -336,7 +343,7 @@ try {
     $payment_method = $request->payment_method;
     $note = $request->note;
     $total = 0;
-    
+
     $ord = new Order();
     $ord->user_id = $uid;
     $ord->total = $total;
@@ -352,7 +359,7 @@ try {
     $ord->save(); // Save the order first to get the order ID
 
     foreach (Session::get('cart') as $item) {
-        
+
 
         $detail = new OrderDetail();
         $detail->product_id =$item-> product->id;
@@ -361,15 +368,18 @@ try {
         $total += intval($detail->price) * intval($detail->quantity);
         $detail->order_id = $ord->id; // Assign the order ID to the order detail
         $detail->save();
-        
+        $product = Product::find($detail->product_id);
+        $product -> quantity -= $detail->quantity;
+        updateProductQuantity($request, $product, $product -> quantity);
+
      }
 
     $token = Str::random(64);
     $data['info'] = $request->all();
     $data['total'] = $total;
-    
+
     $data['cart'] = Session::get('cart');
-    
+
     $email = $request->customer_email;
 
     Mail::send("admin.emails.checkout-email",$data, function ($message) use ($request) {
@@ -377,7 +387,7 @@ try {
         $message -> subject("Order Successful!");
     });
     $request->session()->forget('cart');
-    
+
     return redirect()->route('complete',$ord->id );}
 
     catch (Exception $e) {
@@ -387,7 +397,13 @@ try {
 
     public function blognews()
     {
-        
+
         return view('fe.blog_news');
+    }
+    public function updateProductQuantity(Request $request, Product $product, $quantity) {
+        $prods = $request->all();
+        $prods->quantity = $quantity;
+        $product->update($prods);
+
     }
 }

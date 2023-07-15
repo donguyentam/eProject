@@ -85,7 +85,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg">
-                            <img src="{{ asset('/images/'. $item->image) }}" alt="">
+                            <img class="product__item__pic set-bg" src="{{ asset('/images/'. $item->image) }}" alt="">
 
                                 <ul class="product__hover">
                                     <li><a href="#"><img src="{{ asset('/fe/img/icon/heart.png') }}" alt=""></a></li>
@@ -95,7 +95,7 @@
                                 </ul>
                             </div>
                             <div class="product__item__text">
-                                <h6>{{ $item->price }} đ</h6>
+                                <h3>{{ $item->price }} đ</h3>
                                 <a onclick="AddCart({{$item->id}} )" href="javascript:" class="add-cart">+ Add To
                                     Cart</a>
                                 <div class="rating">

@@ -24,12 +24,25 @@ class OrderController extends Controller
          // ]);
          return view('admin.order.index', compact('orders'));
      }
+     public function indexUser ()
+     {
+        $user = Sentinel::getUser();
+        if ($user != null) {
+            $orders = Order::find($user->user_id)::paginate(6)->get();
+            $orderDetails = OrderDetail::all();
+        }
+
+         // return view('admin.product.index')->with([
+         //     'prods' => $prods
+         // ]);
+         return view('admin.order.index', compact('orders'));
+     }
      public function updateOrders(Request $request, $id)
      {
          $orders = Order::find($id);
          $orderDetails = OrderDetails::all($orders -> id);
 
-         $orders -> order_success = $request->order_success;
+         $orders -> order_status = $request->order_status;
          $orders ->save();
          return redirect()->route('admin.order.index');
      }
@@ -45,14 +58,28 @@ class OrderController extends Controller
      public function deleteOrders( $id)
      {
          $orders = Order::find($id);
-         $orders ->delete();
+         if ($orders -> order_status != "Something") {
+
+         } else {
+            $orders ->delete();
+
+         }
          return redirect()->route('admin.order.index');
      }
 
      public function searchOrders()
      {
          $search = $_GET['search'];
-         $orders = OrderDetail::where('%' . $search . '%' ,' IN ','(first_name, last_name, address, phone_number, email, note, payment_method, payment_type)',)->get();
+
+         $orders = Order::whereLike('first_name', $search)
+         ->whereLike('last_name', $search)
+         ->whereLike('address', $search)
+         ->whereLike('phone_number', $search)
+         ->whereLike('email', $search)
+         ->whereLike('note', $search)
+         ->whereLike('payment_method', $search)
+         ->whereLike('payment_type', $search)
+         ->get();
          return view('admin.order.index', compact('orders'));
      }
 }

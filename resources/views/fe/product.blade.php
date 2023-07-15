@@ -25,7 +25,7 @@
                                 <img src="{{ asset('/images/' . $prod->image) }}" alt="">
                             </div>
                             <div style="padding-left: 0px;" class="col-lg-3 col-md-3">
-                                
+
                             </div>
 
                         </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
-                        
+
                         <h4>{{ $prod->name }}</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -51,16 +51,17 @@
                             <span> - 5 Reviews</span>
                         </div>
                         <h3>{{ $prod->price }} đ <span>{{ $prod->price }} đ </span></h3>
+                        <h3>Current quantity: <span>{{ $prod->quantity }} đ </span></h3>
                         <p></p>
 
                         <div class="product__details__cart__option">
                             <div class="quantity">
-                                
+
                                 <div class="pro-qty-2">
                                     <input style="width:57.2px" type="text" name="quanty" value="1" min="1">
                                 </div>
-                            </div>      
-                            <a href="#" class="primary-btn" data-pid="{{ $prod->id }}">add to cart</a>
+                            </div>
+                            <a href="#" class="primary-btn" data-pid="{{ $prod->id }}">Add to Cart</a>
                         </div>
 
                         <div class="product__details__last__option">
@@ -83,7 +84,7 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                 <div class="product__details__tab__content">
-                                    <p class="note">Free Shop is one of the leading companies in interior design and construction.
+                                    <p class="note">Wood Express is one of the leading companies in interior design and construction.
                                         With enthusiasm, experience, enthusiasm and cosmetics,
                                         the Home&Home team confidently brings customers the appraised interior styles,
                                         enhancing the value of your home. With us, you will surely be satisfied with your living space.</p>
@@ -99,11 +100,11 @@
                                     </div>
                                     <div class="product__details__tab__content__item">
                                         <h5>SERVICE</h5>
-                                        <p>Free Shop always listens to and keeps up with the prevailing trends:
+                                        <p>Wood Express always listens to and keeps up with the prevailing trends:
                                             Indochine style, Neo Classic neoclassical style,
                                             Modern modern style are subtly applied by Icon designers in each residential space but still bearing the unique imprint of the owner's personality.
                                             Customer satisfaction after each project is handed over is a certificate of achievement and tireless efforts of our staff.
-                                            Free Shop Interior Design Joint Stock Company has gradually become a professional interior designer & constructor serving a series of projects of villas,
+                                            Wood Express Interior Design Joint Stock Company has gradually become a professional interior designer & constructor serving a series of projects of villas,
                                             townhouses, apartments, offices, restaurants, hotels, etc. resort…</p>
                                     </div>
                                 </div>
@@ -132,17 +133,17 @@
             @foreach($prodsd as $item)
             <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                 <div class="product__item">
-                
+
                     <div class="product__item__pic set-bg" data-setbg="{{ asset('/images/'. $item->image) }}">
                     </div>
-                   
+
                     <div class="product__item__text" style="padding-top: 40px;">
-                        
+
                     <a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
                         <div class="rating">
-                             
+
                         </div>
-                        
+
                         <h5>{{ $item->price }} đ</h5>
 
                     </div>
