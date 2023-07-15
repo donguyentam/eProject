@@ -145,6 +145,7 @@ return redirect()->route('admin.product.index');
             return redirect()->route('admin.product.index');
         }
         else{
+            $searchs = '%' . $search . '%';
             $prods = Product::orderBy('created_at', 'DESC')->where('name','LIKE','%' . $search . '%')->paginate(6);
         //->orWhere('product_promotion_price',$req->key)
 

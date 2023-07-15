@@ -51,8 +51,8 @@
                                         <img src="{{ asset('/images/'.$item->product->image) }}" alt="{{ $item->product->name }}" style="width:200px;height:auto">
                                     </div>
                                     <div class="product__cart__item__text">
-                                        <h6 style="color: #0d0d0d;
-                                        font-weight: 700;">{{ $item->product->name }}</h6>
+                                    
+                                        <a style="color: black;" href="{{ Route('productDetails', $item->product->id) }}">{{ $item->product->name }}</a></h6>
                                         
                                     </div>
                                 </td>

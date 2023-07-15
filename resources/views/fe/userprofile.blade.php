@@ -27,19 +27,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header-main">
 		       <h1>User profile</h1>
 			<div class="header-bottom">
-
+@php
+                     $user = Sentinel::check();
+                     @endphp
 
 				<div class="header-right w3agile">
 
 
 					<div class="header-left-bottom agileinfo">
 
-					 <form action="{{ Route('updateuserprofile') }}" method="post">
+					 <form action="{{ Route('updateuserprofile',$user -> id) }}" method="post">
 
 					 @csrf
-                     @php
-                     $user = Sentinel::check();
-                     @endphp
+                     
                      <input type="hidden" class="form-control"  value="{{$user->id}}" name="id" />
 								<span style="color:#ff6c6c">
 									@error('email')
@@ -48,29 +48,69 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									@enderror
 								</span>
-						<div class="input-group mb-3">
-							<input type="text" class="form-control" disabled  value="{{$user->email}}" name="email" />
-							
-						</div>
-								<span style="color:#ff6c6c">
-									@error('password')
-
-									{{$message}}
-
-									@enderror
-								</span>
-
-						<div class="input-group mb-3">
-						<input type="text" class="form-control"  placeholder="Password" name="password"/>
 						
-						</div>
+                        @if($user -> first_name==null)        
 
 						<div class="input-group mb-3">
-							<input type="password" class="form-control" name="password_confirmation"  placeholder="Confirm-Password" required />
+							<input type="text" class="form-control" name="fname"  placeholder="First name" />
 							</div>
+                        @else    
+                        <div class="input-group mb-3">
+							<input type="text" class="form-control" name="fname" value="{{$user->first_name}}"  />
+							</div>
+                        @endif
 
+                        
 
-						<input type="submit" class="btn btn-primary btn-block" value="Register">
+@if($user -> last_name==null)        
+
+<div class="input-group mb-3">
+		<input type="text" class="form-control" name="lname"  placeholder="Last name"  />
+		</div>
+@else    
+<div class="input-group mb-3">
+    <input type="text" class="form-control" name="lname" value="{{$user->last_name}}"  />
+    </div>
+@endif
+
+@if($user -> address==null)        
+
+<div class="input-group mb-3">
+							<input type="text" class="form-control" name="address"  placeholder="Address"/>
+							</div>
+@else    
+<div class="input-group mb-3">
+    <input type="text" class="form-control" name="address" value="{{$user->address}}"  />
+    </div>
+@endif
+
+@if($user -> phone_number==null)        
+
+<div class="input-group mb-3">
+							<input type="text" class="form-control" name="phone_number"  placeholder="Phone number"  />
+							</div>
+@else    
+<div class="input-group mb-3">
+    <input type="text" class="form-control" name="phone_number" value="{{$user->phone_number}}"  />
+    </div>
+@endif
+
+@if($user -> country==null)        
+
+<div class="input-group mb-3">
+							<input type="text" class="form-control" name="country"  placeholder="Country"  />
+							</div>
+@else    
+<div class="input-group mb-3">
+    <input type="text" class="form-control" name="country" value="{{$user->country}}"  />
+    </div>
+@endif
+                           
+                            
+                            
+                            
+
+						<input type="submit" class="btn btn-primary btn-block" value="Update">
 
 					</form>
 

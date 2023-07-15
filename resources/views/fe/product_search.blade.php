@@ -92,16 +92,18 @@
                 @if($products->count() >=1)
                     @foreach($products as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
+                        <div  style="border: 2px solid black; padding-top: 5px; margin-top:1%"  class="product__item">
                             <div class="product__item__pic set-bg">
-                                <img src="{{ asset('/images/'. $item->image) }}" alt="">
+                                <img style="padding-left: 4%;" src="{{ asset('/images/'. $item->image) }}" alt="">
                             </div>
                             <div class="product__item__text">
-                                <h6>{{ $item->price }} VNĐ</h6>
-                                <a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
+                                
+                                <a style=" margin-left: 30%;" href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
                             </div>
-                            <h4>
-                                <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
+                            <h5 style="margin-top: 20px;margin-bottom: 10px; margin-left: 20%">{{ $item->price }} VNĐ</h5>
+                            <h4 style=" padding-bottom: 20px;">
+                            
+                                <a style=" margin-left: 5%; color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
                             </h4>
                         </div>
                     </div>
@@ -114,7 +116,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div style="text-align: center; padding-left:10%;" class="product__pagination1">
+                        <div style="text-align: center; padding-left:10%; margin-top:10px;" class="product__pagination1">
                             {{$products->appends(request()->all())->links()}}
                         </div>
                     </div>

@@ -62,9 +62,9 @@
                             </div>      
                             <a href="#" class="primary-btn" data-pid="{{ $prod->id }}">add to cart</a>
                         </div>
-
-                        <div class="product__details__last__option">
-                            <h5><span><a href="{{Route('checkout')}}" style="">Checkout Now</a></span></h5>
+                     
+                     <div class="product__details__last__option">
+                            <h5><span><a href="{{Route('checkout')}}" style="color:black;  ">Checkout Now</a></span></h5>
                             <img src="img/shop-details/details-payment.png" alt="">
 
                         </div>
@@ -125,31 +125,32 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="related-title">Related Product</h3>
+                <h3 class="related-title">New Product</h3>
             </div>
         </div>
         <div class="row">
-            @foreach($prodsd as $item)
-            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                <div class="product__item">
-                
-                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/images/'. $item->image) }}">
-                    </div>
-                   
-                    <div class="product__item__text" style="padding-top: 40px;">
-                        
-                    <a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
-                        <div class="rating">
-                             
-                        </div>
-                        
-                        <h5>{{ $item->price }} đ</h5>
-
-                    </div>
-                    <h6 style="color:black;"><a style="color:black;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a></h6>
-                </div>
-</div>
-                @endforeach
+        @foreach($prodsd as $item)
+          <div  class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+              <div style="border: 2px solid black; padding-top: 5px;" class="product__item">
+                  <div class="product__item__pic set-bg" >
+                    <img style="padding-left: 8px;" src="{{ asset('/images/'. $item->image) }}" alt="">
+                      <span class="label">New</span>
+                      
+                  </div>
+                  <div class="product__item__text">
+                     
+                      <h3><a  style="margin-left: 30%;" href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a></h3>
+                  </div> 
+                  <h6 style="margin-top: 17px; text-align: center;"><p>{{ $item->price }} VND</p></h6>
+                  <div>
+                    <h5 style="text-align: center; margin-bottom: 15px;">
+                    <a style="color: black;" href="{{ Route('productDetails', $item->id) }}"><b>{{ $item->name }}</b></a>
+                  </h5>  
+                  </div>
+                  
+              </div>
+          </div>
+        @endforeach
         </div>
     </div>
 </section>
@@ -162,8 +163,17 @@
 <script>
     $('.product__details__cart__option a').click(function(e) {
         e.preventDefault(); // huỷ tác dụng thẻ a
-        let pid = $(this).data('pid');
-        let quantity = $('.product__details__cart__option .pro-qty-2 input').val();
+         
+        if(($('.product__details__cart__option .pro-qty-2 input').val()) == 0) {
+            $i = null;
+            $q = null;
+            return false;
+        }else {
+            $i = $(this).data('pid');
+            $q = $('.product__details__cart__option .pro-qty-2 input').val();
+        }
+        let pid = $i
+        let quantity = $q;
         //alert(quantity);
         const url = "{{ Route('addCart') }}";
         $.ajax({

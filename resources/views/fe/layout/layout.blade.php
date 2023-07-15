@@ -70,7 +70,7 @@
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select1.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style5.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style6.css') }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
@@ -131,7 +131,7 @@
 
                                         <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
                                         <a style="background-color: coral; padding: 3px;" href="{{Route('logout')}}">Log Out</a>
-                                        <a style="background-color: goldenrod; padding: 3px;" href="{{Route('userprofile')}}">User profile</a>
+                                        <a style="background-color: goldenrod; padding: 3px;" href="{{Route('userprofile',$user ->id)}}">User profile</a>
 
 
 
