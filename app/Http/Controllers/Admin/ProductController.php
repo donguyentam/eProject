@@ -208,10 +208,21 @@ return redirect()->route('admin.product.index');
     public function searchUser()
     {
         $search = $_GET['search'];
-        $users = User::where('email','LIKE','%' . $search . '%')->get();
+        if($search==null){
+            return redirect()->route('admin.user');
+        }else{
+             $searchTerm = '%' . $search . '%';
+        $users = User::where(function ($query) use ($searchTerm){
+            $query->where('email', 'LIKE', $searchTerm)
+                  ->orWhere('username', 'LIKE', $searchTerm)
+                  ->orWhere('phone_number', 'LIKE', $searchTerm)
+                  ->orWhere('address', 'LIKE', $searchTerm);
+                })->paginate(6); 
         return view('admin.adUser.user', compact('users'));
-    }
-
+        }
+       
+        
+            }
 
     public function itemSearch(){
         $search = $_GET['search1'];

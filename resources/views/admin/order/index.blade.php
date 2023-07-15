@@ -74,11 +74,7 @@
                             Edit
                         </a>
 
-                        <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteOrders', $order->id) }}">
-                            <i class="fas fa-trash">
-                            </i>
-                            Delete
-                        </a>
+                        
               @endforeach
               @else
               <tr>

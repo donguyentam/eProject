@@ -67,6 +67,8 @@ Route::get('/view-order', [HomeController::class, 'viewOrderHistory'])->name('vi
 
 Route::get('/DeleteItemCart/{id}', [HomeController::class, 'DeleteItemCart'])->name('DeleteItemCart');
 
+Route::get('/deleteorders/{id}', [HomeController::class, 'deleteorders'])->name('deleteorders');
+
 Route::get('/DeleteListItemCart/{id}', [HomeController::class, 'DeleteListItemCart'])->name('DeleteListItemCart');
 
 Route::post('/SaveListItemCart/{id}/{quanty}', [HomeController::class, 'SaveListItemCart'])->name('SaveListItemCart');
