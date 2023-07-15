@@ -19,7 +19,7 @@
                         <span class="label">New</span>
 
                     </div>
-                    <div class="product__item__text">
+                    <div class="product__item__text add-cart">
 
                         <h3><a style="margin-left: 20%; margin-top: -10%;" href="#" class="btn" data-pid="{{ $item->id }}">+ Add To Cart</a></h3>
 

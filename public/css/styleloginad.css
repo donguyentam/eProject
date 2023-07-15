@@ -251,17 +251,17 @@ h5 {
   font-size: 20px;
   /*-- w3layouts --*/
   font-weight: 400;
-  color: #000;
+  color: #cd977c;
   display: inline-block;
   padding: 0px 0px 0px 68px;
 }
 .header-left-bottom p a{
   font-size: 20px;
   font-weight: 400;
-  color: #000;
+  color: #cd977c;
 }
 .header-left-bottom p a:hover{
-	color:#777;
+	color:#8e4848;
 	text-decoration:none;
 }
 label.checkbox {

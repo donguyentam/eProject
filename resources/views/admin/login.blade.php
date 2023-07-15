@@ -10,7 +10,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/loginadmin.js"></script>
 <!-- Custom Theme files -->
 
-<link rel="stylesheet" href="{{ asset('/css/styleloginad.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/styleloginad.css?v=2').time() }}">
+<link rel="stylesheet" href="{{ URL::asset('/fe/css/bootstrap1.min.css?v=2').time() }}">
 <!-- for-mobile-apps -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -55,11 +56,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</span>
 						<div class="input-group mb-3">
 						<input type="text" class="form-control"  placeholder="Email" name="email" />
-						<div class="input-group-append">
-							<div class="input-group-text">
-							<span class="fas fa-lock"></span>
-							</div>
-						</div>
+
 						</div>
 						<span style="color:#ff6c6c ;width: 10px">
 
@@ -73,26 +70,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</span>
 						<div class="input-group mb-3">
 						<input type="password" class="form-control"  placeholder="Password" name="password"/>
-						<div class="input-group-append">
-							<div class="input-group-text">
-							<span class="fas fa-lock"></span>
-							</div>
-						</div>
 						</div>
 
-						<div class="remember">
+						<div class="remember mx-0 d-flex justify-content-center">
 			            <input type="submit" class="btn btn-primary col-6" value="Login">
 
-                                <a class="btn4" href="{{ Route('register') }}">Register</a>
 
-						 <div class="forgot">
-						 	<h6><a href="{{ Route('forgetPassword') }}">Forgot Password?</a></h6>
-						 </div>
+
 						<div class="clear"> </div>
 					  </div>
-                        <div class="row">
+                        <div class="vstack gap-3">
+                        <div class="forgot row text-color-light">
+						 	<h6><a href="{{ Route('forgetPassword') }}" style="color: white;">Forgot Password?</a></h6>
+						 </div>
+                        <div class="text-center" style="color:white;">
+                            <p class="text-color-light">Not a member? <a href="{{ Route('register') }}" style="color:lightbrown;">Register</a></p>
 
-                            
+                        </div>
+
                         </div>
 
 					</form>

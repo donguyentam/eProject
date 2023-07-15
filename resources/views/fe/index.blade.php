@@ -28,7 +28,7 @@
 
 @section('myjs')
 <script>
-    $('.product__item__text a').click(function(e) {
+    $('.add-cart').click(function(e) {
         e.preventDefault(); // huỷ tác dụng thẻ a
         let pid = $(this).data('pid');
         let quantity = 1;
@@ -47,5 +47,5 @@
             }
         });
     });
-</script> 
+</script>
 @endsection

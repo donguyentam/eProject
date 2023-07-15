@@ -64,14 +64,14 @@
 
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap1.min.css?v=').time() }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap1.min.css?v=2').time() }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/elegant-icons.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select1.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style6.css?v=').time() }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style6.css?v=2').time() }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
