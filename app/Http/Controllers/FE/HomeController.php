@@ -391,7 +391,7 @@ try {
         $detail->save();
         $product = Product::find($detail->product_id);
         $product -> quantity -= $detail->quantity;
-        updateProductQuantity($request, $product, $product -> quantity);
+        $product -> save();
 
      }
 

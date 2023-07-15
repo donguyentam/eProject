@@ -26,14 +26,15 @@
         <div class="row">
             <div class="col-lg-12 justify-content-center align-items-center">
                 <div class="shopping__cart__table row justify-content-center align-items-center">
-                    <table class="table justify-content-center align-items-center">
+                    <table class="table justify-content-center align-items-center" style="background: white;">
                         <thead>
 
                                 <tr style="background-color:rgb(255, 245, 226);">
-                                    <th scope="col">Product</th>
+                                    <th scope="col">Product Image</th>
+                                    <th scope="col">Product Name</th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Total</th>
-                                    <th scope="col">Delete</th>
+                                    <th scope="col"></th>
                                 </tr>
 
                         </thead>
@@ -45,25 +46,30 @@
 
                           @if (\Session::has('cart'))
                             @foreach(\Session::get('cart') as $item)
-                            <tr>
+                            <tr scope="row">
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
-                                        <img src="{{ asset('/images/'.$item->product->image) }}" alt="{{ $item->product->name }}" style="width:200px;height:auto">
+                                        <a href="{{ Route('productDetails', $item->product->id) }}">
+                                        <img src="{{ asset('/images/'.$item->product->image) }}" alt="{{ $item->product->name }}" style="width:200px;height:auto" >
+</a>
                                     </div>
-                                    <div class="product__cart__item__text">
-                                        <h6 style="color: #0d0d0d;
-                                        font-weight: 700;">{{ $item->product->name }}</h6>
+
+                                </td>
+                                <td>
+                                <div class="product__cart__item__text">
+                                        <a style="color: #0d0d0d;
+                                        font-weight: 700;" href="{{ Route('productDetails', $item->product->id) }}">{{ $item->product->name }}</a>
 
                                     </div>
                                 </td>
-                                <td class="quantity__item">
+                                <td class="quantity__item text-center">
                                     <div class="quantity">
                                         <div class="pro-qty-2">
                                             <input type="text" value="{{ $item->quantity }}" data-pid="{{ $item->product->id }}">
                                         </div>
                                     </div>
                                 </td>
-                                <td class="cart__price">{{ $item->product->price * $item->quantity }} đ</td>
+                                <td class="cart__price">{{number_format($item->product->price * $item->quantity )}} VNĐ</td>
                                 @php
                                 $totalQ+=$item->quantity;
                                 $totalP+=$item->product->price * $item->quantity;
@@ -98,8 +104,7 @@
                             @if(!empty(session('cart')))
                             <div class="cart__total">
                                 <ul>
-                                    <li>Total Quantity <span>{{ $totalQ }} </span></li>
-                                    <li>Total Price <span>{{ $totalP }} đ</span></li>
+                                    <li>Total Price <span><h2 style="color: green;">{{ number_format($totalP) }} VNĐ</h2></span></li>
                                 </ul>
                                 @php
                             $user = Sentinel::check();
