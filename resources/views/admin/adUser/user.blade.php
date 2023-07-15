@@ -11,7 +11,7 @@
           <h1>Users</h1>
 
          <form type="get" action="{{ Route('admin.searchUser') }}">
-          <input type="search" style="width:350px; height:35px; " name="search" class="but1"  placeholder="Search user">
+          <input type="search" style="width:350px; height:35px; " name="search" class="but1 p-2"  placeholder="Search user">
           <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="btn btn-success" value="Search">
         </form>
         </div>

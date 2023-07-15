@@ -51,6 +51,22 @@ class OrderController extends Controller
 
          return view('admin.order.edit', compact('orders'));
      }
+     public function viewOrderInfoAd(Request $request, $id)
+     {
+        $orderId = Order::find($id);
+
+        $order=Order::where('id', $id)->get();
+        $orderd=OrderDetail::where('order_id',$id)->get();
+         return view('admin.order.detail', compact('order', 'orderd', 'orderId'));
+     }
+     public function viewOrderInfo(Request $request, $id)
+     {
+        $orderId = Order::find($id);
+
+        $order=Order::where('id', $id)->get();
+        $orderd=OrderDetail::where('order_id',$id)->get();
+         return view('admin.order.detail', compact('order', 'orderd', 'orderId'));
+     }
 
      public function deleteOrders( $id)
      {

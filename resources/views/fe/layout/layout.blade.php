@@ -87,10 +87,17 @@
                             $user = Sentinel::check();
                             @endphp
                                 @if(Sentinel::check())
+                                @if($user -> username == null)
 
-                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
-                                        <a style="background-color: coral; padding: 3px;" href="{{Route('logout')}}">Log Out</a>
+                                        <a style="color: white;font-size: small;">Hello {{$user->email}}</a>
+
+                                        @else
+                                        <a style="color: white;font-size: small;">Hello {{$user->username}}</a>
+
+                                        @endif
                                 <a style="background-color: coral; padding: 3px;" href="">User profile</a>
+
+                                        <a style="background-color: coral; padding: 3px;" href="{{Route('logout')}}">Log Out</a>
 
                                @else
                                <a href="{{ Route('login') }}">Sign in</a>
@@ -130,9 +137,17 @@
                             @endphp
                                 @if(Sentinel::check())
 
-                                        <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
-                                        <a style="background-color: coral; padding: 3px;" href="{{Route('logout')}}">Log Out</a>
-                                        <a style="background-color: goldenrod; padding: 3px;" href="{{Route('userprofile',$user ->id)}}">User profile</a>
+                                @if($user -> username == null)
+
+                                    <a style="color: white;font-size: small;">Hello {{$user->email}}</a>
+
+                                    @else
+                                    <a style="color: white;font-size: small;">Hello {{$user->username}}</a>
+
+                                    @endif
+                                    <a style="background-color: goldenrod; padding: 3px;" href="{{Route('userprofile',$user ->id)}}">User profile</a>
+                                        <a style="background-color: coral; padding: 2px 5px;" href="{{Route('logout')}}">Log Out</a>
+
 
 
 

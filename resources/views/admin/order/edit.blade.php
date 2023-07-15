@@ -8,13 +8,13 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Edit Order</h1>
+          <h1>View Order</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ Route('admin.order.index') }}">Orders</a></li>
-            <li class="breadcrumb-item active">Edit Order</li>
+            <li class="breadcrumb-item active">View Order</li>
           </ol>
         </div>
       </div>
@@ -88,9 +88,16 @@
         </div>
         <!-- /.card -->
       </div>
-      <div class="col-md-12">
-        <input type="submit" value="Edit" class="btn btn-success float-right">
+      <div class="col-md-12 mb-3 row justify-content-end">
+        <div class="float-right mx-3"><a class="btn btn-info" href="{{ Route('admin.viewOrderInfoAd', $orders->id) }}">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            View Order Cart
+                        </a></div>
+
+        <input type="submit" value="Edit" class="btn btn-success">
       </div>
+
     </form>
   </section>
   <!-- /.content -->

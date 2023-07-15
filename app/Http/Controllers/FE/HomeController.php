@@ -229,6 +229,7 @@ class HomeController extends Controller
 
         $user = User::find($id);
 
+        $user -> username = $request->username;
         $user -> first_name = $request->fname;
 
         $user -> last_name = $request->lname;

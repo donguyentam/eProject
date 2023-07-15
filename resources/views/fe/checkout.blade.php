@@ -29,7 +29,7 @@
               <input type="hidden" name="uid" value="{{ $user->id}}"/>
               <div class="row">
                   <div class="col-lg-8 col-md-6">
-                      
+
                       <h6 class="checkout__title">Billing Details</h6>
                       <div class="row">
                           <div class="col-lg-6">
@@ -45,12 +45,12 @@
                               </div>
                           </div>
                       </div>
-                      
+
                       <div class="checkout__input">
                           <p>Address<span>*</span></p>
                           <input type="text" name="address" required placeholder="Street Address" class="checkout__input__add">
                       </div>
-                      
+
                       <div class="row">
                           <div class="col-lg-6">
                               <div class="checkout__input">
@@ -71,16 +71,16 @@
                           placeholder="Notes about your order, e.g. special notes for delivery.">
                       </div>
                   </div>
-                  <div class="col-lg-4 col-md-6">
-                      <div class="checkout__order">
+                  <div class="col-lg-4 col-md-6 align-bottom">
+                      <div class="checkout__order align-items-end justify-content-end">
                           <h4 style="margin-bottom: 0px;" class="order__title">Your order</h4>
-                          
-                          
+
+
                           @php
                             $totalP=0;
                             $totalQ=0;
                             @endphp
-                          
+
                           @if(!empty(session('cart')))
                           @foreach(Session::get('cart') as $item)
                           @php
@@ -88,10 +88,10 @@
                           $totalP+=$item->product->price * $item->quantity;
                             @endphp
                           @endforeach
-                          
+
                           <ul class="checkout__total__all">
                           <li>Total Quantity: <span>{{ $totalQ }} </span></li>
-                                    <li>Total Price: <span>{{ $totalP }} đ</span></li>
+                                    <li>Total Price: <span style="color: green";>{{ number_format($totalP) }} VNĐ</span></li>
                           </ul>
                           <input type="hidden" name="total" value="{{ $totalP }}" class="checkout__input__add">
                           @endif
@@ -114,7 +114,7 @@
                           <div class="checkout__input__checkbox">
                               <label for="paypal">
                                   Paypal
-                                  <input type="radio" name="payment_method" value="Paypal" id="paypal">
+                                  <input type="radio" name="payment_method" value="Paypal" id="paypal" required>
                                   <span class="checkmark"></span>
                               </label>
                           </div>

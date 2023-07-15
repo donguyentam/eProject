@@ -31,7 +31,7 @@
       </div>
 
       <form type="get" action="{{ Route('admin.searchOrders') }}">
-          <input type="search" style="width:350px; height:35px; " name="search" class="but1 m-2"  placeholder="Search Orders">
+          <input type="search" style="width:350px; height:35px; " name="search" class="but1 p-2 m-2"  placeholder="Search Orders">
           <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="btn btn-success" value="Search">
       </form>
 
@@ -72,12 +72,6 @@
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit
-                        </a>
-
-                        <a class="btn btn-danger btn-sm" href="{{ Route('admin.deleteOrders', $order->id) }}">
-                            <i class="fas fa-trash">
-                            </i>
-                            Delete
                         </a>
               @endforeach
               @else

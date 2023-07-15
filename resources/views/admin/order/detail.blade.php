@@ -8,92 +8,90 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Edit Order</h1>
+          <h1>View Order Cart</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ Route('admin') }}">Home</a></li>
             <li class="breadcrumb-item"><a href="{{ Route('admin.order.index') }}">Orders</a></li>
-            <li class="breadcrumb-item active">View Order Cart Detail</li>
+            <li class="breadcrumb-item active">View Order Cart</li>
           </ol>
         </div>
+        <div class="col-md-12">
+                    <a class="btn btn-info float-right m-3" href="{{ Route('admin.editOrders', $orderId->id) }}">
+                            <i class="fas fa-arrow-left">
+                            </i>
+                            Go Back
+                        </a>
+      </div>
       </div>
     </div><!-- /.container-fluid -->
   </section>
 
   <!-- Main content -->
-  <section class="content">
-      @csrf
-      @method('put')
-      <!-- <input type="hidden" name="_method" value="put"/> -->
-      <input type="hidden" name="id" value="{{ $orders->id }}"/>
-      <div class="col-md-12">
-        <div class="card card-primary">
-          <div class="card-header">
-            <h3 class="card-title">Order #{{ $orders->id }} Cart</h3>
+  <section id="body ">
+		<div class="container mt-3">
+			<div class="row">
+				<div id="main" class="col-md-12">
+					<div class="ta">
 
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body p-0">
-        <table class="table table-striped projects">
-            <thead>
-                <tr>
-                    <th style="width: 10%">Id</th>
-                    <th style="width: 20%">Name</th>
-                    <th style="width: 10%">Price</th>
-                    <th style="width: 10%">Category</th>
-                    <th style="width: 10%">Inventory</th>
-                    <th style="width: 20%">Image</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-              @if ($prods != null && count($prods) > 0)
-              @foreach($prods as $item)
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->price }}</td>
-                    <td>{{ $item->category!=null ? $item->category->name : '' }}</td>
-                    <td>{{ $item->quantity}}</td>
-                    <td>
-                      @if ($item->image!=null)
-                      <img src="{{ asset('images/' . $item->image) }}" alt=""
-                            style="width:200px; height:auto;"/>
-                      @endif
-                    </td>
-                </tr>
-              @endforeach
-              @else
-              <tr>
-                <td colspan="6">No Data</td>
-              </tr>
-              @endif
-            </tbody>
 
-        </table>
-        <div class="row">
-                    <div class="col-lg-12">
-                        <div style="text-align: center; padding-left:35%;"  class="product__pagination">
-                            {{$prods->appends(request()->all())->links()}}
-                        </div>
-                    </div>
-                </div>
+					</div>
+					<div id="wrap-inner">
+						<div id="complete">
 
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-      </div>
-      <div class="col-md-12">
-        <input type="submit" value="Edit" class="btn btn-success float-right">
-      </div>
 
-  </section>
+						@php
+						$total =0
+					@endphp
+							<div style="text-align: center; margin-left: auto; margin-bottom: 5%;">
+								<table class="table" style="background: white;" border="1" cellspacing="0" >
+									<tr>
+                                    <th scope="col">Product Image</th>
+
+											<th scope="col"><strong>Product Name</strong></th>
+											<th scope="col"><strong>Price</strong></th>
+											<th scope="col"><strong>Quantity</strong></th>
+											<th scope="col"><strong>Total</strong></th>
+										</tr>
+									@foreach($orderd as $item)
+										<tr scope="row">
+                                        <td class="product__cart__item">
+                                            <div class="product__cart__item__pic">
+                                                    <img src="{{ asset('/images/'.$item->product->image) }}" alt="{{ $item->product->name }}" style="width:200px;height:auto" >
+                                            </div>
+                                        </td>
+                                        <td>
+                                        <div class="product__cart__item__text">
+                                                <p style="color: #0d0d0d;
+                                                font-weight: 700;">{{ $item->product->name }}</p>
+
+                                            </div>
+                                        </td>
+											<td>{{number_format($item-> product->price)}} VNĐ</td>
+											<td>{{$item->quantity}}</td>
+											<td>{{number_format( $item-> product->price*$item->quantity,0,',','.')}}</td>
+										</tr>
+										@php
+											$total += $item-> product->price*$item->quantity;
+										@endphp
+										@endforeach
+										<tr>
+											<td>Total:</td>
+											<td colspan="4" align="right" ><h4 style="color:green;">{{ number_format($total)}} VNĐ</h4></td>
+										</tr>
+									</table>
+							</div>
+						</div>
+
+					</div>
+					<!-- end main -->
+
+				</div>
+			</div>
+		</div>
+	</section>
+
   <!-- /.content -->
 </div>
 

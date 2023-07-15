@@ -50,8 +50,7 @@
                             <i class="fa fa-star-o"></i>
                             <span> - 5 Reviews</span>
                         </div> -->
-                        <h3 style="color: #da5f5f!important;">{{ number_format($prod->price) }} đ <span>{{ number_format($prod->price) }} đ </span></h3>
-                        <h4 class="font-weight-light">Current stock: {{ $prod->quantity }}</h4>
+                        <h3 style="color: #da5f5f!important;">{{ number_format($prod->price) }} đ <span>{{ number_format($prod->price + intval(300000)) }} đ </span></h3>
                         <p></p>
 
                         <div class="product__details__cart__option">
@@ -65,7 +64,7 @@
                         </div>
 
                         <div class="product__details__last__option">
-                            <h5><a href="{{Route('checkout')}}" style=""><span>Checkout Now</span></a></h5>
+                            <h5><a href="{{Route('viewCart')}}" class="btn btn-danger" style="color: black;"><span>Checkout Now</span></a></h5>
                             <img src="img/shop-details/details-payment.png" alt="">
 
                         </div>

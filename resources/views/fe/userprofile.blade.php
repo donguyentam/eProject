@@ -49,7 +49,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									@enderror
 								</span>
+                                @if($user -> username==null)
 
+<div class="input-group mb-3">
+    <input type="text" class="form-control" name="username"  placeholder="Username" />
+    </div>
+@else
+<div class="input-group mb-3">
+    <input type="text" class="form-control" name="username" value="{{$user->username}}"  />
+    </div>
+@endif
                         @if($user -> first_name==null)
 
 						<div class="input-group mb-3">

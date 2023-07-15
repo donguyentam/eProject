@@ -79,7 +79,7 @@ class DashboardController extends Controller
             'email.unique'=>'THE EMAIL WAS REGISTERED',
         ]);
 
-        
+
         $email = $request->email;
         $pwd = $request->password;
 
@@ -106,7 +106,6 @@ class DashboardController extends Controller
         return view('admin.forget-password');
     }
     function complete($id){
-        
         $order=Order::where('id', $id)->get();
         $orderd=OrderDetail::where('order_id',$id)->get();
         return view('fe.complete',compact('order','orderd'));
@@ -146,16 +145,16 @@ class DashboardController extends Controller
 
     function resetPasswordPost(Request $request){
         $request -> validate([
-            
+
             'password'    => 'required|confirmed',
 
         ],
     [
-        
-            
+
+
             'password.required' => 'ENTER PASSWORD',
             'password.confirmed' => 'VERIFICATION PASSWORD IS NOT THE SAME'
-           
+
     ]);
 
 

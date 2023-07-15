@@ -83,13 +83,13 @@
                     </table>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="continue__btn">
                             <a style="background-color: #724100; color: white;" href="{{ Route('productSearch') }}">Continue
                                 Shopping</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="continue__btn update__btn">
                             <a href="#"><i class="fa fa-spinner"></i> Update cart</a>
                         </div>
@@ -100,11 +100,11 @@
         <div class="row">
 
 
-                        <div style="margin-top: 10px;" class="col-lg-4 offset-lg-8">
+                        <div style="margin-top: 10px;" class="col-lg-4 offset-lg-8 p-0 mt-5">
                             @if(!empty(session('cart')))
                             <div class="cart__total">
                                 <ul>
-                                    <li>Total Price <span><h2 style="color: green;">{{ number_format($totalP) }} VNĐ</h2></span></li>
+                                    <li>Total Price: <span><h2 style="color: green;">{{ number_format($totalP) }} VNĐ</h2></span></li>
                                 </ul>
                                 @php
                             $user = Sentinel::check();

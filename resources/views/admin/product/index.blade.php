@@ -35,7 +35,7 @@
       </div>
 
       <form type="get" action="{{ Route('admin.searchProduct') }}">
-          <input type="search" style="width:350px; height:35px; " name="search" class="but1 m-2" value = ""  placeholder="Search Product">
+          <input type="search" style="width:350px; height:35px; " name="search" class="but1 p-2 m-2" value = ""  placeholder="Search Product">
           <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="btn btn-success" value="Search">
           <a style="float:right;" class="btn btn-primary m-2" href="{{ Route('admin.product.create') }}">Create New Product</a>
       </form>
