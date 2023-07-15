@@ -30,11 +30,11 @@
                                             <th scope="col">Email</th>
                                             <th scope="col">Note</th>
                                             <th scope="col">Payment method</th>
-											<th scope="col">Order status</th>
+											<th scope="col">Order status</th><th scope="row"></th>
 										</tr>
 									@foreach($order as $item)
 										<tr>
-                                            <th scope="row"></th>
+                                            
 											<td>{{$item->first_name}}</td>
 											<td>{{$item->last_name}}</td>
 											<td>{{$item->address}}</td>

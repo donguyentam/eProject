@@ -29,7 +29,7 @@ class HomeController extends Controller
 
     public function bedroom()
     {
-        $products = Product::all();
+        $products = Product::where('product_category_id','4')->take(8)->get();
         return view('fe.news.bedroom', compact('products'));
     }
     public function viewOrderHistory()
@@ -43,14 +43,14 @@ class HomeController extends Controller
 
     public function workroom()
     {
-        $products = Product::all();
+        $products = Product::where('product_category_id','1')->take(8)->get();
         return view('fe.news.workroom', compact('products'));
     }
 
 
     public function diningroom()
     {
-        $products = Product::all();
+        $products = Product::where('product_category_id','2')->take(8)->get();
         return view('fe.news.diningroom', compact('products'));
     }
 
