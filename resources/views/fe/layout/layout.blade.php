@@ -64,14 +64,14 @@
 
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap1.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/bootstrap1.min.css?v=').time() }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/elegant-icons.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/nice-select1.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/fe/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/fe/css/style6.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/fe/css/style6.css?v=').time() }}" type="text/css">
 </head>
 
 <body style="background-color: wheat;">
@@ -138,7 +138,7 @@
 
                                @endif
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
                             <li><a style="padding:  4px 20px; background-color: wheat;border: 2px solid black; color: black; right: 10px; " href="{{ Route('login') }}">Sign in</a></li>
                             @endif
 
-                            
+
 
                             <li class="cart-icon">
                                 <a href="{{ Route('viewCart') }}">
@@ -198,7 +198,7 @@
                                     @endif -->
 
                                 </a>
-                               
+
                             </li>
 
                         </ul>
@@ -228,20 +228,20 @@
                     <div style="text-align: center; " class="footer__widget">
                         <h6>Shopping</h6>
                         <ul>
-                           
+
                             <li><a href="{{ Route('productSearch') }}">Trending Products</a></li>
                             <li><a href="{{ Route('blognews') }}">About</a></li>
                             <li><a href="{{ Route('viewCart')}}">View Cart</a></li>
                         </ul>
-                    </div>  
+                    </div>
                 </div>
-                
+
                 <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
                     <div class="footer__widget">
                         <h6>NewLetter</h6>
                         <div class="footer__newslatter">
                             <p>Be the first to know about new arrivals, products, sales & promos!</p>
-                           
+
                         </div>
                     </div>
                 </div>
