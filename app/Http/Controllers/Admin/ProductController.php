@@ -117,6 +117,7 @@ class ProductController extends Controller
 
         $prods['image'] = $imgName;
         $product->update($prods);
+        $product->save();
 return redirect()->route('admin.product.index');
     }
 
@@ -217,11 +218,11 @@ return redirect()->route('admin.product.index');
                   ->orWhere('username', 'LIKE', $searchTerm)
                   ->orWhere('phone_number', 'LIKE', $searchTerm)
                   ->orWhere('address', 'LIKE', $searchTerm);
-                })->paginate(6); 
+                })->paginate(6);
         return view('admin.adUser.user', compact('users'));
         }
-       
-        
+
+
             }
 
     public function itemSearch(){
