@@ -26,7 +26,7 @@
 	</div>
 	<div>
 		<h3><font color="#FF9600">Bill</font></h3>
-		<table border="1" cellspacing="0">
+		<table class="table" border="1" cellspacing="0">
 		<tr>
 				<td><strong>Product name</strong></td>
 				<td><strong>Price</strong></td>

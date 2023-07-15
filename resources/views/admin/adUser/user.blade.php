@@ -12,7 +12,7 @@
 
          <form type="get" action="{{ Route('admin.searchUser') }}">
           <input type="search" style="width:350px; height:35px; " name="search" class="but1"  placeholder="Search user">
-          <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="but1" value="Search">
+          <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="btn btn-success" value="Search">
         </form>
         </div>
 
@@ -64,7 +64,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->phone_number }}</td>
                     <td>{{ $user->address }}</td>
-                    
+
                 </tr>
               @endforeach
               @else

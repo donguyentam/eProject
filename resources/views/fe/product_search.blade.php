@@ -80,8 +80,8 @@
 
                                 <form style="margin-left: 30%;" action="{{ Route('productSearch') }}"   method="GET">
                                 <p>Sort by Price:</p>
-  <input required min="1" style="width: 30%;" type="number" name="min_price" placeholder="Minimum Price">
-  <input required min="1" style="width: 30%;" type="number" name="max_price" placeholder="Maximum Price">
+  <input required min="0" style="width: 30%;" type="number" name="min_price" placeholder="Min">
+  <input required min="1" style="width: 30%;" type="number" name="max_price" placeholder="Max">
   <button class="btn5" style="padding-top: 3px;padding-bottom: 7px;" type="submit">Filter</button>
 </form>
                             </div>
@@ -93,13 +93,15 @@
                     @foreach($products as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6 mt-2 p-3 align-items-center justify-content-center row" href="{{ Route('productDetails', $item->id) }}">
                         <div class="card" style="background-color: antiquewhite;">
+                        <a href="{{ Route('productDetails', $item->id) }}">
                             <img class="card-img-top" src="{{ asset('/images/'. $item->image) }}" alt="">
+</a>
                                     <div class="card-body">
                                         <h5 class="card-title">
                                             <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
                                         </h5>
-                                        <h4 style="color: lightred;">{{ $item->price }} VNĐ</h4>
-                                    <a class="add-cart btn btn-primary justify-content-center mt-2" data-pid="{{ $item->id }}">Add To Cart</a>
+                                        <h4 style="color: lightred;">{{ number_format($item->price) }} VNĐ</h4>
+                                    <a class="add-cart primary-btn mt-3" href="#" style="color:white;" data-pid="{{ $item->id }}">Add To Cart</a>
                                     </div>
                             </div>
                             </div>

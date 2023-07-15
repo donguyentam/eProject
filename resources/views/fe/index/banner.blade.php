@@ -7,7 +7,7 @@
                       <img src="{{ asset('/fe/img/banner/banner-4.png') }}" alt="">
                   </div>
                   <div class="banner__item__text">
-                      <h2>Products Try</h2>
+                      <h2>Products</h2>
                       <a href="{{ Route('productSearch') }}">Shop now</a>
                   </div>
               </div>

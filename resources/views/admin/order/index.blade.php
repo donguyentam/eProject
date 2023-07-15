@@ -32,7 +32,7 @@
 
       <form type="get" action="{{ Route('admin.searchOrders') }}">
           <input type="search" style="width:350px; height:35px; " name="search" class="but1 m-2"  placeholder="Search Orders">
-          <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="but1" value="Search">
+          <input style="background-color:#83cc83;pading-left:40px;pading-right:40px;height:35px;" type="submit" class="btn btn-success" value="Search">
       </form>
 
       <div class="card-body p-0">

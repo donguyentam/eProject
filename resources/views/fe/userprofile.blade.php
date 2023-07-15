@@ -10,7 +10,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/loginadmin.js"></script>
 <!-- Custom Theme files -->
 
-<link rel="stylesheet" href="{{ asset('/css/styleloginad.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('css/styleloginad.css?v=2').time() }}">
+<link rel="stylesheet" href="{{ URL::asset('/fe/css/bootstrap1.min.css?v=2').time() }}">
 <!-- for-mobile-apps -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -39,7 +40,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <form action="{{ Route('updateuserprofile',$user -> id) }}" method="post">
 
 					 @csrf
-                     
+
                      <input type="hidden" class="form-control"  value="{{$user->id}}" name="id" />
 								<span style="color:#ff6c6c">
 									@error('email')
@@ -48,67 +49,67 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									@enderror
 								</span>
-						
-                        @if($user -> first_name==null)        
+
+                        @if($user -> first_name==null)
 
 						<div class="input-group mb-3">
 							<input type="text" class="form-control" name="fname"  placeholder="First name" />
 							</div>
-                        @else    
+                        @else
                         <div class="input-group mb-3">
 							<input type="text" class="form-control" name="fname" value="{{$user->first_name}}"  />
 							</div>
                         @endif
 
-                        
 
-@if($user -> last_name==null)        
+
+@if($user -> last_name==null)
 
 <div class="input-group mb-3">
 		<input type="text" class="form-control" name="lname"  placeholder="Last name"  />
 		</div>
-@else    
+@else
 <div class="input-group mb-3">
     <input type="text" class="form-control" name="lname" value="{{$user->last_name}}"  />
     </div>
 @endif
 
-@if($user -> address==null)        
+@if($user -> address==null)
 
 <div class="input-group mb-3">
 							<input type="text" class="form-control" name="address"  placeholder="Address"/>
 							</div>
-@else    
+@else
 <div class="input-group mb-3">
     <input type="text" class="form-control" name="address" value="{{$user->address}}"  />
     </div>
 @endif
 
-@if($user -> phone_number==null)        
+@if($user -> phone_number==null)
 
 <div class="input-group mb-3">
 							<input type="text" class="form-control" name="phone_number"  placeholder="Phone number"  />
 							</div>
-@else    
+@else
 <div class="input-group mb-3">
     <input type="text" class="form-control" name="phone_number" value="{{$user->phone_number}}"  />
     </div>
 @endif
 
-@if($user -> country==null)        
+@if($user -> country==null)
 
 <div class="input-group mb-3">
 							<input type="text" class="form-control" name="country"  placeholder="Country"  />
 							</div>
-@else    
+@else
 <div class="input-group mb-3">
     <input type="text" class="form-control" name="country" value="{{$user->country}}"  />
     </div>
 @endif
-                           
-                            
-                            
-                            
+
+
+
+
 
 						<input type="submit" class="btn btn-primary btn-block" value="Update">
 
@@ -124,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <!--header end here-->
 <div class="copyright">
-	<p>You want good, quality, durable and beautiful furniture? Come to the Free Shop of the best quality furniture in Vietnamese © 2023<a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+	<p>You want good, quality, durable and beautiful furniture? Come to the Free Shop of the best quality furniture in Vietnamese © 2023</p>
 </div>
 <!--footer end here-->
 

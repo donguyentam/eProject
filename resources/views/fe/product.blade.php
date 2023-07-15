@@ -42,15 +42,15 @@
                     <div class="product__details__text">
 
                         <h4>{{ $prod->name }}</h4>
-                        <div class="rating">
+                        <!-- <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
                             <span> - 5 Reviews</span>
-                        </div>
-                        <h3 style="color: #da5f5f!important;">{{ $prod->price }} đ <span>{{ $prod->price }} đ </span></h3>
+                        </div> -->
+                        <h3 style="color: #da5f5f!important;">{{ number_format($prod->price) }} đ <span>{{ number_format($prod->price) }} đ </span></h3>
                         <h4 class="font-weight-light">Current stock: {{ $prod->quantity }}</h4>
                         <p></p>
 
@@ -58,14 +58,14 @@
                             <div class="quantity">
 
                                 <div class="pro-qty-2">
-                                    <input style="width:57.2px" type="text" name="quanty" value="1" min="1">
+                                    <input style="width:57.2px" type="number" name="quanty" value="1" min="1" max="{{ $prod->quantity}}">
                                 </div>
                             </div>
                             <a href="#" class="primary-btn" data-pid="{{ $prod->id }}">Add to Cart</a>
                         </div>
 
                         <div class="product__details__last__option">
-                            <h5><span><a href="{{Route('checkout')}}" style="">Checkout Now</a></span></h5>
+                            <h5><a href="{{Route('checkout')}}" style=""><span>Checkout Now</span></a></h5>
                             <img src="img/shop-details/details-payment.png" alt="">
 
                         </div>
@@ -132,19 +132,18 @@
         <div class="row">
         @foreach($prodsd as $item)
           <div  class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-              <div style="border: 2px solid black; padding-top: 5px;" class="product__item">
-                  <div class="card" style="background-color: antiquewhite;">
+          <div class="card" style="background-color: antiquewhite;">
+                        <a href="{{ Route('productDetails', $item->id) }}">
                             <img class="card-img-top" src="{{ asset('/images/'. $item->image) }}" alt="">
+                        </a>
                                     <div class="card-body">
-                                        <h4 class="card-title">
+                                        <h5 class="card-title">
                                             <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
-                                        </h4>
-                                        <h4 style="color: lightred;">{{ $item->price }} VNĐ</h4>
-                                    <a style="color:white;" class="btn btn-primary justify-content-center mt-2" data-pid="{{ $item->id }}">+ Add To Cart</a>
+                                        </h5>
+                                        <h4 style="color: lightred;">{{ number_format($item->price) }} VNĐ</h4>
+                                    <a class="add-cart primary-btn mt-3" style="color:white;" data-pid="{{ $item->id }}">Add To Cart</a>
                                     </div>
                             </div>
-
-              </div>
           </div>
         @endforeach
         </div>

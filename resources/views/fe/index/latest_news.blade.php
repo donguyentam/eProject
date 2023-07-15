@@ -4,7 +4,7 @@
           <div class="col-lg-12">
               <div class="section-title">
                   <span>Latest News</span>
-                  <h2>TURNING HOME INTO A HOME</h2>
+                  <h2>TURNING A HOUSE INTO A HOME</h2>
               </div>
           </div>
       </div>
