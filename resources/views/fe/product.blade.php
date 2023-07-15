@@ -50,8 +50,8 @@
                             <i class="fa fa-star-o"></i>
                             <span> - 5 Reviews</span>
                         </div>
-                        <h3>{{ $prod->price }} đ <span>{{ $prod->price }} đ </span></h3>
-                        <h3>Current quantity: <span>{{ $prod->quantity }} đ </span></h3>
+                        <h3 style="color: #da5f5f!important;">{{ $prod->price }} đ <span>{{ $prod->price }} đ </span></h3>
+                        <h4 class="font-weight-light">Current stock: {{ $prod->quantity }}</h4>
                         <p></p>
 
                         <div class="product__details__cart__option">
@@ -126,28 +126,23 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3 class="related-title">New Product</h3>
+                <h3 class="related-title">Other Products</h3>
             </div>
         </div>
         <div class="row">
         @foreach($prodsd as $item)
           <div  class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
               <div style="border: 2px solid black; padding-top: 5px;" class="product__item">
-                  <div class="product__item__pic set-bg" >
-                    <img style="padding-left: 8px;" src="{{ asset('/images/'. $item->image) }}" alt="">
-                      <span class="label">New</span>
-
-                  </div>
-                  <div class="product__item__text">
-
-                      <h3><a  style="margin-left: 30%;" href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a></h3>
-                  </div>
-                  <h6 style="margin-top: 17px; text-align: center;"><p>{{ $item->price }} VND</p></h6>
-                  <div>
-                    <h5 style="text-align: center; margin-bottom: 15px;">
-                    <a style="color: black;" href="{{ Route('productDetails', $item->id) }}"><b>{{ $item->name }}</b></a>
-                  </h5>
-                  </div>
+                  <div class="card" style="background-color: antiquewhite;">
+                            <img class="card-img-top" src="{{ asset('/images/'. $item->image) }}" alt="">
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
+                                        </h4>
+                                        <h4 style="color: lightred;">{{ $item->price }} VNĐ</h4>
+                                    <a style="color:white;" class="btn btn-primary justify-content-center mt-2" data-pid="{{ $item->id }}">+ Add To Cart</a>
+                                    </div>
+                            </div>
 
               </div>
           </div>
