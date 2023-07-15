@@ -94,11 +94,11 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 align-items-center justify-content-center row" href="{{ Route('productDetails', $item->id) }}">
                         <div  style="border: 2px solid black; padding-top: 5px; margin-top:1%"  class="product__item">
                             <div class="product__item__pic set-bg d-block">
-                                <img class="product__item__pic set-bg" style="padding-left: 4%;" src="{{ asset('/images/'. $item->image) }}" alt="">
+                                <img class="product__item__pic set-bg" src="{{ asset('/images/'. $item->image) }}" alt="">
                             </div>
                             <div class="product__item__text">
 
-                                <a style=" margin-left: 30%;" href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
+                            <h3><a style="margin-left: 20%; margin-top: -8%;" href="#" class="btn" data-pid="{{ $item->id }}">+ Add To Cart</a></h3>
                             </div>
                             <h4 class="mt-3">
                                 <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
