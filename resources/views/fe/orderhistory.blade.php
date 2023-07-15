@@ -16,10 +16,18 @@
 				<div id="main" class="col-md-12">
 					<div class="ta">
 
-
+@if ($errors->any())
+    <div style="width: 40%;" class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 					</div>
 					<div id="wrap-inner">
-
+						
 							<div style="text-align: center; margin-bottom: 5%;">
 								<table class="table" style="background: white;" border="1" cellspacing="0">
 									<tr>
@@ -30,7 +38,8 @@
                                             <th scope="col">Email</th>
                                             <th scope="col">Note</th>
                                             <th scope="col">Payment method</th>
-											<th scope="col">Order status</th><th scope="row"></th>
+											<th scope="col">Order status</th>
+											<th scope="col">Action</th>
 										</tr>
 									@foreach($order as $item)
 										<tr>
@@ -43,6 +52,10 @@
                                             <td>{{$item->note}}</td>
                                             <td>{{$item->payment_method}}</td>
                                             <td>{{$item->order_status}}</td>
+											<td>
+												<a class="btn1 btn-danger"  onclick="hiende() " href="#">Delete</a>
+											</td>
+											
 										</tr>
                                         @endforeach
 									</table>
@@ -57,5 +70,14 @@
 	</section>
 	<!-- endmain -->
 @endsection
+<script>
+	function hiende()
+	{
+		var a=confirm('Are you sure you want to delete this order?');
 
+		if(a==true){
+			window.location.href="{{ Route('deleteorders',$item->id) }}"
+		}
+	}
+</script>
 

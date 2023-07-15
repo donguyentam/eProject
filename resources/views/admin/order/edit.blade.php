@@ -69,7 +69,7 @@
             </div>
             <div class="form-group">
               <label for="order_success">Order Status</label>
-              <select id="order_success" class="form-control custom-select" name="order_success" required>
+              <select id="order_success" class="form-control custom-select" name="order_status" required>
                 <option value="Pending payment">Pending payment</option>
                 <option value="Processing">Processing</option>
                 <option value="Delivering">Delivering</option>

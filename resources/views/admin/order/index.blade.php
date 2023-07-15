@@ -73,6 +73,8 @@
                             </i>
                             Edit
                         </a>
+
+
               @endforeach
               @else
               <tr>

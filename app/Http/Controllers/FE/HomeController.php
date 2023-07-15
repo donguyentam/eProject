@@ -155,12 +155,13 @@ class HomeController extends Controller
     }
 }
 
-    public function clearCart(Request $request)
-    {
-        if ($request->session()->has('cart')) {
-            $request->session()->forget('cart');
-        }
-    }
+    // public function clearCart(Request $request)
+    // {
+    //     if ($request->session()->has('cart')) {
+    //         $request->session()->forget('cart');
+    //     }
+    // }
+
 
 
     public function viewCart(Request $request)
@@ -199,22 +200,22 @@ class HomeController extends Controller
     }
 
 
-    public function DeleteItemCart(Request $request, $id)
-    {
+    // public function DeleteItemCart(Request $request, $id)
+    // {
 
-        $oldCart = Session('Cart') ? Session('Cart') : null;
-        $newCart = new CartItem($oldCart);
-        $newCart->DeleteItemCart($id);
+    //     $oldCart = Session('Cart') ? Session('Cart') : null;
+    //     $newCart = new CartItem($oldCart);
+    //     $newCart->DeleteItemCart($id);
 
-        if (count($newCart->products) > 0) {
-            $request->session()->put('Cart', $newCart);
-        } else {
-            $request->session()->forget('Cart');
-        }
+    //     if (count($newCart->products) > 0) {
+    //         $request->session()->put('Cart', $newCart);
+    //     } else {
+    //         $request->session()->forget('Cart');
+    //     }
 
 
-        return view('fe.cart');
-    }
+    //     return view('fe.cart');
+    // }
 
     public function userprofile($id)
     {
@@ -255,7 +256,22 @@ class HomeController extends Controller
     }
 
 
+    public function deleteorders($id)
+{
+    $order = Order::find($id);
 
+    if ($order && $order->order_status !== "Delivering") {
+        $order->delete();
+    }else {
+        $err ="You cannot delete an order after it has been processed";
+        return redirect()->route('viewOrderHistory')->withErrors($err);
+    }
+
+    return redirect()->route('viewOrderHistory');
+}
+        
+        
+    
 
     public function DeleteListItemCart(Request $request, $id)
     {
