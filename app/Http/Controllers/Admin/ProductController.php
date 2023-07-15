@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $prods = Product::orderBy('created_at', 'DESC')->paginate(1);
+        $prods = Product::orderBy('created_at', 'DESC')->paginate(6);
 
         // return view('admin.product.index')->with([
         //     'prods' => $prods
@@ -141,11 +141,11 @@ return redirect()->route('admin.product.index');
     {
         $search = $_GET['search'];
         if( $search==""){
-            $prods = Product::orderBy('created_at', 'DESC')->where('name','LIKE','%' . $search . '%')->paginate(1);
+            $prods = Product::orderBy('created_at', 'DESC')->where('name','LIKE','%' . $search . '%')->paginate(6);
             return redirect()->route('admin.product.index');
         }
         else{
-            $prods = Product::orderBy('created_at', 'DESC')->where('name','LIKE','%' . $search . '%')->paginate(1);
+            $prods = Product::orderBy('created_at', 'DESC')->where('name','LIKE','%' . $search . '%')->paginate(6);
         //->orWhere('product_promotion_price',$req->key)
 
         return view('admin.product.index', compact('prods'));
@@ -174,7 +174,7 @@ return redirect()->route('admin.product.index');
 
     public function user ()
     {
-        $users = User::all();
+        $users = User::paginate(6);
         // return view('admin.product.index')->with([
         //     'prods' => $prods
         // ]);

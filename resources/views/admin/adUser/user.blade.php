@@ -49,10 +49,9 @@
                 <tr>
                     <th style="width: 10%">Id</th>
                     <th style="width: 20%">Username</th>
-                    <th style="width: 20%">Email</th>
-                    <th style="width: 15%">Phone Number</th>
+                    <th style="width: 30%">Email</th>
+                    <th style="width: 20%">Phone Number</th>
                     <th style="width: 20%">Address</th>
-                    <th style="width: 15%">Action</th>
                     <th></th>
                 </tr>
             </thead>
@@ -75,6 +74,13 @@
               @endif
             </tbody>
         </table>
+        <div class="row">
+                    <div class="col-lg-12">
+                        <div style="text-align: center; padding-left:35%;" class="product__pagination1">
+                            {{$users->appends(request()->all())->links()}}
+                        </div>
+                    </div>
+                </div>
       </div>
       <!-- /.card-body -->
     </div>

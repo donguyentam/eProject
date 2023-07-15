@@ -85,6 +85,13 @@
               </tr>
               @endif
             </tbody>
+            <div class="row">
+                    <div class="col-lg-12">
+                        <div style="text-align: center; padding-left:35%;" class="product__pagination1">
+                            {{$orders->appends(request()->all())->links()}}
+                        </div>
+                    </div>
+                </div>
   <!-- /.content -->
 </div>
 @endsection

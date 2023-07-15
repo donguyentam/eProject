@@ -10,9 +10,9 @@
       </div>
 
 
-      <div class="row product__filter">
+      <div style="display: flex;" class="ro product__filte">
       @foreach($prodsd as $item)
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+          <div style="border: 2px solid black; padding-top: 5px; margin-left: 1%;" class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
               <div class="product__item">
                   <div class="product__item__pic set-bg" >
                     <img src="{{ asset('/images/'. $item->image) }}" alt="">
@@ -20,8 +20,8 @@
                       
                   </div>
                   <div class="product__item__text">
-                      <h6>{{ $item->price }} đ</h6>
-                      <a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a>
+                      <h5><p>{{ $item->price }} đ</p></h5>
+                      <h3><a href="#" class="add-cart" data-pid="{{ $item->id }}">+ Add To Cart</a></h3>
                      
                       <!-- <div class="product__color__select">
                           <label for="pc-1">

@@ -89,7 +89,7 @@
 
                                         <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
                                         <a style="background-color: coral; padding: 3px;" href="{{Route('logout')}}">Log Out</a>
-
+                                <a style="background-color: coral; padding: 3px;" href="">User profile</a>
 
                                @else
                                <a href="{{ Route('login') }}">Sign in</a>
@@ -130,8 +130,8 @@
                                 @if(Sentinel::check())
 
                                         <a style="color: white;font-size: xx-small;">Hello {{$user->email}}</a>
-                                        <a style="background-color: coral; padding: 3px;" href="{{'logout'}}">Log Out</a>
-
+                                        <a style="background-color: coral; padding: 3px;" href="{{Route('logout')}}">Log Out</a>
+                                        <a style="background-color: goldenrod; padding: 3px;" href="{{Route('userprofile')}}">User profile</a>
 
 
 

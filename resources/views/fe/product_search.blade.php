@@ -114,7 +114,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="product__pagination">
+                        <div style="text-align: center; padding-left:10%;" class="product__pagination1">
                             {{$products->appends(request()->all())->links()}}
                         </div>
                     </div>
@@ -148,20 +148,20 @@
         });
     });
 
-    $('#sort_by').on('change', function(){
-        let sort_by = $('#sort_by').val();
+    // $('#sort_by').on('change', function(){
+    //     let sort_by = $('#sort_by').val();
         
-        // const url = "{{ Route('productSearch') }}";
+    //     // const url = "{{ Route('productSearch') }}";
         
-        $.ajax({
-            url: "{{ Route('sort_by') }}",
-            method:"get",
-            data:{sort_by:sort_by},
-            success:function(res){
-                $('fe.product_search').html(res);
-            }
-        });
-    })
+    //     $.ajax({
+    //         url: "{{ Route('sort_by') }}",
+    //         method:"get",
+    //         data:{sort_by:sort_by},
+    //         success:function(res){
+    //             $('fe.product_search').html(res);
+    //         }
+    //     });
+    // })
 
 </script> 
 @endsection

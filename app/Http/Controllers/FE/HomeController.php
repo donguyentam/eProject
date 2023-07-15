@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use DB;
 use Session;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -206,6 +207,29 @@ class HomeController extends Controller
 
 
         return view('fe.cart');
+    }
+
+    public function userprofile(Request $request)
+    {
+        return view('fe.userprofile');
+    }
+
+    public function updateuserprofile(Request $request, User $user)
+    {
+
+        $ids = $request->all();
+        
+        $$user ->update($ids);
+        
+        // for ($i = 0; $i < count($pids); $i++) {
+        //     foreach ($cart as $item) {
+        //         if ($item->product->id == $pids[$i]) {
+        //             $item->quantity = $quantities[$i];
+        //             break;
+        //         }
+        //     }
+        // }
+        
     }
 
 

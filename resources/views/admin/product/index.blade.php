@@ -93,7 +93,7 @@
         </table>
         <div class="row">
                     <div class="col-lg-12">
-                        <div class="product__pagination">
+                        <div style="text-align: center; padding-left:35%;"  class="product__pagination">
                             {{$prods->appends(request()->all())->links()}}
                         </div>
                     </div>

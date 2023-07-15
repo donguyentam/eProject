@@ -17,7 +17,7 @@ class OrderController extends Controller
 
      public function index ()
      {
-         $orders = Order::all();
+         $orders = Order::paginate(6);
          $orderDetails = OrderDetail::all();
          // return view('admin.product.index')->with([
          //     'prods' => $prods
