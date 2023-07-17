@@ -45,7 +45,7 @@
                                             <a style="color: #0d0d0d; font-weight: 700;" href="{{ Route('productDetails', $item->id) }}">{{ $item->name }}</a>
                                         </h5>
                                         <h4 style="color: lightred;">{{ number_format($item->price) }} VNĐ</h4>
-                                    <a class="add-cart primary-btn mt-3" href="#" style="color:white;" data-pid="{{ $item->id }}">Add To Cart</a>
+
                                     </div>
                             </div>
             </div>
