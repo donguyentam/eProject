@@ -76,14 +76,15 @@
 	</section>
 	<!-- endmain -->
 @endsection
+@if(isset($item->id))
 <script>
 	function hiende()
 	{
 		var a=confirm('Are you sure you want to delete this order?');
-
 		if(a==true){
 			window.location.href="{{ Route('deleteorders',$item->id) }}"
 		}
 	}
 </script>
+@endif
 
