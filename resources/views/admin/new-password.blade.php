@@ -38,7 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                      <input  type="hidden" name="token"  value="{{$token}}">
 						<div class="input-group mb-3">
-						<input type="text" class="form-control" disabled value="{{$email -> email}}" name="email" />
+						<input type="text" class="form-control" readonly value="{{$email -> email}}" name="email" />
 
 						</div>
 						<span style="color:#ff6c6c ;width: 10px">
@@ -49,8 +49,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 								@enderror
 
+								@error('token')
+
+								{{$message}}
+
+								@enderror
 
 							</span>
+							<div name="token"></div>
 						<div class="input-group mb-3">
 						<input type="password" class="form-control"  placeholder="Password" name="password"/>
 

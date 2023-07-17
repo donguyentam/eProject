@@ -144,36 +144,60 @@ class DashboardController extends Controller
     }
 
     function resetPasswordPost(Request $request){
-        $request -> validate([
+        // $request -> validate([
 
-            'password'    => 'required|confirmed',
+        //     'password'    => 'required|confirmed',
 
-        ],
-    [
+        // ],
+    
+   
+    $request->validate([
+        // 'token' => 'required',
+        // 'email' => 'required|email',
+        'password' => 'required|min:8|confirmed',
+    ],[
 
+        // 'token.required' => 'mising token',
+        'password.required' => 'ENTER PASSWORD',
+        'password.confirmed' => 'VERIFICATION PASSWORD IS NOT THE SAME'
 
-            'password.required' => 'ENTER PASSWORD',
-            'password.confirmed' => 'VERIFICATION PASSWORD IS NOT THE SAME'
+]);
+ 
+    // $status = Password::reset(
+    //     $request->only('email', 'password', 'token'),
+    //     function (User $user, string $password) {
+    //         $user->forceFill([
+    //             'password' => Hash::make($password)
+    //         ])->setRememberToken(Str::random(60));
+ 
+    //         $user->save();
+ 
+    //         event(new PasswordReset($user));
+    //     }
+        
+    // );
+    // return $status === Password::PASSWORD_RESET
+    // ? redirect()->route('login',compact('success'))->with('status', ($status))
+    // : back()->withErrors(['email' => [($status)]]);
+    
+$updatePassword = DB::table('password_reset_tokens')->where([
+    'token' => $request -> token
+])->first();
 
-    ]);
+if (!$updatePassword){
+    return redirect()->to(Route('resetPassword'))->with('error','Invalid');
+}
 
+User::where('email', $request -> email)->update(['password'=> Hash::make($request->password)]);
 
-        $updatePassword = DB::table('password_reset_tokens')->where([
-            'token' => $request -> token
-        ])->first();
+DB::table('password_reset_tokens')->where(['email'=>$request->email])->delete();
 
-        if (!$updatePassword){
-            return redirect()->to(Route('resetPassword'))->with('error','Invalid');
-        }
+$success = 'RESET PASSWORD SUCCESSFUL';
 
-        User::where('email', $request -> email)->update(['password'=> Hash::make($request->password)]);
+session()->flash('success', $success);
+return redirect()->to(route('login',compact('success')));
 
-        DB::table('password_reset_tokens')->where(['email'=>$request->email])->delete();
-
-        $success = 'RESET PASSWORD SUCCESSFUL';
-        session()->flash('success', $success);
-        return redirect()->to(route('login',compact('success')));
-    }
+}
 
 
     public function logout(Request $request)
