@@ -33,11 +33,17 @@ class HomeController extends Controller
         return view('fe.news.bedroom', compact('products'));
     }
     public function viewOrderHistory()
-    {
-        $user = \Sentinel::getUser();
+    { 
+        
+
+        if(!\Sentinel::check()){
+            return redirect()->route('login');
+        }else{
+            $user = \Sentinel::getUser();
         $users=$user->id;
-        $order = Order::where('user_id',$users)->get();
+           $order = Order::where('user_id',$users)->get();
         return view('fe.orderhistory', compact('order'));
+        }
     }
 
 
