@@ -26,7 +26,7 @@ class IsLogin
         }
         else
         {
-            return redirect()->route('/');
+            return redirect()->route('home');
         }
     }
 }
