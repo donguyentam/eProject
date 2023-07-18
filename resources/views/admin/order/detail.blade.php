@@ -55,6 +55,7 @@
 											<th scope="col"><strong>Total</strong></th>
 										</tr>
 									@foreach($orderd as $item)
+									@if ($item -> quantity > 0)
 										<tr scope="row">
                                         <td class="product__cart__item">
                                             <div class="product__cart__item__pic">
@@ -75,6 +76,7 @@
 										@php
 											$total += $item-> product->price*$item->quantity;
 										@endphp
+										@endif
 										@endforeach
 										<tr>
 											<td>Total:</td>

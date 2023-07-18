@@ -46,6 +46,8 @@
 
                           @if (\Session::has('cart'))
                             @foreach(\Session::get('cart') as $item)
+									@if ($item -> quantity > 0)
+
                             <tr scope="row">
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
@@ -64,7 +66,7 @@
                                 </td>
                                 <td class="quantity__item text-center">
                                     <div class="quantity">
-                                        <div class="pro-qty-2">
+                                        <div class="pro-qty2">
                                             <input type="number" min="1" value="{{ $item->quantity }}" data-pid="{{ $item->product->id }}">
                                         </div>
                                     </div>
@@ -77,6 +79,7 @@
                                 @endphp
                                 <td style="text-align: center;" class="cart__close"><a href="#"  data-pid="{{ $item->product->id }}"><i class="fa fa-close"></i></a></td>
                             </tr>
+                            @endif
                             @endforeach
                           @endif
                         </tbody>
@@ -101,7 +104,7 @@
 
 
                         <div style="margin-top: 10px;" class="col-lg-4 offset-lg-8 p-0 mt-5">
-                            @if(!empty(session('cart')))
+                            @if(!empty(session('cart')) && $totalP > 0)
                             <div class="cart__total">
                                 <ul>
                                     <li>Total Price: <span><h2 style="color: green;">{{ number_format($totalP) }} VNĐ</h2></span></li>
@@ -134,7 +137,7 @@ $('.continue__btn.update__btn').click(function(e) {
   e.preventDefault();
   let pids=[];
   let quantities=[];
-  $('.pro-qty-2 input[type="number"]').each(function(index, value){
+  $('.pro-qty2 input[type="number"]').each(function(index, value){
     pids.push($(value).data('pid'));
     quantities.push($(value).val());
   });
