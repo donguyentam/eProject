@@ -56,14 +56,18 @@
 										</tr>
 									@foreach($orderd as $item)
 									@if ($item -> quantity > 0)
+									@if (isset($item->product->image) && isset( $item->product->name) && isset( $item->product->price) && isset( $item->quantity))
 										<tr scope="row">
                                         <td class="product__cart__item">
                                             <div class="product__cart__item__pic">
+												@if (isset($item->product->image))
                                                     <img src="{{ asset('/images/'.$item->product->image) }}" alt="{{ $item->product->name }}" style="width:200px;height:auto" >
-                                            </div>
+	@endif
+												</div>
                                         </td>
                                         <td>
                                         <div class="product__cart__item__text">
+											
                                                 <p style="color: #0d0d0d;
                                                 font-weight: 700;">{{ $item->product->name }}</p>
 
@@ -76,6 +80,7 @@
 										@php
 											$total += $item-> product->price*$item->quantity;
 										@endphp
+										@endif
 										@endif
 										@endforeach
 										<tr>

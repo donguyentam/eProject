@@ -69,7 +69,7 @@ class DashboardController extends Controller
         $request->validate([
 
             'email'    => 'required|max:50|email|unique:users',
-            'password'    => 'required|confirmed',
+            'password'    => 'required|min:8|confirmed',
         ],
         [
             'email.required' => 'ENTER EMAIL',

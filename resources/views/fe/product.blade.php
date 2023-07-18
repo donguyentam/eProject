@@ -50,7 +50,7 @@
                             <i class="fa fa-star-o"></i>
                             <span> - 5 Reviews</span>
                         </div> -->
-                        <h3 style="color: #da5f5f!important;">{{ number_format($prod->price) }} đ <span>{{ number_format($prod->price + intval(300000)) }} đ </span></h3>
+                        <h3 style="color: #da5f5f!important;">{{ number_format($prod->price) }} VNĐ</h3>
                         <p></p>
 
                         <div class="product__details__cart__option">

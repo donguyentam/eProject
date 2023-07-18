@@ -39,6 +39,7 @@
 											<th scope="col"><strong>Total</strong></th>
 										</tr>
 									@foreach($orderd as $item)
+									@if (isset($item->product->image) && isset( $item->product->name) && isset( $item->product->price) && isset( $item->quantity))
 										<tr scope="row">
                                         <td class="product__cart__item">
                                             <div class="product__cart__item__pic">
@@ -59,6 +60,7 @@
 										@php
 											$total += $item-> product->price*$item->quantity;
 										@endphp
+										@endif
 										@endforeach
 										<tr>
 											<td>Total:</td>

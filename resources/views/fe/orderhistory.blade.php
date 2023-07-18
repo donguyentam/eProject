@@ -42,6 +42,7 @@
 											<th scope="col">Action</th>
 										</tr>
 									@foreach($order as $item)
+									
 										<tr>
 
 											<td>{{$item->first_name}}</td>
