@@ -55,7 +55,7 @@
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Phone <span>*</span></p>
-                                  <input type="tel" min="10" value="{{ isset($user->phone_number) ? $user->phone_number: '' }}" required name="phone_number">
+                                  <input type="tel" maxlength="15" value="{{ isset($user->phone_number) ? $user->phone_number: '' }}" required name="phone_number">
                               </div>
                           </div>
                           <div class="col-lg-6">

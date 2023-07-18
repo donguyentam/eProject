@@ -65,7 +65,7 @@
                                 <td class="quantity__item text-center">
                                     <div class="quantity">
                                         <div class="pro-qty-2">
-                                            <input type="text" value="{{ $item->quantity }}" data-pid="{{ $item->product->id }}">
+                                            <input type="number" min="1" value="{{ $item->quantity }}" data-pid="{{ $item->product->id }}">
                                         </div>
                                     </div>
                                 </td>
@@ -134,7 +134,7 @@ $('.continue__btn.update__btn').click(function(e) {
   e.preventDefault();
   let pids=[];
   let quantities=[];
-  $('.pro-qty-2 input[type="text"]').each(function(index, value){
+  $('.pro-qty-2 input[type="number"]').each(function(index, value){
     pids.push($(value).data('pid'));
     quantities.push($(value).val());
   });
