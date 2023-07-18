@@ -158,7 +158,7 @@
     $('.product__details__cart__option a').click(function(e) {
         e.preventDefault(); // huỷ tác dụng thẻ a
 
-        if(($('.product__details__cart__option .pro-qty-2 input').val()) == 0) {
+        if(($('.product__details__cart__option .pro-qty-2 input').val()) <= 0) {
             $i = null;
             $q = null;
             return false;

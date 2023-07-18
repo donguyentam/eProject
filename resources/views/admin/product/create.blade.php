@@ -40,7 +40,7 @@
           <div class="card-body">
             <div class="form-group">
               <label for="name">Name</label>
-              <input id="name" required class="form-control" name="name"/>
+              <input id="name" required class="form-control" name="name" maxlength="50"/>
             </div>
             <div class="form-group">
               <label for="price">Price</label>
@@ -61,7 +61,7 @@
             </div>
             <div class="form-group">
               <label for="quantity">Quantity</label>
-                <input id="quantity" type="number" required min="1" max="999" class="form-control" name="quantity"/>
+                <input id="quantity" type="number" required min="0" max="999" class="form-control" name="quantity"/>
             </div>
           </div>
           <!-- /.card-body -->
