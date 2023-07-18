@@ -52,21 +52,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 @if($user -> username==null)
 
 <div class="input-group mb-3">
-    <input type="text" class="form-control" name="username"  placeholder="Username" />
+    <input type="text" class="form-control" name="username"  placeholder="Username" maxlength="20" />
     </div>
 @else
 <div class="input-group mb-3">
-    <input type="text" class="form-control" name="username" value="{{$user->username}}"  />
+    <input type="text" class="form-control" name="username" value="{{$user->username}}" maxlength="20" />
     </div>
 @endif
                         @if($user -> first_name==null)
 
 						<div class="input-group mb-3">
-							<input type="text" class="form-control" name="fname"  placeholder="First name" />
+							<input type="text" class="form-control" name="fname"  placeholder="First name" maxlength="20" />
 							</div>
                         @else
                         <div class="input-group mb-3">
-							<input type="text" class="form-control" name="fname" value="{{$user->first_name}}"  />
+							<input type="text" class="form-control" name="fname" value="{{$user->first_name}}" maxlength="20" />
 							</div>
                         @endif
 
@@ -75,44 +75,44 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 @if($user -> last_name==null)
 
 <div class="input-group mb-3">
-		<input type="text" class="form-control" name="lname"  placeholder="Last name"  />
+		<input type="text" class="form-control" name="lname"  placeholder="Last name" maxlength="20" />
 		</div>
 @else
 <div class="input-group mb-3">
-    <input type="text" class="form-control" name="lname" value="{{$user->last_name}}"  />
+    <input type="text" class="form-control" name="lname" value="{{$user->last_name}}" maxlength="20" />
     </div>
 @endif
 
 @if($user -> address==null)
 
 <div class="input-group mb-3">
-							<input type="text" class="form-control" name="address"  placeholder="Address"/>
+							<input type="text" class="form-control" name="address"  placeholder="Address" maxlength="150"/>
 							</div>
 @else
 <div class="input-group mb-3">
-    <input type="text" class="form-control" name="address" value="{{$user->address}}"  />
+    <input type="text" class="form-control" name="address" value="{{$user->address}}" maxlength="150" />
     </div>
 @endif
 
 @if($user -> phone_number==null)
 
 <div class="input-group mb-3">
-							<input type="text" class="form-control" name="phone_number"  placeholder="Phone number"  />
+							<input type="text" maxlength="15" class="form-control" name="phone_number"  placeholder="Phone number"  />
 							</div>
 @else
 <div class="input-group mb-3">
-    <input type="text" class="form-control" name="phone_number" value="{{$user->phone_number}}"  />
+    <input type="text" maxlength="15" class="form-control" name="phone_number" value="{{$user->phone_number}}"  />
     </div>
 @endif
 
 @if($user -> country==null)
 
 <div class="input-group mb-3">
-							<input type="text" class="form-control" name="country"  placeholder="Country"  />
+							<input type="text" class="form-control" name="country"  placeholder="Country" maxlength="50" />
 							</div>
 @else
 <div class="input-group mb-3">
-    <input type="text" class="form-control" name="country" value="{{$user->country}}"  />
+    <input type="text" class="form-control" name="country" value="{{$user->country}}" maxlength="50"  />
     </div>
 @endif
 

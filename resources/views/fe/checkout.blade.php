@@ -35,20 +35,20 @@
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>First Name <span>*</span></p>
-                                  <input type="text" name="first_name" required value="{{ isset($user->first_name) ? $user->first_name: '' }}">
+                                  <input type="text" name="first_name" maxlength="20" required value="{{ isset($user->first_name) ? $user->first_name: '' }}">
                               </div>
                           </div>
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Last Name <span>*</span></p>
-                                  <input type="text" required name="last_name" value="{{ isset($user->last_name) ? $user->last_name: '' }}">
+                                  <input type="text" required name="last_name" maxlength="20" value="{{ isset($user->last_name) ? $user->last_name: '' }}">
                               </div>
                           </div>
                       </div>
 
                       <div class="checkout__input">
                           <p>Address <span>*</span></p>
-                          <input type="text" name="address" value="{{ isset($user->address) ? $user->address: '' }}" required placeholder="Street Address" class="checkout__input__add">
+                          <input type="text" name="address" maxlength="150" value="{{ isset($user->address) ? $user->address: '' }}" required placeholder="Street Address" class="checkout__input__add">
                       </div>
 
                       <div class="row">
@@ -61,13 +61,13 @@
                           <div class="col-lg-6">
                               <div class="checkout__input">
                                   <p>Email<span>*</span></p>
-                                  <input type="text" required name="email" value="{{ isset($user->email) ? $user->email: '' }}">
+                                  <input type="text" maxlength="50" required name="email" value="{{ isset($user->email) ? $user->email: '' }}">
                               </div>
                           </div>
                       </div>
                       <div class="checkout__input">
                           <p>Order notes</p>
-                          <input type="text" name="note"
+                          <input type="text" name="note" maxlength="300"
                           placeholder="Notes about your order, e.g. special notes for delivery.">
                       </div>
                   </div>
